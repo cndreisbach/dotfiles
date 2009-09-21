@@ -47,3 +47,5 @@ alias sg='script/generate'
 alias a='autotest -rails'
 alias rr='touch tmp/restart.txt'
 
+# Cleanup
+alias rmorig="find . -name '*.orig' | xargs rm"
