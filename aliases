@@ -7,13 +7,14 @@ export MY_GITHUB_LOGIN="crnixon"
 alias g="grep"
 alias g+="grep -r $1 *"
 alias h="history"
-alias ll="ls -laF"
-alias .p="source ~/knapsack/zshrc"
+alias ll="ls -laFh"
 alias \?="h | g $1"
 alias ps\?="ps ax | grep $1"
 alias c='clear'
 alias ms='mysql -u root'
-alias t='thor'
+alias .a="waitmate ~/.aliases && source ~/.aliases"
+alias reload="source ~/.aliases && ruby ~/.userenv.rb && source ~/.userenv.sh"
+alias top10="cat ~/.zsh_history|cut -d ';' -f 2- 2>/dev/null|awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}'|sort -rn|head"
 
 # Editor
 alias e=$EDITOR
@@ -31,16 +32,18 @@ alias gc='git commit'
 alias gst='git status'
 alias gsd='git svn dcommit'
 alias gsr='git svn rebase'
+function gg() {
+  git commit -v -a -m "$*"
+}
+
+# Ruby
+alias r='rake'
+alias th='thor'
 
 # Rails
 alias ss='script/server'
 alias sc='script/console'
+alias sg='script/generate'
 alias a='autotest -rails'
 alias rr='touch tmp/restart.txt'
 
-# JRuby
-alias j='jruby'
-alias jr='jruby -S'
-alias jgem='jruby -S gem'
-alias jrake='jruby -S rake'
-alias jirb='jruby -S irb'
