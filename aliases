@@ -1,8 +1,3 @@
-### ENV VARS
-export MY_NAME="Clinton R. Nixon"
-export MY_EMAIL="crnixon@gmail.com"
-export MY_GITHUB_LOGIN="crnixon"
-
 ### ALIASES
 alias g="grep"
 alias g+="grep -r $1 *"
