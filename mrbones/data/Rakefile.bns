@@ -1,0 +1,27 @@
+# Look in the tasks/setup.rb file for the various options that can be
+# configured in this Rakefile. The .rake files in the tasks directory
+# are where the options are used.
+
+begin
+  require 'bones'
+  Bones.setup
+rescue LoadError
+  load 'tasks/setup.rb'   # this line should already be there
+end
+
+
+ensure_in_path 'lib'
+require '<%= name %>'
+
+task :default => 'test:run'
+
+PROJ.name = '<%= name %>'
+PROJ.authors = '<%= ENV['MY_NAME'] || "FIXME (who is writing this software)" %>'
+PROJ.email = '<%= ENV['MY_EMAIL'] || 'FIXME (your e-mail)' %>'        
+PROJ.url = 'http://github.com/<%= "#{ENV['MY_GITHUB_LOGIN'] || 'FIXME'}/#{name}" %>'
+PROJ.rubyforge.name = '<%= name %>'
+
+PROJ.version = <%= classname %>.version
+
+PROJ.gem.dependencies = [] # ['gem', '>= version']
+

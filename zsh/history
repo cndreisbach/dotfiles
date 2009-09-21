@@ -1,0 +1,5 @@
+HISTFILE=~/.zsh_history
+HISTSIZE=2048
+SAVEHIST=1024
+setopt appendhistory autocd extendedglob
+setopt hist_ignore_dups hist_reduce_blanks

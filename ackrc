@@ -1,0 +1,12 @@
+--sort-files
+--color
+--context=1
+--follow
+--group
+--type-set=scala=.scala
+--type-set=erb=.erb
+--type-set=rhtml=.rhtml
+--type-set=rjs=.rjs
+--type-set=haml=.haml
+--ignore-dir=.rsync_cache
+--type=nosql

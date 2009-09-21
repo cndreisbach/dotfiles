@@ -1,0 +1,27 @@
+#compdef thor
+
+# List of commands built into thor.
+_thor_commands() {
+  _values "Thor" "list" "install" "uninstall" "help" "installed" "update"
+}
+
+# Get list of all thor tasks added.
+_thor_tasks() {
+  compadd `thor list | grep -vP '^[\#\-]|^\s*$' | sed -e '1d' -e 's/[^a-zA-Z0-9_\-\:].*$//' | grep -v '^\n$'`
+}
+
+# Normally, show all of the above.
+if (( CURRENT == 2 )); then
+  _thor_commands
+  _thor_tasks
+else
+  # If we've typed 'thor install', let us look for a normal file.
+  if [[ $words[2] == install ]] ; then
+    _files
+  # If we've typed 'thor help', just show us the built in thor commands.
+  elif [[ $words[2] == help ]] ; then
+    _thor_commands
+  else
+    _files
+  fi
+fi

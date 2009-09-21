@@ -1,0 +1,30 @@
+[user]
+	email = crnixon@gmail.com
+	name = Clinton R. Nixon
+[github]
+  user = crnixon
+  token = 00aa78a17ed69048edaa80b8e62bba60
+[alias]
+#  up = pull
+  ci = commit
+  st = status
+  di = diff
+  co = checkout
+  br = branch
+  sta = stash
+  pu = !thor git:push
+  up = !thor git:update
+  upa = !thor git:all
+  open = !thor git:open $1
+  close = !thor git:close $1
+  fold = !thor git:fold
+  sq = !thor git:squash
+[core]
+  excludesfile = "/Users/cnixon/.gitignore"
+  pager = most
+[color]
+  ui = auto
+[apply]
+  whitespace = nowarn
+[help]
+  autocorrect = 1

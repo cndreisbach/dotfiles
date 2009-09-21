@@ -1,0 +1,31 @@
+#compdef gem
+
+_gem_commands () {
+  if [[ -z $gem_commands ]] ; then
+    gem_commands=$(gem help commands | grep '^    [a-z]' | cut -d " " -f 5)
+  fi
+  
+  # This seems unnecessary, but if I try to set gem_commands to an array, it falls over.
+ 
+  typeset -a gem_command_array
+  gem_command_array=($(echo $gem_commands))
+  compadd $gem_command_array
+}
+ 
+_installed_gems () {
+  if [[ -z $installed_gems ]] ; then
+    installed_gems=($(gem list | grep '^[A-Za-z]' | cut -d " " -f 1))
+  fi
+  
+  typeset -a installed_gem_array
+  installed_gem_array=($(echo $installed_gems))
+  compadd $installed_gem_array
+}
+ 
+if (( CURRENT == 2 )); then
+  _gem_commands
+else
+  if [[ $words[2] == open || $words[2] == update || $words[2] == uninstall ]] ; then
+    _installed_gems
+  fi
+fi

@@ -1,0 +1,28 @@
+# turn colors on
+autoload colors zsh/terminfo
+if [[ "$terminfo[colors]" -ge 8 ]]; then
+  colors
+fi
+
+# automatically use pushd
+setopt auto_pushd
+
+# prompt
+setopt prompt_subst
+export PS1='%{$reset_color%}%n@%m %~`git-prompt`%(!.#.>) '
+export MYSQL_PS1="\d> "
+
+# emacs editing
+bindkey -e
+
+# automatically enter directories without cd
+setopt auto_cd
+
+# default apps
+(( ${+BROWSER} )) || export BROWSER="links"
+(( ${+PAGER} ))   || export PAGER="most"
+(( ${+EDITOR} ))  || export EDITOR="mate -w"
+
+# cdpath
+export CDPATH=~/Projects
+

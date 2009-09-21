@@ -1,0 +1,6 @@
+### HISTORY CONTROL
+export HISTCONTROL="erasedups"
+shopt -s histappend
+
+### PROMPT
+export PS1="\u@\h \w\$ "

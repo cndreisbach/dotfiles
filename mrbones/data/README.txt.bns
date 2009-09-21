@@ -1,0 +1,31 @@
+= <%= name %>
+
+by <%= ENV['MY_NAME'] || "FIXME (your name)" %><%= " of #{ENV['MY_ORG']}" if ENV['MY_ORG'] %>
+
+URL: http://github.com/<%= "#{ENV['MY_GITHUB_LOGIN'] || 'FIXME'}/#{name}" %>
+
+== DESCRIPTION:
+
+FIXME (describe your package)
+
+== FEATURES/PROBLEMS:
+
+* FIXME (list of features or problems)
+
+== SYNOPSIS:
+
+  FIXME (code sample of usage)
+
+== REQUIREMENTS:
+
+* To run the tests, you need the Shoulda, spect, and mocha gems.
+* FIXME (list of requirements)
+
+== INSTALL:
+
+* FIXME (sudo gem install, anything else)
+
+== LICENSE:
+
+This software is distributed under the MIT License.
+See LICENSE.txt for details.
