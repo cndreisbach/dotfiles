@@ -1,5 +1,5 @@
-if [ -f ~/.userenv.sh ]; then
-  . ~/.userenv.sh
+if [ -f ~/.env ]; then
+  . ~/.env
 fi
 
 if [ -f ~/.aliases ]; then
