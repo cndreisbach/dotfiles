@@ -8,7 +8,8 @@ alias ps\?="ps ax | grep $1"
 alias c='clear'
 alias my='mysql -u root'
 alias .a="waitmate ~/.aliases && source ~/.aliases"
-alias reload="source ~/.aliases && ruby ~/.userenv.rb && source ~/.userenv.sh"
+alias .e="waitmate ~/.env && source ~/.env"
+alias reload="source ~/.aliases && source ~/.env"
 
 # Editor
 alias e=$EDITOR
