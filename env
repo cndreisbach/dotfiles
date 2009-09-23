@@ -10,7 +10,7 @@ CLICOLOR=1
 
 APXS2='/usr/sbin/apxs'
 APACHE='/usr/sbin/httpd'
-NGINX_HOME='/usr/local/Cellar/nginx/0.7.61'
+NGINX_HOME='/usr/local/Cellar/nginx/0.7.62'
 JAVA_HOME='/Library/Java/Home'
 SCALA_HOME='/usr/local/Cellar/scala/2.7.5'
 ANT_HOME='/usr/local/Cellar/apache-ant/1.7.1-bin'
