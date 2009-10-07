@@ -24,8 +24,8 @@ _installed_gems () {
  
 if (( CURRENT == 2 )); then
   _gem_commands
-else
-  if [[ $words[2] == open || $words[2] == update || $words[2] == uninstall ]] ; then
+elif [[ $words[2] == open || $words[2] == update || $words[2] == uninstall ]] ; then
     _installed_gems
-  fi
+else
+  _files
 fi
