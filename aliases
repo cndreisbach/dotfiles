@@ -19,6 +19,7 @@ alias sa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
 alias sl='svn log --limit 5'
 alias se='svn log -v --limit 1'
 alias sr='svn diff | less'
+alias s\?='svn status | grep "^\?"'
 
 # Git
 alias ga='git add'
@@ -34,6 +35,7 @@ function gg() {
 # Ruby
 alias r='rake'
 alias th='thor'
+alias lr='brew link ruby-enterprise'
 
 # Rails
 alias ss='script/server'
