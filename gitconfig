@@ -13,8 +13,8 @@
   br = branch
   sta = stash
   rma = !git status | grep deleted | cut -d ' ' -f 5 | xargs git rm
-#  pu = !thor git:push
-#  up = !thor git:update
+  pu = !thor git:push
+  up = !thor git:update
   upa = !thor git:all
   open = !thor git:open $1
   close = !thor git:close $1
