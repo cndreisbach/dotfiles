@@ -35,7 +35,8 @@ function gg() {
 # Ruby
 alias r='rake'
 alias th='thor'
-alias lr='brew link ruby-enterprise'
+alias lr='brew link ruby-enterprise-edition'
+alias jr='jruby -S'
 
 # Rails
 alias ss='script/server'
