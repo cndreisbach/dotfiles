@@ -1,0 +1,13 @@
+#compdef boson
+
+# Get list of all thor tasks added.
+_boson_commands() {
+  compadd `boson commands 2> /dev/null | cut -d ' ' -f 2 | sed -e '1,3d' -e '$d' | grep -v '^\+'`
+}
+
+# Normally, show all of the above.
+if (( CURRENT == 2 )); then
+  _boson_commands
+else
+  _files
+fi

@@ -1,0 +1,3 @@
+:libraries:
+  nginx:
+    :namespace: true
