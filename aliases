@@ -22,12 +22,14 @@ alias sr='svn diff | less'
 alias s\?='svn status | grep "^\?"'
 
 # Git
+alias g='git'
 alias ga='git add'
 alias gap='git add --patch'
 alias gc='git commit'
 alias gst='git status'
 alias gsd='git svn dcommit'
 alias gsr='git svn rebase'
+alias gci='git pull --rebase && rake && git push'
 function gg() {
   git commit -v -a -m "$*"
 }

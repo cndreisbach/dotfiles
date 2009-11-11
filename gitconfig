@@ -1,25 +1,24 @@
 [user]
-	email = crnixon@gmail.com
-	name = Clinton R. Nixon
+  email = crnixon@gmail.com
+  name = Clinton R. Nixon
 [github]
   user = crnixon
   token = 00aa78a17ed69048edaa80b8e62bba60
 [alias]
+  ap = add --patch
   up = pull
   ci = commit
   st = status
   di = diff
+  dic = diff --cached
   co = checkout
   br = branch
   sta = stash
+  sd = svn dcommit
+  sr = svn rebase
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   rma = !git status | grep deleted | cut -d ' ' -f 5 | xargs git rm
-  pu = !thor git:push
-  up = !thor git:update
-  upa = !thor git:all
-  open = !thor git:open $1
-  close = !thor git:close $1
-  fold = !thor git:fold
-  sq = !thor git:squash
+  deploy = !git push && cap deploy
 [core]
   excludesfile = "/Users/cnixon/.gitignore"
   pager = most
