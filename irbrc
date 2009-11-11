@@ -1,8 +1,6 @@
 require 'pp'
 require 'rubygems'
 require 'yaml'
-require 'sketches'
-Sketches.config :editor => 'mate'
 
 # wirble is amazing
 # it gives you cross-session history, coloring, and auto-completion
@@ -14,7 +12,7 @@ IRB.conf[:AUTO_INDENT] = true
 
 class Object
   # get all the methods for an object that aren't basic methods from Object
-  def my_methods
+  def local_methods
     (methods - Object.instance_methods).sort
   end
 end
