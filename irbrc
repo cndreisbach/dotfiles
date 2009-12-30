@@ -8,12 +8,27 @@ require 'wirble'
 Wirble.init
 Wirble.colorize
 
+# Hirb
+require 'hirb'
+ 
+Hirb.enable :pager=>false
+ 
+# make hashes show up as yaml (from the Hirb documentation)
+class Hirb::Helpers::Yaml
+  def self.render(output, options={})
+    output.to_yaml
+  end
+end
+Hirb::View.format_class Hash, :class=>"Hirb::Helpers::Yaml"
+
+# IRB setup
+
 IRB.conf[:AUTO_INDENT] = true
 
 class Object
-  # get all the methods for an object that aren't basic methods from Object
-  def local_methods
-    (methods - Object.instance_methods).sort
+  # return methods and instance methods of a class
+  def my_methods
+    methods(false).map { |m| "#{name}::#{m}" }.sort + instance_methods(false).sort
   end
 end
 
