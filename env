@@ -3,17 +3,23 @@ MY_EMAIL='crnixon@gmail.com'
 MY_GITHUB_LOGIN='crnixon'
 MY_ORG='Viget Labs'
 
-PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+PATH=~/bin:~/.gem/ruby/1.8/bin:~/.gem/jruby/1.8/bin:~/.javagem/java/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 EDITOR=waitmate
 PAGER=most
 CLICOLOR=1
 
 APXS2='/usr/sbin/apxs'
 APACHE='/usr/sbin/httpd'
-NGINX_HOME='/usr/local/Cellar/nginx/0.7.62'
+NGINX_HOME='/usr/local/Cellar/nginx/0.7.64'
 JAVA_HOME='/Library/Java/Home'
-SCALA_HOME='/usr/local/Cellar/scala/2.7.5'
-ANT_HOME='/usr/local/Cellar/apache-ant/1.7.1-bin'
+SCALA_HOME='/usr/local/Cellar/scala/2.7.7'
+ANT_HOME='/usr/local/Cellar/ant/1.7.1'
 
 CFLAGS='-O3 -march=core2 -m64 -mmmx -msse4.1 -w -mmacosx-version-min=10.6'
 CXXFLAGS=$CFLAGS
+
+GOROOT=`brew --prefix`/Cellar/go/HEAD
+GOARCH=amd64
+GOOS=darwin
+
+CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/HEAD
