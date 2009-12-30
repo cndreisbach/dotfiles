@@ -1,6 +1,8 @@
 require 'fileutils'
+require 'erb'
 
 module Nginx  
+  
   # @desc Add a new site to nginx/sites-available
   def add_site(directory, hostname=nil)    
     if !File.exist?(directory) || !File.directory?(directory)
