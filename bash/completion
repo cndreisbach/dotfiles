@@ -1,11 +1,7 @@
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
-
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
 
 _rakecomplete() {
-  COMPREPLY=($(compgen -W "`rake -s -T | awk '{{print $2}}'`" -- ${COMP_WORDS[COMP_CWORD]}))
+  COMPREPLY=($(compgen -W "`rake -s -T | awk '{{print $2}}'`" -- ${COMP_WORDS[COMP_CWORD\]}))
   return 0
 }
 
