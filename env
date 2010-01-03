@@ -19,3 +19,4 @@ CFLAGS='-O3 -march=core2 -m64 -mmmx -msse4.1 -w -mmacosx-version-min=10.6'
 CXXFLAGS=$CFLAGS
 
 CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/HEAD
+export AWT_TOOLKIT=MToolkit
