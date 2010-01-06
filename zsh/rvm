@@ -1,5 +1,0 @@
-if [ -s ~/.rvm/scripts/rvm ]; 
-then 
-  source ~/.rvm/scripts/rvm
-  RPS1="\$(rvm-prompt)"
-fi
