@@ -1,10 +1,10 @@
 require 'rubygems'
-require 'net/sftp'
 
 module Ssh  
   # @options :username => :string, :key => :string
   def install_ssh_key(host, options={})
     require 'highline/import'
+    require 'net/sftp'
     
     username = options['username'] || ask("Enter your username: ") { |q| q.default = ENV['USER'] }
     password = options['password'] || ask("Enter your password: ") { |q| q.echo = false }
