@@ -8,5 +8,6 @@
 --type-set=rhtml=.rhtml
 --type-set=rjs=.rjs
 --type-set=haml=.haml
+--type-set=sass=.sass
 --ignore-dir=.rsync_cache
 --type=nosql
