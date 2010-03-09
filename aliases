@@ -37,18 +37,15 @@ function gg() {
   git commit -v -a -m "$*"
 }
 
-# Ruby
-alias r='rake'
-alias th='thor'
-alias lr='brew link ruby-enterprise-edition'
-alias jr='jruby -S'
-
 # Rails
 alias ss='script/server'
 alias sc='script/console'
 alias sg='script/generate'
 alias a='autotest -rails'
 alias rr='touch tmp/restart.txt'
+alias r='rails'
+alias rs='rails server'
+alias rc='rails console'
 
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
