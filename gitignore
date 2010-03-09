@@ -6,3 +6,5 @@ nbproject
 mkmf.log
 *.orig
 .graffiti
+*.iml
+.rvmrc
