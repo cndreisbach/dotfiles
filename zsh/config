@@ -10,9 +10,8 @@ setopt auto_cd
 # automatically use pushd
 setopt auto_pushd pushd_ignore_dups
 
-# don't clobber files on redirection
-setopt no_clobber
-
+# globs can be empty
+setopt nullglob
 
 # emacs editing
 bindkey -e

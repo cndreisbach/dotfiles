@@ -10,9 +10,9 @@ CLICOLOR=1
 
 APXS2='/usr/sbin/apxs'
 APACHE='/usr/sbin/httpd'
-NGINX_HOME='/usr/local/Cellar/nginx/0.7.64'
+NGINX_HOME='/usr/local/Cellar/nginx/0.7.65'
 JAVA_HOME='/Library/Java/Home'
-SCALA_HOME='/usr/local/Cellar/scala/2.7.7'
+SCALA_HOME='/usr/local/Cellar/scala/2.8.0.b1'
 ANT_HOME='/usr/local/Cellar/ant/1.7.1'
 
 CFLAGS='-O3 -march=core2 -m64 -mmmx -msse4.1 -w -mmacosx-version-min=10.6'
