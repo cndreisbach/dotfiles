@@ -19,7 +19,7 @@ class Hirb::Helpers::Yaml
     output.to_yaml
   end
 end
-Hirb::View.format_class Hash, :class=>"Hirb::Helpers::Yaml"
+# Hirb::View.format_class Hash, :class=>"Hirb::Helpers::Yaml"
 
 # IRB setup
 
