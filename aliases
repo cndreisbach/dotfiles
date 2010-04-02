@@ -49,5 +49,8 @@ alias r='rails'
 alias rs='rails server'
 alias rc='rails console'
 
+# Thor
+alias t='thor'
+
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
