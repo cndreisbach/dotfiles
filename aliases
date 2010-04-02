@@ -29,9 +29,11 @@ alias g='git'
 alias ga='git add'
 alias gap='git add --patch'
 alias gc='git commit'
+alias gca='git commit -a'
 alias gst='git status'
 alias gsd='git svn dcommit'
 alias gsr='git svn rebase'
+alias gpp='git pp'
 alias gci='git pull --rebase && rake && git push'
 function gg() {
   git commit -v -a -m "$*"
