@@ -18,7 +18,7 @@ bindkey -e
 
 # prompt
 setopt prompt_subst
-export PS1='%{$reset_color%}%n@%m %~`git-prompt`%(!.#.>) '
+export PS1='%{$reset_color%}%~`git-prompt`%(!.#.>) '
 export MYSQL_PS1="\d> "
 
 # default apps
@@ -27,5 +27,5 @@ export MYSQL_PS1="\d> "
 (( ${+EDITOR} ))  || export EDITOR="mate -w"
 
 # cdpath
-export CDPATH=~/Projects
+export CDPATH=~/Projects:~/Projects/Viget
 
