@@ -10,3 +10,4 @@ mkmf.log
 .rvmrc
 config/query_reviewer.yml
 vendor/plugins/query_reviewer/
+.tmtags
