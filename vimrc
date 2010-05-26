@@ -21,11 +21,11 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-set number                        " Show line numbers.
-set ruler                         " Show cursor position.
-
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
+
+set number                        " Show line numbers.
+set ruler                         " Show cursor position.
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
@@ -48,6 +48,9 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 colorscheme desert
 
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
@@ -59,9 +62,9 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-map ,f :LustyFilesystemExplorer<cr>
-map ,h :LustyFilesystemExplorerFromHere<cr>
-map ,b :LustyBufferExplorer<cr>
+map <leader>f :LustyFilesystemExplorer<cr>
+map <leader>h :LustyFilesystemExplorerFromHere<cr>
+map <leader>b :LustyBufferExplorer<cr>
 
 " Automatic fold settings for specific files. Uncomment to use.
 " autocmd FileType ruby set foldmethod=syntax
