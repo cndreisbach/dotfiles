@@ -1,7 +1,7 @@
 #compdef grb
 
 _grb_commands() {
-  _values "grb" "create" "publish" "rename" "delete" "track" "help" "explain"
+  _values "grb" "new" "push" "mv" "rm" "pull" "help"
 }
 
 _grb_local_branches() {

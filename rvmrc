@@ -1,2 +1,1 @@
-rvm_install_on_use_flag=0
-rvm_archflags="-arch x86_64"
+rvm ruby-head

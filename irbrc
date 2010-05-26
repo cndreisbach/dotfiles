@@ -1,6 +1,9 @@
 require 'pp'
 require 'rubygems'
 require 'yaml'
+# require 'ap'
+# 
+# alias :vdump :ap
 
 # wirble is amazing
 # it gives you cross-session history, coloring, and auto-completion
