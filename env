@@ -13,3 +13,5 @@ APACHE='/usr/sbin/httpd'
 
 CFLAGS='-O3'
 CXXFLAGS=$CFLAGS
+
+AWT_TOOLKIT=MToolkit
