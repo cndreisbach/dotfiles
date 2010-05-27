@@ -101,6 +101,14 @@ P, p
 C-p, C-n
 : paste previous, next yank
 
+## Coding
+
+=
+: indent
+
+gf
+: go to referenced file
+
 ## Lusty Explorer
 
 C-w

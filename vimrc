@@ -49,23 +49,18 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 colorscheme desert
 
 map , <leader>
+map <Space> <leader>
 nmap ; :
+
+" Ctrl-S to save
+map <C-s> :w<cr>
+imap <C-s> <Esc>:w<cr>i
 
 " Show trailing spaces
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
-" Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-
+" Lusty Explorer
 map <leader>f :LustyFilesystemExplorer<cr>
 map <leader>h :LustyFilesystemExplorerFromHere<cr>
 map <leader>b :LustyBufferExplorer<cr>
