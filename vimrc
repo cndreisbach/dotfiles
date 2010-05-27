@@ -48,6 +48,10 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 colorscheme desert
 
+map , <leader>
+nmap ; :
+
+" Show trailing spaces
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
@@ -66,6 +70,3 @@ map <leader>f :LustyFilesystemExplorer<cr>
 map <leader>h :LustyFilesystemExplorerFromHere<cr>
 map <leader>b :LustyBufferExplorer<cr>
 
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby set foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
