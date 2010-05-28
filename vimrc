@@ -50,7 +50,11 @@ colorscheme desert
 
 map , <leader>
 map <Space> <leader>
+map <C-x> <leader>
 nmap ; :
+
+map <S-Enter> O<ESC>
+map <Enter> o<ESC>
 
 " Ctrl-S to save
 map <C-s> :w<cr>
@@ -65,3 +69,8 @@ map <leader>f :LustyFilesystemExplorer<cr>
 map <leader>h :LustyFilesystemExplorerFromHere<cr>
 map <leader>b :LustyBufferExplorer<cr>
 
+" NERD Commenter
+let NERDCreateDefaultMappings=0    " Do not create default NERD mappings.
+let NERDCommentWholeLinesInVmode=1
+map <leader>c <plug>NERDComToggleComment
+map <leader>C <plug>NERDComAppendComment
