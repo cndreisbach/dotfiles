@@ -22,7 +22,7 @@ set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
+"set hlsearch                      " Highlight matches.
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -41,6 +41,7 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
+set autoindent
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -64,7 +65,6 @@ imap <C-s> <Esc>:w<cr>i
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
-" Lusty Explorer
 map <leader>f :LustyFilesystemExplorer<cr>
 map <leader>h :LustyFilesystemExplorerFromHere<cr>
 map <leader>b :LustyBufferExplorer<cr>
