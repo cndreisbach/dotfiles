@@ -1,12 +1,12 @@
 import XMonad
 import XMonad.Config.Gnome
+import XMonad.Util.EZConfig
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.ManageHook
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.WindowNavigation
-import qualified Data.Map as M
- 
+
 -- Actions
 import XMonad.Actions.CycleWS
 import XMonad.Actions.SwapWorkspaces
@@ -18,29 +18,21 @@ myManageHook =
     [ isSplash --> doIgnore ]
 
 main = do xmonad $ gnomeConfig
-                     { manageHook = manageHook gnomeConfig <+> composeAll myManageHook,
-                       layoutHook = windowNavigation $ layoutHook gnomeConfig,
-                       keys = myKeys,
-                       borderWidth = 3,
-                       focusedBorderColor = "#FFF838",
-                       normalBorderColor = "#444447",
-                       modMask = mod4Mask }
-          where
-            defKeys = keys defaultConfig
-            delKeys x = foldr M.delete (defKeys x) (toRemove x)
-            myKeys x = foldr (uncurry M.insert) (delKeys x) (toAdd x)
- 
-          -- remove some of the default key bindings
-            toRemove x =
-                [ (modMask x              , xK_p  )
-                , (modMask x .|. shiftMask, xK_q  ) -- don't strand naive users
-                ]
- 
-            toAdd x =
-                [ ((modMask x, xK_Right), sendMessage $ Go R)
-		, ((modMask x, xK_Left ), sendMessage $ Go L)
-		, ((modMask x, xK_Up   ), sendMessage $ Go U)
-		, ((modMask x, xK_Down ), sendMessage $ Go D)
-                ]
-            
-     
+                     { manageHook = manageHook gnomeConfig <+> composeAll myManageHook
+                     , layoutHook = windowNavigation $ layoutHook gnomeConfig
+                     -- , keys = myKeys
+                     , borderWidth = 3
+                     , focusedBorderColor = "#FFF838"
+                     , normalBorderColor = "#444447"
+                     , modMask = mod4Mask 
+                     }
+                     `additionalKeysP`
+                     [ ("M-<Left>",    sendMessage $ Go L)
+                     , ("M-<Right>",   sendMessage $ Go R)
+                     , ("M-<Up>",      sendMessage $ Go U)
+                     , ("M-<Down>",    sendMessage $ Go D)
+                     , ("C-<Left>",    prevWS)
+                     , ("C-<Right>",   nextWS)
+                     , ("C-S-<Left>",  shiftToPrev )
+                     , ("C-S-<Right>", shiftToNext )
+                     ]
