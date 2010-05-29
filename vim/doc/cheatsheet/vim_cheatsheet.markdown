@@ -70,6 +70,45 @@ _n_ d
 ^D, ^T
 : indent current line left, right
 
+## Visual mode
+
+v, V
+: start visual mode for characters, lines
+
+C-v
+: start visual block mode
+
+o, O
+: move to other end of marked area, block
+
+y
+: yank selected text
+
+## Cut and paste
+
+y _m_, d _m_
+: yank movement command _m_, delete and yank
+
+yy, dd
+: yank a line, delete a line
+
+x
+: delete a character
+
+P, p
+: paste the clipboard before, after cursor
+
+C-p, C-n
+: paste previous, next yank
+
+## Coding
+
+=
+: indent
+
+gf
+: go to referenced file
+
 ## Lusty Explorer
 
 C-w
