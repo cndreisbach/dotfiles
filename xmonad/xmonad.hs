@@ -15,12 +15,12 @@ isSplash = isInProperty "_NET_WM_WINDOW_TYPE" "_NET_WM_WINDOW_TYPE_SPLASH"
 
 myManageHook :: [ManageHook]
 myManageHook = 
-    [ isSplash --> doIgnore ]
+    [ isSplash --> doIgnore 
+    , isFullscreen --> doFullFloat ]
 
 main = do xmonad $ gnomeConfig
                      { manageHook = manageHook gnomeConfig <+> composeAll myManageHook
                      , layoutHook = windowNavigation $ layoutHook gnomeConfig
-                     -- , keys = myKeys
                      , borderWidth = 3
                      , focusedBorderColor = "#FFF838"
                      , normalBorderColor = "#444447"

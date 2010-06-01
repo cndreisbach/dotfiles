@@ -1,6 +1,8 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
+set t_Co=256
+
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
@@ -47,8 +49,6 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme desert
-
 map , <leader>
 map <Space> <leader>
 map <C-x> <leader>
@@ -69,8 +69,3 @@ map <leader>f :LustyFilesystemExplorer<cr>
 map <leader>h :LustyFilesystemExplorerFromHere<cr>
 map <leader>b :LustyBufferExplorer<cr>
 
-" NERD Commenter
-let NERDCreateDefaultMappings=0    " Do not create default NERD mappings.
-let NERDCommentWholeLinesInVmode=1
-map <leader>c <plug>NERDComToggleComment
-map <leader>C <plug>NERDComAppendComment

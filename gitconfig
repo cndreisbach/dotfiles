@@ -21,7 +21,7 @@
   rma = !git status | grep deleted | cut -d ' ' -f 5 | xargs git rm
   deploy = !git push && cap deploy
 [core]
-  excludesfile = "/Users/cnixon/.gitignore"
+  excludesfile = "/home/cnixon/.gitignore"
   pager = most
 [color]
   ui = auto
