@@ -1,6 +1,6 @@
 [user]
-  email = crnixon@gmail.com
-  name = Clinton R. Nixon
+	email = crnixon@gmail.com
+	name = Clinton R. Nixon
 [github]
   user = crnixon
   token = 00aa78a17ed69048edaa80b8e62bba60
@@ -31,3 +31,9 @@
   autocorrect = 1
 [branch]  
   autosetuprebase = always
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 954x1049+0+25
+	history-view-vpane-position = 389
+	file-view-vpane-position = 979
+	main-window-view = HistoryView

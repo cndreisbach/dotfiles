@@ -18,21 +18,20 @@ myManageHook =
     [ isSplash --> doIgnore 
     , isFullscreen --> doFullFloat ]
 
+myWorkspaces = ["one", "two", "three", "four", "five"]
+
 main = do xmonad $ gnomeConfig
                      { manageHook = manageHook gnomeConfig <+> composeAll myManageHook
                      , layoutHook = windowNavigation $ layoutHook gnomeConfig
                      , borderWidth = 3
                      , focusedBorderColor = "#FFF838"
                      , normalBorderColor = "#444447"
-                     , modMask = mod4Mask 
+                     , modMask = mod4Mask
+--                     , workspaces = myWorkspaces
                      }
                      `additionalKeysP`
-                     [ ("M-<Left>",    sendMessage $ Go L)
-                     , ("M-<Right>",   sendMessage $ Go R)
-                     , ("M-<Up>",      sendMessage $ Go U)
-                     , ("M-<Down>",    sendMessage $ Go D)
-                     , ("C-<Left>",    prevWS)
-                     , ("C-<Right>",   nextWS)
-                     , ("C-S-<Left>",  shiftToPrev )
-                     , ("C-S-<Right>", shiftToNext )
+                     [ ("M-<Left>",    prevWS)
+                     , ("M-<Right>",   nextWS)
+                     , ("M-S-<Left>",  shiftToPrev )
+                     , ("M-S-<Right>", shiftToNext )
                      ]
