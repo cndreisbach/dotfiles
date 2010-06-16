@@ -2,6 +2,7 @@
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
 set t_Co=256
+set exrc
 
 set nocompatible                  " Must come first because it changes other options.
 
@@ -69,3 +70,14 @@ map <leader>f :LustyFilesystemExplorer<cr>
 map <leader>h :LustyFilesystemExplorerFromHere<cr>
 map <leader>b :LustyBufferExplorer<cr>
 
+au BufNewFile,BufRead *.md set filetype=mkd
+
+nmap <Left> <nop>
+nmap <Right> <nop>
+nmap <Up> <nop>
+nmap <Down> <nop>
+
+imap <Left> <nop>
+imap <Right> <nop>
+imap <Up> <nop>
+imap <Down> <nop>
