@@ -66,9 +66,10 @@ imap <C-s> <Esc>:w<cr>i
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
-map <leader>f :LustyFilesystemExplorer<cr>
-map <leader>h :LustyFilesystemExplorerFromHere<cr>
-map <leader>b :LustyBufferExplorer<cr>
+map <leader>f :FufFile<cr>
+map <leader>F :FufFileWithFullCwd<cr>
+map <leader>h :FufFileWithCurrentBufferDir<cr>
+map <leader>b :FufBuffer<cr>
 
 au BufNewFile,BufRead *.md set filetype=mkd
 au BufNewFile,BufRead *.p6 set filetype=perl
