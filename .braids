@@ -1,0 +1,8 @@
+--- 
+vim/bundle/rails: 
+  branch: master
+  remote: braid/vim/bundle/rails
+  revision: 6c6f2ad13b18558e2444cedc8ee8d4e36f58680f
+  squashed: true
+  type: git
+  url: git://github.com/tpope/vim-rails.git
