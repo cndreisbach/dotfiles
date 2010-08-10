@@ -72,4 +72,5 @@ map <leader>h :FufFileWithCurrentBufferDir<cr>
 map <leader>b :FufBuffer<cr>
 
 au BufNewFile,BufRead *.md set filetype=mkd
+au BufNewFile,BufRead *.mkd set filetype=mkd
 au BufNewFile,BufRead *.p6 set filetype=perl
