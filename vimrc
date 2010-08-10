@@ -11,8 +11,6 @@ set nocompatible                  " Must come first because it changes other opt
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 
-runtime macros/matchit.vim        " Load the matchit plugin.
-
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
@@ -51,6 +49,9 @@ set autoindent
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+let g:fugitive_git_executable="/usr/local/bin/git"
 
 map , <leader>
 map <C-x> <leader>
