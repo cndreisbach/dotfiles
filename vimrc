@@ -50,12 +50,17 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+" Word wrapping
+set wrap
+set linebreak
+set display+=lastline
+set textwidth=0
+set wrapmargin=0
+
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 let g:fugitive_git_executable="/usr/local/bin/git"
 
 map , <leader>
-map <C-x> <leader>
-nmap ; :
 
 map <S-Enter> O<ESC>
 map <Enter> o<ESC>
@@ -75,3 +80,4 @@ map <leader>b :FufBuffer<cr>
 au BufNewFile,BufRead *.md set filetype=mkd
 au BufNewFile,BufRead *.mkd set filetype=mkd
 au BufNewFile,BufRead *.p6 set filetype=perl
+au BufNewFile,BufRead *.asciidoc set filetype=asciidoc
