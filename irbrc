@@ -1,6 +1,6 @@
-require 'pp'
 require 'rubygems'
 require 'yaml'
+require 'pp'
 # require 'ap'
 # 
 # alias :vdump :ap
@@ -13,17 +13,8 @@ Wirble.colorize
 
 # Hirb
 require 'hirb'
+Hirb::View.enable 
  
-Hirb.enable :pager=>false
- 
-# make hashes show up as yaml (from the Hirb documentation)
-class Hirb::Helpers::Yaml
-  def self.render(output, options={})
-    output.to_yaml
-  end
-end
-# Hirb::View.format_class Hash, :class=>"Hirb::Helpers::Yaml"
-
 # IRB setup
 
 IRB.conf[:AUTO_INDENT] = true
@@ -35,7 +26,6 @@ class Object
   end
 end
 
-# from http://themomorohoax.com/2009/03/27/irb-tip-load-files-faster
 def ls
    %x{ls}.split("\n")
 end
@@ -47,12 +37,6 @@ end
 
 def pwd
   Dir.pwd
-end
-
-def mate(obj)
-  IO.popen( 'mate -', 'w') do |io|
-    io.puts obj.to_yaml
-  end
 end
 
 # also from http://themomorohoax.com/2009/03/27/irb-tip-load-files-faster
