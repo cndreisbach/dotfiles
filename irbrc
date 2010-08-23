@@ -11,10 +11,6 @@ require 'wirble'
 Wirble.init
 Wirble.colorize
 
-# Hirb
-require 'hirb'
-Hirb::View.enable 
- 
 # IRB setup
 
 IRB.conf[:AUTO_INDENT] = true
