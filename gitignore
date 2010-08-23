@@ -12,3 +12,5 @@ mkmf.log
 config/query_reviewer.yml
 vendor/plugins/query_reviewer/
 .tmtags
+tags
+TAGS
