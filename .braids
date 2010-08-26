@@ -1,4 +1,11 @@
 --- 
+vim/bundle/ack: 
+  branch: master
+  remote: braid/vim/bundle/ack
+  revision: b6be751b4b4391e7e25ba51e36300a8e04820846
+  squashed: true
+  type: git
+  url: git://github.com/mileszs/ack.vim.git
 vim/bundle/endwise: 
   branch: master
   remote: braid/vim/bundle/endwise
