@@ -2,7 +2,7 @@ freya
 spring
 oceandeep
 wombat256
-settlemeyer
+settlemyer
 sea
 sienna
 pyte

@@ -8,6 +8,7 @@ mkmf.log
 .graffiti
 *.iml
 *.swp
+*.swo
 .rvmrc
 config/query_reviewer.yml
 vendor/plugins/query_reviewer/
