@@ -10,6 +10,7 @@ set guifont=Monaco:h12
 if has("gui_macvim")
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+  map <D-x> :
 endif
 
 ruby << RUBY
@@ -21,5 +22,10 @@ def random_colorscheme
   VIM.command "colorscheme #{color_scheme}"
 end
 
+def slugify(str)
+  str.downcase.split(/\W+/).join("_")
+end
+
 random_colorscheme
 RUBY
+
