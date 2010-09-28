@@ -9,9 +9,11 @@ mkmf.log
 *.iml
 *.swp
 *.swo
+*.sql.bz2
 .rvmrc
 config/query_reviewer.yml
 vendor/plugins/query_reviewer/
 .tmtags
 tags
 TAGS
+public/bundles

@@ -1,6 +1,7 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
+call pathogen#helptags()
 call pathogen#runtime_append_all_bundles() 
 
 set t_Co=256
@@ -11,27 +12,32 @@ set nocompatible                  " Must come first because it changes other opt
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 
+set encoding=utf-8
+set scrolloff=3                   " Minimum number of lines above and below the cursor
+set cursorline                    
+
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
-
 set backspace=indent,eol,start    " Intuitive backspacing.
-
 set hidden                        " Handle multiple buffers better.
-
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 
+" Searching
+nnoremap / /\v
+vnoremap / /\v
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
 
-set incsearch                     " Highlight matches as you type.
-"set hlsearch                      " Highlight matches.
-
-set number                        " Show line numbers.
+set relativenumber
 set ruler                         " Show cursor position.
-
-set wrap                          " Turn on line wrapping.
-set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
@@ -45,18 +51,32 @@ set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 set autoindent
+set smartindent
 
-set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
+set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Word wrapping
-set wrap
+set wrap                          " Turn on line wrapping.
 set linebreak
 set display+=lastline
 set textwidth=0
 set wrapmargin=0
 
+" Movement keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+" Disable help key
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+              
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 let g:fugitive_git_executable="/usr/local/bin/git"
 
@@ -69,17 +89,41 @@ map <Enter> o<ESC>
 map <C-s> :w<cr>
 imap <C-s> <Esc>:w<cr>i
 
-" Show trailing spaces
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Key mapping for FuzzyFinder
 map <leader>f :FufFile<cr>
 map <leader>h :FufFileWithCurrentBufferDir<cr>
 map <leader>b :FufBuffer<cr>
 
-map <C-f> :Ack<space>
+" Strip trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+" Save when losing focus
+au FocusLost * :wa
+
+" Better key mappings for splits
+nnoremap <leader>ws <C-w>s<C-w>j
+nnoremap <leader>wv <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Nice title
+if has('title') && (has('gui_running') || &title)
+  set titlestring=
+	set titlestring+=%f\                                              " file name
+	set titlestring+=%h%m%r%w                                         " flags
+	set titlestring+=\ -\ %{v:progname}                               " program name
+	set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}  " working directory
+endif
+
+" File associations
 au BufNewFile,BufRead *.md set filetype=mkd
 au BufNewFile,BufRead *.mkd set filetype=mkd
 au BufNewFile,BufRead *.p6 set filetype=perl6
 au BufNewFile,BufRead *.asciidoc set filetype=asciidoc
+

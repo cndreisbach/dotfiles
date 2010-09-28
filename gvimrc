@@ -3,9 +3,9 @@
 
 set encoding=utf-8                " Use UTF-8 everywhere.
 set guioptions-=T                 " Hide toolbar.
-set guioptions-=rL                 " Don't show right scrollbar
+set guioptions-=rL                " Don't show right scrollbar
 set guioptions-=m                 " Don't show menu
-set guifont=Monaco:h12
+set guifont=Consolas:h13
 
 if has("gui_macvim")
   " Command-/ to toggle comments
@@ -20,10 +20,6 @@ def random_colorscheme
   end
   color_scheme = $color_schemes.shuffle.pop
   VIM.command "colorscheme #{color_scheme}"
-end
-
-def slugify(str)
-  str.downcase.split(/\W+/).join("_")
 end
 
 random_colorscheme
