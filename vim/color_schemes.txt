@@ -1,3 +1,4 @@
+mac_classic
 freya
 peaksea
 bclear
