@@ -20,6 +20,13 @@ vim/bundle/fugitive:
   squashed: true
   type: git
   url: http://github.com/tpope/vim-fugitive.git
+vim/bundle/mac-classic-theme: 
+  branch: master
+  remote: braid/vim/bundle/mac-classic-theme
+  revision: b092bb1843c7e52f0acd66f6d0872cea154d3f5c
+  squashed: true
+  type: git
+  url: http://github.com/nelstrom/vim-mac-classic-theme.git
 vim/bundle/nerdcommenter: 
   branch: master
   remote: braid/vim/bundle/nerdcommenter
