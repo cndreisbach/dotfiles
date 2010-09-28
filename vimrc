@@ -112,18 +112,45 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Nice title
-if has('title') && (has('gui_running') || &title)
-  set titlestring=
-	set titlestring+=%f\                                              " file name
-	set titlestring+=%h%m%r%w                                         " flags
-	set titlestring+=\ -\ %{v:progname}                               " program name
-	set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}  " working directory
-endif
-
 " File associations
 au BufNewFile,BufRead *.md set filetype=mkd
 au BufNewFile,BufRead *.mkd set filetype=mkd
 au BufNewFile,BufRead *.p6 set filetype=perl6
 au BufNewFile,BufRead *.asciidoc set filetype=asciidoc
+
+" For GUI vim
+if (has("gui_running"))
+  set encoding=utf-8                " Use UTF-8 everywhere.
+  set guioptions-=T                 " Hide toolbar.
+  set guioptions-=rL                " Don't show right scrollbar
+  set guioptions-=m                 " Don't show menu
+  set guifont=Monaco:h12
+
+  ruby << RUBY
+  def random_colorscheme
+    if !defined?($color_schemes) || $color_schemes.empty?
+      $color_schemes = File.read(File.expand_path("~/.vim/color_schemes.txt")).map { |cs| cs.chomp }
+    end
+    color_scheme = $color_schemes.shuffle.pop
+    VIM.command "colorscheme #{color_scheme}"
+  end
+
+  random_colorscheme
+RUBY
+
+  if has("gui_macvim")
+    " Command-/ to toggle comments
+    map <D-/> <plug>NERDCommenterToggle<CR>
+    map <D-x> :
+  endif
+
+  " Nice title
+  if has('title') && (has('gui_running') || &title)
+    set titlestring=
+    set titlestring+=%f\                                              " file name
+    set titlestring+=%h%m%r%w                                         " flags
+    set titlestring+=\ -\ %{v:progname}                               " program name
+    set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}  " working directory
+  endif
+endif
 
