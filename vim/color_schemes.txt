@@ -11,5 +11,4 @@ papayawhip
 moria
 inkpot
 dawn
-darkblue2
 darkspectrum
