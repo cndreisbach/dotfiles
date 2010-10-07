@@ -1,7 +1,9 @@
 # turn colors on
-autoload colors zsh/terminfo
-if [[ "$terminfo[colors]" -ge 8 ]]; then
-  colors
+if [[ -z $LAUNCH_PATH ]]; then
+  autoload colors zsh/terminfo
+  if [[ "$terminfo[colors]" -ge 8 ]]; then
+    colors
+  fi
 fi
 
 # automatically enter directories without cd
