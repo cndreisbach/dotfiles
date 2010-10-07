@@ -17,8 +17,6 @@ let g:colors_name = "Mac Classic"
 
 
 " Colors: {{{1
-" hint: to see what the colors look like, run:
-"   :source script/highlight_colors.vim
 " TODO figure out how to not highlight TODO
 "
 " #000000
@@ -56,16 +54,16 @@ hi Pmenu guibg=#EFEFEF ctermbg=7
 hi PmenuSel  guibg=#C6DEFF ctermbg=189
 hi Directory  guifg=#D51015 ctermfg=160 gui=bold
 hi Folded  guifg=#0066FF ctermfg=27 guibg=#FFFFFF ctermbg=15
-
-" StatusLine: {{{1
+" StatusLine: {{{2
 hi StatusLine  guifg=#000000 ctermfg=0 guibg=#C6DEFF ctermbg=189 gui=italic
 hi StatusLineNC  guifg=#000000 ctermfg=0 guibg=#EFEFEF ctermbg=7 gui=NONE
 
-" Search: {{{1
+" Search: {{{2
 " [IncSearch is stronger than Search]
 hi IncSearch  guifg=NONE guibg=#FFCE77 ctermbg=222 gui=NONE
 hi Search  guibg=#FFE6BB ctermbg=223
 
+" Syntax: {{{1
 hi Normal  guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15
 hi Boolean  guifg=#6E79F1 ctermfg=69 gui=bold
 hi Character  guifg=#D51015 ctermfg=160 gui=bold
