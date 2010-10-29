@@ -1,14 +1,8 @@
 mac_classic
-freya
-peaksea
 bclear
-spring
-oceandeep
-wombat256
 sienna
-pyte
-papayawhip
 moria
-inkpot
 dawn
-darkspectrum
+habilight
+fruit
+nuvola

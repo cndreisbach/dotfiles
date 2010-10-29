@@ -4,10 +4,9 @@
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles() 
 
+set nocompatible                  " Must come first because it changes other options.
 set t_Co=256
 set exrc
-
-set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
@@ -43,8 +42,13 @@ set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
+set noswapfile
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 set tabstop=2                    " Global tab width.
@@ -64,6 +68,12 @@ set display+=lastline
 set textwidth=0
 set wrapmargin=0
 
+" Make it easy to get into command mode
+nnoremap ; :
+
+" Make it easy to paste without autoindent
+set pastetoggle=<F2> 
+
 " Movement keys
 nnoremap j gj
 nnoremap k gk
@@ -75,8 +85,7 @@ vnoremap <F1> <ESC>
               
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 let g:fugitive_git_executable="/usr/local/bin/git"
-
-map , <leader>
+let g:slimv_lisp='/usr/local/bin/sbcl'
 
 map <S-Enter> O<ESC>
 map <Enter> o<ESC>
@@ -98,7 +107,7 @@ map <leader>b :FufBuffer<cr>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Save when losing focus
-au FocusLost * :wa
+au FocusLost * :up
 
 " Better key mappings for splits
 nnoremap <leader>ws <C-w>s<C-w>j
@@ -121,6 +130,7 @@ if (has("gui_running"))
   set guioptions-=rL                " Don't show right scrollbar
   set guioptions-=m                 " Don't show menu
   set guifont=Monaco:h12
+  colorscheme habilight
 
   ruby << RUBY
   def random_colorscheme
@@ -130,8 +140,6 @@ if (has("gui_running"))
     color_scheme = $color_schemes.shuffle.pop
     VIM.command "colorscheme #{color_scheme}"
   end
-
-  random_colorscheme
 RUBY
 
   if has("gui_macvim")
