@@ -37,3 +37,6 @@
 	history-view-vpane-position = 389
 	file-view-vpane-position = 979
 	main-window-view = HistoryView
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master

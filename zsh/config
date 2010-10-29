@@ -39,6 +39,3 @@ export MYSQL_PS1="\d> "
 (( ${+PAGER} ))   || export PAGER="most"
 (( ${+EDITOR} ))  || export EDITOR="mate -w"
 
-# cdpath
-export CDPATH=~/Projects:~/Projects/Viget
-
