@@ -55,6 +55,13 @@ vim/bundle/rooter:
   squashed: true
   type: git
   url: http://github.com/airblade/vim-rooter.git
+vim/bundle/slimv: 
+  branch: master
+  remote: braid/vim/bundle/slimv
+  revision: 4b51e811107e5cb7ac6c49a5e2ed01de968f7428
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/slimv.vim.git
 vim/bundle/snipmate: 
   branch: master
   remote: braid/vim/bundle/snipmate
