@@ -27,13 +27,6 @@ vim/bundle/html5:
   squashed: true
   type: git
   url: git://github.com/othree/html5.vim.git
-vim/bundle/limp: 
-  branch: master
-  remote: braid/vim/bundle/limp
-  revision: 680341324ab57cc46635ee143d06bab8d5c5f34c
-  squashed: true
-  type: git
-  url: https://github.com/mikaelj/limp.git
 vim/bundle/mac-classic-theme: 
   branch: master
   remote: braid/vim/bundle/mac-classic-theme
