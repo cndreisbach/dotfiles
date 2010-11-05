@@ -85,7 +85,7 @@ vnoremap <F1> <ESC>
               
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 let g:fugitive_git_executable="/usr/local/bin/git"
-let g:slimv_lisp='/usr/local/bin/sbcl'
+let g:slimv_lisp='/usr/local/bin/clisp'
 
 map <S-Enter> O<ESC>
 map <Enter> o<ESC>
