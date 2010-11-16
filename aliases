@@ -17,6 +17,7 @@ alias lip="lorem $* | pbcopy"
 alias vi='vim'
 alias sap='sudo aptitude'
 alias socks="ssh -vND 8888 cnixon@server.crnixon.org"
+alias redcar="ruby /Users/cnixon/Projects/redcar/bin/redcar"
 # Editor
 alias e=$EDITOR
 

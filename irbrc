@@ -1,24 +1,25 @@
 require 'rubygems'
-require 'irb/ext/save-history'
-require 'irb/completion'
 require 'yaml'
 require 'pp'
-# require 'ap'
-# 
-# alias :vdump :ap
 
-# wirble is amazing
-# it gives you cross-session history, coloring, and auto-completion
-require 'wirble'
-Wirble.init
-Wirble.colorize
 
-# IRB setup
-IRB.conf[:USE_READLINE] = true
-IRB.conf[:AUTO_INDENT] = true
-# Save History between irb sessions
-IRB.conf[:SAVE_HISTORY] = 100
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+if defined? IRB
+  require 'irb/ext/save-history'
+  require 'irb/completion'
+
+  # wirble is amazing
+  # it gives you cross-session history, coloring, and auto-completion
+  require 'wirble'
+  Wirble.init
+  Wirble.colorize
+
+  # IRB setup
+  IRB.conf[:USE_READLINE] = true
+  IRB.conf[:AUTO_INDENT] = true
+  # Save History between irb sessions
+  IRB.conf[:SAVE_HISTORY] = 100
+  IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+end
 
 class Object
   # return methods and instance methods of a class
