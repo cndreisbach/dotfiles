@@ -30,7 +30,7 @@ vim/bundle/html5:
 vim/bundle/mac-classic-theme: 
   branch: master
   remote: braid/vim/bundle/mac-classic-theme
-  revision: 2849d2b778af4855bb45996b26a09022ce8fdd00
+  revision: bdd6ea305851217eae18bbe15fa38765aea8cb85
   squashed: true
   type: git
   url: http://github.com/nelstrom/vim-mac-classic-theme.git
