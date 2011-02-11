@@ -44,7 +44,7 @@ vim/bundle/nerdtree:
 vim/bundle/rails: 
   branch: master
   remote: braid/vim/bundle/rails
-  revision: 087132ff8c1b2e1a3f491604aad9a73fcf672056
+  revision: 0a55cda9e826bd601f0389a787595bfbf9987306
   squashed: true
   type: git
   url: git://github.com/tpope/vim-rails.git
