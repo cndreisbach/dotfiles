@@ -76,6 +76,13 @@ vim/bundle/surround:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-surround.git
+vim/bundle/tcomment: 
+  branch: master
+  remote: braid/vim/bundle/tcomment
+  revision: 9fe6842a6195cbedec49b7f0856f03386dfb9bef
+  squashed: true
+  type: git
+  url: git://github.com/tomtom/tcomment_vim.git
 vim/bundle/vim-haml: 
   branch: master
   remote: braid/vim/bundle/vim-haml
