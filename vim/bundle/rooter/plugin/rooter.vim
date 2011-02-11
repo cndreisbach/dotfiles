@@ -12,6 +12,11 @@
 "     map <silent> <unique> <Leader>foo <Plug>RooterChangeToRootDirectory
 "
 " ... where <Leader>foo is your preferred mapping.
+"
+" Options:
+"   let g:rooter_use_lcd = 1
+"     Use :lcd instead of :cd
+"
 
 
 "
@@ -25,6 +30,10 @@ let loaded_rooter = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
+
+if !exists("g:rooter_use_lcd")
+  let g:rooter_use_lcd = 0
+endif
 
 "
 " Functions
@@ -48,7 +57,7 @@ endfunction
 " known SCM directory names.
 function! s:FindRootDirectory()
   " add any future tools here
-  let scm_list = ['_darcs', '.hg', '.git']
+  let scm_list = ['.git', '_darcs', '.hg']
   for scmdir in scm_list
     let result = s:FindSCMDirectory(scmdir)
     if !empty(result)
@@ -61,8 +70,12 @@ endfunction
 " root directory.
 function! s:ChangeToRootDirectory()
   let root_dir = s:FindRootDirectory()
-  if !empty(root_dir) 
-    exe ":cd " . root_dir
+  if !empty(root_dir)
+    if g:rooter_use_lcd ==# 1
+      exe ":lcd " . root_dir
+    else
+      exe ":cd " . root_dir
+    endif
   endif
 endfunction
 

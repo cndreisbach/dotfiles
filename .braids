@@ -51,7 +51,7 @@ vim/bundle/rails:
 vim/bundle/rooter: 
   branch: master
   remote: braid/vim/bundle/rooter
-  revision: e81e753afb93034fc94faa50405a9c1b64ffab39
+  revision: 02a15222dbd821fb92b87cde8be5ca511dae15e9
   squashed: true
   type: git
   url: http://github.com/airblade/vim-rooter.git
