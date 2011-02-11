@@ -117,6 +117,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+map <leader>c :TComment<cr>
+
 if has("autocmd")
   " Use tabs instead of spaces with HTML, CSS, and Javascript.
   autocmd FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
@@ -153,7 +155,7 @@ RUBY
 
   if has("gui_macvim")
     " Command-/ to toggle comments
-    map <D-/> <plug>NERDCommenterToggle<CR>
+    map <D-/> :TComment<CR>
     map <D-x> :
   endif
 
