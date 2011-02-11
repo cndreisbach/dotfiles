@@ -1,23 +1,19 @@
 ### ALIASES
-alias g="grep"
 alias g+="grep -r $1 *"
 alias h="history"
 alias ll="ls -laFh"
-alias \?="h | g $1"
+alias \?="history | grep $1"
 alias ps\?="ps ax | grep $1"
 alias c='clear'
 alias my='mysql -u root'
-alias .a="$EDITOR ~/.aliases && source ~/.aliases"
-alias .e="$EDITOR ~/.env && source ~/.env"
+alias .a="$EDITOR ~/dotfiles/aliases && source ~/dotfiles/aliases"
+alias .e="$EDITOR ~/dotfiles/env && source ~/dotfiles/env"
 alias reload="source ~/.aliases && source ~/.env"
 alias push="rake && git push"
 alias deploy="rake && git push && cap deploy"
 alias ducks="du -cks * | sort -rn | head -11"
 alias lip="lorem $* | pbcopy"
 alias vi='vim'
-alias sap='sudo aptitude'
-alias socks="ssh -vND 8888 cnixon@server.crnixon.org"
-alias redcar="ruby /Users/cnixon/Projects/redcar/bin/redcar"
 # Editor
 alias e=$EDITOR
 
@@ -29,7 +25,6 @@ alias sr='svn diff | less'
 alias s\?='svn status | grep "^\?"'
 
 # Git
-alias g='git'
 alias ga='git add'
 alias gb='git branch'
 alias gap='git add --patch'
@@ -41,9 +36,6 @@ alias gsd='git svn dcommit'
 alias gsr='git svn rebase'
 alias gpp='git pp'
 alias gci='git pull --rebase && rake && git push'
-function gg() {
-  git commit -v -a -m "$*"
-}
 
 # Rails
 alias ss='script/server'
@@ -53,10 +45,8 @@ alias rc='rails console'
 alias sg='script/generate'
 alias rg='rails generate'
 alias rr='touch tmp/restart.txt'
-alias r='rails'
-
-# Thor
-alias t='thor'
 
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
+
+alias hyde="python /usr/local/Cellar/hyde/0.5.3/hyde.py"
