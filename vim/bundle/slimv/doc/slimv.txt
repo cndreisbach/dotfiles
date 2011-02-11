@@ -1,7 +1,7 @@
-*slimv.txt*                    Slimv                 Last Change: 02 Oct 2010
+*slimv.txt*                    Slimv                 Last Change: 21 Jan 2011
 
 Slimv                                                                  *slimv*
-                               Version 0.7.0
+                               Version 0.7.6
 
 The Superior Lisp Interaction Mode for Vim.
 This plugin is aimed to help Lisp development by interfacing between Vim and
@@ -38,7 +38,9 @@ Prerequisites:
   Required components:
   - Lisp (any console Common Lisp implementation should be OK) or
     Clojure installed.
-  - Python 2.4 or later installed.
+  - Python 2.4 or later installed. Please note that due to a Popen bug in the
+    Cygwin Python implementation Cygwin users should install Windows Python,
+    which is autodetected by the script.
 
   Optional components:
   - The interrupt functionality needs the pywin32 extension on Windows.
@@ -160,6 +162,9 @@ Below that list follows the detailed explanation on each option.
 |g:paredit_shortmaps|        If nonzero, paredit is remapping some one-letter
                              Vim commands that are not frequently used.
 
+|g:slimv_browser_cmd|        If nonempty, this command is used to open the
+                             Common Lisp Hyperspec. 
+
 |g:slimv_clhs_root|          Base URL for the Common Lisp Hyperspec.
 
 |g:slimv_clhs_user_db|       User defined extension for Slimv's built-in
@@ -180,8 +185,6 @@ Below that list follows the detailed explanation on each option.
                              the terminal emulator to use for the Lisp REPL.
 
 |g:slimv_ctags|              OS command to generate tags file.
-
-|g:slimv_debug_client|       Display the command to start client.
 
 |g:slimv_impl|               The Lisp implementation. Defaults to 'clisp'.
 
@@ -323,12 +326,6 @@ And this can be for Konsole:
   let g:slimv_client =
   \ 'python ~/.vim/plugin/slimv.py -r "konsole -T Slimv -e @p @s -l clisp -s"'
 
-                                                         *g:slimv_debug_client*
-Set this to nonzero if you want to make Vim display the command used to start
-the client and any occurrent error messages. This also makes Slimv keep the
-Slimv client window open on Windows. This setting is useful to debug problems
-when setting up a custom |g:slimv_client| command.
-
                                                                 *g:slimv_ctags*
 It is possible to generate tags file from within Vim. By default Slimv assumes
 that ctags.exe is stored somewhere along with the standard Vim path designated
@@ -350,16 +347,13 @@ The <Leader> is set to ',' by default.
 If nonzero then the Slimv menu is added to the end of the global menu.
 Also the Slimv menu can be shown by pressing <Leader>, (defaults to ,,).
 
-
                                                          *g:paredit_matchlines*
 Number of lines to look backward and forward when checking if the current
 top level form is balanced in paredit mode. Default is 100.
 
-
                                                                *g:paredit_mode*
 If nonzero then paredit mode is switched on, i.e. Slimv tries to keep the
 balanced state of parens. See |g:slimv-paredit|.
-
 
                                                           *g:paredit_shortmaps*
 If nonzero, paredit is remapping some one-letter normal mode Vim commands that
@@ -368,6 +362,13 @@ these maps then can be reached via the <Leader> prefix (which is the ","
 character by default in Slimv).
 Otherwise these paredit functions can be reached via the <Leader> prefix.
 
+                                                          *g:slimv_browser_cmd*
+Specifies the command to start the browser in order to display the Common Lisp
+Hyperspec or the Clojure API. If the command contains spaces then enclose the
+whole string in double quotes or escape the spaces with a backslash.
+This option is empty by default, which means that the command associated with
+the .html extension (on Windows) or returned by the Python webbrowser package
+(on Linux) is used to start the browser.
 
                                                              *g:slimv_repl_dir*
 Directory path for the Lisp REPL buffer file. By default this is a directory
@@ -404,6 +405,10 @@ buffer, so that only the separate REPL window is opened.
                                                            *g:slimv_repl_split*
 Open the Lisp REPL buffer in a split window or in a separate buffer in Vim.
 Used only when |g:slimv_repl_open| is nonzero.
+The default is to use split window. If you prefer having REPL being in a hidden
+buffer then set this option to zero. This way the REPL buffer will be opened
+at the first evaluation, but any subsequent evaluation will be performed
+silently, with the REPL buffer kept hidden.
 
                                                            *g:slimv_updatetime*
 The REPL buffer is refreshed at every keystroke or when the user doesn't press
@@ -434,8 +439,11 @@ will move the cursor one line on the display and not one line in the document.
                                                          *g:slimv_javadoc_root*
 Base URL for the Common Lisp Hyperspec, Clojure API, and JavaDoc.
 If the Hyperspec/API is downloaded to the hard disk, then set these variables
-to the base path of the local copy, something like
-"file:/usr/local/doc/HyperSpec/".
+to the base path of the local copy, something like (where file:// specifies
+the file protocol):
+"file:///c:/doc/HyperSpec/" (Windows).
+or
+"file:///usr/local/doc/HyperSpec/" (Linux).
 It is possible to extend the Hyperspec symbol database with user defined
 symbols, see |g:slimv_clhs_user_db| and |g:slimv_cljapi_user_db|.
 
@@ -577,9 +585,10 @@ sequence, then you may want to fine tune these Vim options:
     ---------------------------------------------------
     ,,      ,,       Slimv Menu
 
-    Edit commands (Insert mode):
-    <C-X>0           Close-Form
-    <C-X><C-O>       Complete-Symbol
+    Edit commands:
+    <C-X>0           Close-Form (Insert mode)
+    <C-X><C-O>       Complete-Symbol (Insert mode)
+    ,(      ,(t      Paredit Toggle
 
     Evaluation commands:
     ,d      ,ed      Eval Defun (current top level form)
@@ -1058,6 +1067,19 @@ Normal Mode:
 
     <Leader>S      Same as 'dd' but go to insert mode at the end.
 
+    d{motion}      Delete text till {motion}. Keeps text balanced, so if the
+                   surrounded text contains unpaired matched characters then
+                   they are not removed.
+
+    c{motion}      Delete text till {motion} and start insert mode. Keeps text
+                   balanced just like d{motion}.
+
+    p              Put the text after the cursor with all unbalanced matched
+                   characters removed.
+
+    P              Put the text before the cursor with all unbalanced matched
+                   characters removed.
+
 
 Visual Mode:
 
@@ -1068,6 +1090,13 @@ Visual Mode:
     )              Finds closing ')' of the current list and selects the whole
                    list. Can be pressed repeatedly until the top level form
                    selected.
+
+    d              Delete the current visual selection. Keeps text balanced,
+    x              so the the selection contains unpaired matched characters
+    <Del>          then they are not removed.
+
+    c              Delete the current visual selection and start insert mode.
+                   Keeps text balanced just like the 'd' command.
 
     <Leader>W      Wrap the current visual selection in a pair of parentheses.
     <Leader>w(     The visual selection is kept.
@@ -1228,6 +1257,25 @@ FAQ                                                                 *slimv-faq*
      The plugin resides in 'slimv.vim', the client and the server both
      located in 'slimv.py'.
 
+- Q: There is no Slimv server opened when I evaluate a form in Vim.
+- A: There may be many reasons for that. Try to run the server manually by
+     opening a new terminal console window and running this command:
+         {python command} {slimv.py path} -l {lisp command} -s
+     where
+         {python command} is the command to start the Python interpreter,
+         {slimv.py} is the path for slimv.py (usually in Vim's ftplugin dir),
+         {lisp command} is the command to start Lisp (or Clojure).
+     Examples:
+         c:\python24\python "c:\Program Files\Vim\vimfiles\ftplugin\slimv.py" -l c:\clisp\clisp.exe -s
+         python /home/username/.vim/ftplugin/slimv.py -l sbcl -s
+     Please remember to enclose each parameter in double quotes if that
+     parameter contains spaces.
+     Also check the following Slimv variables in Vim, maybe they are not
+     correctly autodetected and you need to override them in your .vimrc:
+         :echo g:slimv_python
+         :echo g:slimv_lisp
+         :echo g:slimv_client         
+
 - Q: Why is SLIME functionality XYZ missing from Slimv?
 - A: There are two possible reasons:
      1. The dataflow of Slimv is one-directional: from client to server.
@@ -1245,6 +1293,21 @@ FAQ                                                                 *slimv-faq*
      major  version: Let's talk about it when it reaches 1...
      minor  version: New functionalities added, that are worth mentioning.
      bugfix release: Only bugfixes or tiny additions.
+
+- Q: Why is the plugin distributed in zip file?
+- A: I want that Windows/Linux/Mac users all can easily extract the plugin
+     files. For this reason the vimball or zip format seems to be a good
+     choice. There is no native .tar, .tar.gz, .tar.bz2 decompressors on
+     Windows (however there exist free tools for the job, like 7zip).
+     I'm relatively new to vimball and it looks like a good candidate, but
+     I have some problems with it:
+     1. It is uncompressed, and if I want to compress it then I will end up
+        having it zipped.
+     2. The .vba extension is also used for Visual Basic scripts on Windows
+        and this frequently contains virus, so Windows users may dislike it.
+        And remembering the very first time I met a vba file I was thinking
+        that someone had created a Visual Basic installer for the script.
+     3. Many Vim users don't know vimball but most of them know zip files.
 
 - Q: Are you a Lisp expert?
 - A: No, not at all. I'm just learning Lisp. Also just learning Vim
@@ -1269,6 +1332,59 @@ FAQ                                                                 *slimv-faq*
 
 ===============================================================================
 CHANGE LOG                                                    *slimv-changelog*
+
+0.7.6  - Cursor potision is kept during evaluation.
+       - Most Slimv commands made silent.
+       - Bugfix: find defun start when cursor is on a comment.
+       - Bugfix: keep newlines in Compile-Region.
+       - Bugfix: infinite loop when selecting form in empty buffer.
+       - Bugfix: error when opening REPL buffer with g:slimv_repl_split=0.
+       - Bugfix: REPL blinking in insert mode when visualbell is on.
+       - Bugfix: added the comma to the list of macro prefix characters
+         (thanks to John Obbele).
+       - Bugfix: long/short Windows filename problem for REPL buffer.
+
+0.7.5  - Added Cygwin compatibility using the Windows Python
+         (thanks to Jerome Baum).
+       - Display client error message when eval was not successful.
+       - Form is passed to client via stdin instead of temp file.
+       - Bugfix: automatic reconnection when server closed and reopened.
+       - Bugfix: delete and yank also via named registers in paredit.vim.
+       - Bugfix: handle double quotes in Compile-Defun and Compile-Region.
+
+0.7.4  - Added autodetection for simple 'clojure' command on Linux.
+       - Removed duplicates from history of commands entered in REPL buffer
+         (those recallable with <Up> and <Down>).
+       - Bugfix: infinite loop during eval when 'in-package' or 'in-ns'
+         was in comment.
+       - Bugfix: Lisp prompt identification problems in REPL buffer.
+       - Bugfix: input line duplication in SBCL on Linux
+         (assigned "*debug-io*" to stdin).
+       - Bugfix: Eval Defun missed last ")" if form contained "'('".
+
+0.7.3  - Added compatibility with Python 3.x.
+       - Bugfix: input lines for REPL were doubled on Linux (thanks to
+         Andrew Hills), however not yet fixed for SBCL.
+       - Bugfix: enclose Slimv path in double quotes if it contains space.
+       - Bugfix: select form when standing on prefix character (e.g. ' or `).
+
+0.7.2  - Added autodetection for /usr/local/bin/clojure on Linux.
+       - Added special characters to Lisp keyword selection (iskeyword).
+       - Run Vim's original ftplugin/lisp.vim for Clojure filetype.
+       - Bugfix: PareditWrap error when g:paredit_shortmaps=1 (thanks to
+         Jon Thacker).
+       - Bugfix: buffer selection problems in case of three of more buffers
+         (thanks to Philipp Marek).
+       - Bugfix: conflicting keybindings for SlimvGenerateTags.
+       - Bugfix: unmap error messages when g:paredit_mode=0.
+
+0.7.1  - Added option g:slimv_browser_cmd for opening hyperspec in a custom
+         webbrowser (on behalf of Andreas Salwasser).
+       - Added paredit handling for d<motion>, c<motion>, p and P commands:
+         keep paren balance when deleting and pasting text.
+       - Paredit Toggle function removes and re-adds paredit keybindings.
+       - Bugfix: D and C deleted till beginning of line if () or [] found.
+       - Bugfix: handle escaped \" characters inside string.
 
 0.7.0  - Added package/namespace support.
        - New way of refreshing the REPL buffer via autocommands, removed
@@ -1401,7 +1517,6 @@ ISSUES, LIMITATIONS, KNOWN BUGS                                  *slimv-issues*
 
 - Works only with the console Lisp and Python versions, does not work with the
   GUI Lisp versions or with a Python IDE (like IDLE).
-- Does not work from within Cygwin.
 - Vim register "s is used for all form selections, so its original content is
   destroyed.
 - Vim mark 's is used to mark the end of the REPL buffer, i.e. the beginning
@@ -1411,11 +1526,10 @@ ISSUES, LIMITATIONS, KNOWN BUGS                                  *slimv-issues*
 - Needs Python 2.4 or higher (uses the subprocess module)
 - Sometimes a Python exception happens after a CTRL-C inside the REPL buffer
   followed by an EOF (CTRL-Z or CTRL-D) in the external REPL window.
-- REPL buffer refresh on Vim focus gain works only in gvim, not in console vim.
 - Interruption (Ctrl-C) does not work with all Lisp implementations.
   For example SBCL exits on Windows when receiving Ctrl-C.
   It does not work in Clojure.
-  In this case use the Interrupt-Lisp-Process menu command.
+  In these cases use the Interrupt-Lisp-Process menu command.
 - There are some functions that are not compatible or simply not working for
   Clojure.
 - It is not possible to run separate Lisp and Clojure REPL in the same
@@ -1446,7 +1560,8 @@ Common Lisp Hyperspec lookup packages for SLIME, and thanks to
 Taylor R. Campbell for the Emacs paredit.el script.
 Thanks to the Vim community for testing, commenting and patching the script,
 especially to Philipp Marek, Vlad Hanciuta, Marcin Fatyga, Dmitry Petukhov,
-Daniel Solano Gómez, Brian Kropf, Len Weincier.
+Daniel Solano Gómez, Brian Kropf, Len Weincier, Andreas Salwasser, Jon Thacker,
+Andrew Hills, Jerome Baum, John Obbele.
 Last but not least many thanks to my wife Andrea (for the Italians out there:
 hey, this is a female name in Hungary :) for her support and patience.
 

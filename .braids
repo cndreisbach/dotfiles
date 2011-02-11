@@ -58,7 +58,7 @@ vim/bundle/rooter:
 vim/bundle/slimv: 
   branch: master
   remote: braid/vim/bundle/slimv
-  revision: 4b51e811107e5cb7ac6c49a5e2ed01de968f7428
+  revision: 031ebf073919c552b164e2c1f8cc6703e0f8db41
   squashed: true
   type: git
   url: git://github.com/vim-scripts/slimv.vim.git
