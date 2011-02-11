@@ -1,4 +1,7 @@
+*~
+*.zwc
 .ditz-config
+.sass-cache
 .DS_Store
 .rake_tasks
 nbproject

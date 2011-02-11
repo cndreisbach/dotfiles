@@ -117,11 +117,20 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" File associations
-au BufNewFile,BufRead *.md set filetype=mkd
-au BufNewFile,BufRead *.mkd set filetype=mkd
-au BufNewFile,BufRead *.p6 set filetype=perl6
-au BufNewFile,BufRead *.asciidoc set filetype=asciidoc
+if has("autocmd")
+  " Use tabs instead of spaces with HTML, CSS, and Javascript.
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
+  autocmd FileType eruby setlocal ts=2 sts=2 sw=2 noexpandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 noexpandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+ 
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.md set filetype=mkd
+  autocmd BufNewFile,BufRead *.mkd set filetype=mkd
+  autocmd BufNewFile,BufRead *.p6 set filetype=perl6
+  autocmd BufNewFile,BufRead *.asciidoc set filetype=asciidoc
+  autocmd BufNewFile,BufRead *.rss set filetype=xml
+endif
 
 " For GUI vim
 if (has("gui_running"))
