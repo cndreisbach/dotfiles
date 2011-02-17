@@ -169,3 +169,4 @@ RUBY
   endif
 endif
 
+let g:vmail_flagged_color = "ctermfg=yellow ctermbg=black cterm=bold"

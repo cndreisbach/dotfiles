@@ -31,12 +31,4 @@
   autocorrect = 1
 [branch]  
   autosetuprebase = always
-[giggle]
-	main-window-maximized = false
-	main-window-geometry = 954x1049+0+25
-	history-view-vpane-position = 389
-	file-view-vpane-position = 979
-	main-window-view = HistoryView
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
+  autosetupmerge = always

@@ -49,4 +49,12 @@ alias rr='touch tmp/restart.txt'
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
 
+# Bundler
+alias b="bundle"
+alias bi="bundle install --path vendor"
+alias bp="bundle package"
+alias bu="bundle update"
+alias be="bundle exec"
+alias binit="bi && bundle package && echo 'vendor/ruby' >> .gitignore"
+
 alias hyde="python /usr/local/Cellar/hyde/0.5.3/hyde.py"
