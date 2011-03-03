@@ -9,3 +9,5 @@ fi
 for file in $(ls ~/.bash); do
   . ~/.bash/$file
 done
+
+[[ $- == *i* ]] && [[ -f ~/bin/git-prompt.sh ]] && . ~/bin/git-prompt.sh

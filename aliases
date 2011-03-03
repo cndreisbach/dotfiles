@@ -45,9 +45,11 @@ alias rc='rails console'
 alias sg='script/generate'
 alias rg='rails generate'
 alias rr='touch tmp/restart.txt'
+alias rp='passenger start &'
 
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
+alias rmlogs="find . -name '*.log' | xargs rm"
 
 # Bundler
 alias b="bundle"
