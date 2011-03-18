@@ -69,6 +69,13 @@ vim/bundle/snipmate:
   squashed: true
   type: git
   url: git://github.com/msanders/snipmate.vim.git
+vim/bundle/supertab: 
+  branch: master
+  remote: braid/vim/bundle/supertab
+  revision: 231e05425062f34d131c42e468cb716c98e94c9c
+  squashed: true
+  type: git
+  url: git://github.com/ervandew/supertab.git
 vim/bundle/surround: 
   branch: master
   remote: braid/vim/bundle/surround
