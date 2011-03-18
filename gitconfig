@@ -5,6 +5,7 @@
   user = crnixon
   token = 00aa78a17ed69048edaa80b8e62bba60
 [alias]
+  aa = add --all
   ap = add --patch
   up = pull
   ci = commit
@@ -18,7 +19,6 @@
   sr = svn rebase
   pp = !git pull --rebase && git push
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  rma = !git status | grep deleted | cut -d ' ' -f 5 | xargs git rm
   deploy = !git push && cap deploy
 [core]
   excludesfile = "/Users/cnixon/.gitignore"
