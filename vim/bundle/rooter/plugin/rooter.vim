@@ -57,7 +57,7 @@ endfunction
 " known SCM directory names.
 function! s:FindRootDirectory()
   " add any future tools here
-  let scm_list = ['.git', '_darcs', '.hg']
+  let scm_list = ['.git', '_darcs', '.hg', '.bzr']
   for scmdir in scm_list
     let result = s:FindSCMDirectory(scmdir)
     if !empty(result)
@@ -71,6 +71,9 @@ endfunction
 function! s:ChangeToRootDirectory()
   let root_dir = s:FindRootDirectory()
   if !empty(root_dir)
+    if exists('+autochdir')
+      set noautochdir
+    endif
     if g:rooter_use_lcd ==# 1
       exe ":lcd " . root_dir
     else
