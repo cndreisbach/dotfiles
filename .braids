@@ -23,7 +23,7 @@ vim/bundle/fugitive:
 vim/bundle/html5: 
   branch: master
   remote: braid/vim/bundle/html5
-  revision: 60545015ff66cf38581cda89aea386cbbc0b9861
+  revision: 1a0c84c0c82886e3331ce3b69b008c9d1bb5ac73
   squashed: true
   type: git
   url: git://github.com/othree/html5.vim.git
