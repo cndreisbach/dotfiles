@@ -79,7 +79,7 @@ vim/bundle/surround:
 vim/bundle/tcomment: 
   branch: master
   remote: braid/vim/bundle/tcomment
-  revision: 9fe6842a6195cbedec49b7f0856f03386dfb9bef
+  revision: 12bb928024f3a78226135808695f59ca8c78f737
   squashed: true
   type: git
   url: git://github.com/tomtom/tcomment_vim.git
