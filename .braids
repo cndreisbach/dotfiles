@@ -93,7 +93,7 @@ vim/bundle/vim-haml:
 vim/bundle/vim-javascript: 
   branch: master
   remote: braid/vim/bundle/vim-javascript
-  revision: c2df2e430d7d5fe645aa40e36079ab51f082e06b
+  revision: 67be84dd2b052823f685b3054a869eb76338f432
   squashed: true
   type: git
   url: http://github.com/pangloss/vim-javascript.git
