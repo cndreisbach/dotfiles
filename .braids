@@ -37,7 +37,7 @@ vim/bundle/mac-classic-theme:
 vim/bundle/nerdtree: 
   branch: master
   remote: braid/vim/bundle/nerdtree
-  revision: 721ad3ecc2ac2ad66a92bf3df9a25964b8f48d2e
+  revision: 1dd345c56db1d11e1c1c7838587b03df7cbd5733
   squashed: true
   type: git
   url: http://github.com/scrooloose/nerdtree.git
