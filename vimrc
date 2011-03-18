@@ -102,6 +102,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 map <leader>f :FufFile<cr>
 map <leader>h :FufFileWithCurrentBufferDir<cr>
 map <leader>b :FufBuffer<cr>
+map <leader>r :FufRenewCache<cr>
 
 " Strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -132,6 +133,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.p6 set filetype=perl6
   autocmd BufNewFile,BufRead *.asciidoc set filetype=asciidoc
   autocmd BufNewFile,BufRead *.rss set filetype=xml
+  autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+  autocmd BufRead,BufNewFile *.jst set filetype=html.javascript
 endif
 
 " For GUI vim
