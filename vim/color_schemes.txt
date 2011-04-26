@@ -1,8 +1,0 @@
-mac_classic
-bclear
-sienna
-moria
-dawn
-habilight
-fruit
-nuvola

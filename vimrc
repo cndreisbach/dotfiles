@@ -1,15 +1,11 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles() 
-
 set nocompatible                  " Must come first because it changes other options.
 set t_Co=256
 set exrc
-
-syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
+syntax enable                     " Turn on syntax highlighting.
 
 set encoding=utf-8
 set scrolloff=3                   " Minimum number of lines above and below the cursor
@@ -83,8 +79,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
               
-let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
-let g:fugitive_git_executable="/usr/local/bin/git"
 let g:slimv_lisp='/usr/local/bin/clisp'
 
 map <S-Enter> O<ESC>
@@ -97,12 +91,6 @@ imap <C-s> <Esc>:w<cr>i
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" Key mapping for FuzzyFinder
-map <leader>f :FufFile<cr>
-map <leader>h :FufFileWithCurrentBufferDir<cr>
-map <leader>b :FufBuffer<cr>
-map <leader>r :FufRenewCache<cr>
 
 " Strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -118,25 +106,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-map <leader>c :TComment<cr>
-
-if has("autocmd")
-  " Use tabs instead of spaces with HTML, CSS, and Javascript.
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
-  autocmd FileType eruby setlocal ts=2 sts=2 sw=2 noexpandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 noexpandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
- 
-  " Treat .rss files as XML
-  autocmd BufNewFile,BufRead *.md set filetype=mkd
-  autocmd BufNewFile,BufRead *.mkd set filetype=mkd
-  autocmd BufNewFile,BufRead *.p6 set filetype=perl6
-  autocmd BufNewFile,BufRead *.asciidoc set filetype=asciidoc
-  autocmd BufNewFile,BufRead *.rss set filetype=xml
-  autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
-  autocmd BufRead,BufNewFile *.jst set filetype=html.javascript
-endif
-
 " For GUI vim
 if (has("gui_running"))
   set encoding=utf-8                " Use UTF-8 everywhere.
@@ -144,17 +113,6 @@ if (has("gui_running"))
   set guioptions-=rL                " Don't show right scrollbar
   set guioptions-=m                 " Don't show menu
   set guifont=Monaco:h12
-  colorscheme habilight
-
-  ruby << RUBY
-  def random_colorscheme
-    if !defined?($color_schemes) || $color_schemes.empty?
-      $color_schemes = File.read(File.expand_path("~/.vim/color_schemes.txt")).map { |cs| cs.chomp }
-    end
-    color_scheme = $color_schemes.shuffle.pop
-    VIM.command "colorscheme #{color_scheme}"
-  end
-RUBY
 
   if has("gui_macvim")
     " Command-/ to toggle comments
@@ -173,3 +131,65 @@ RUBY
 endif
 
 let g:vmail_flagged_color = "ctermfg=yellow ctermbg=black cterm=bold"
+
+" Bundles
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+" Utilities
+Bundle "IndentAnything"
+Bundle "YankRing.vim"
+Bundle "airblade/vim-rooter"
+Bundle "ervandew/supertab"
+Bundle "mileszs/ack.vim"
+Bundle "msanders/snipmate.vim"
+Bundle "scrooloose/nerdtree"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-surround"
+Bundle "crnixon/textshifter.vim"
+
+" Colors
+Bundle "altercation/vim-colors-solarized"
+set background=dark
+colorscheme solarized
+
+" Commenting
+Bundle "tomtom/tcomment_vim"
+map <leader>c :TComment<cr>
+
+" Fugitive
+Bundle "tpope/vim-fugitive"
+let g:fugitive_git_executable="/usr/local/bin/git"
+
+" Tags
+Bundle "taglist.vim"
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+
+" FuzzyFinder
+Bundle "L9"
+Bundle "FuzzyFinder"
+map <leader>f :FufFile<cr>
+map <leader>h :FufFileWithCurrentBufferDir<cr>
+map <leader>b :FufBuffer<cr>
+map <leader>r :FufRenewCache<cr>
+
+" Syntax
+Bundle "scala.vim"
+Bundle "othree/html5-syntax.vim"
+Bundle "pangloss/vim-javascript"
+Bundle "tpope/vim-haml"
+Bundle "tpope/vim-rails"
+Bundle "asciidoc.vim"
+Bundle "Markdown"
+
+if has("autocmd")
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.md set filetype=mkd
+  autocmd BufNewFile,BufRead *.mkd set filetype=mkd
+  autocmd BufNewFile,BufRead *.p6 set filetype=perl6
+  autocmd BufNewFile,BufRead *.asciidoc set filetype=asciidoc
+  autocmd BufNewFile,BufRead *.rss set filetype=xml
+  autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+  autocmd BufRead,BufNewFile *.jst set filetype=html.javascript
+endif
+
