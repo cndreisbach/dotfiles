@@ -7,22 +7,31 @@
 [alias]
   aa = add --all
   ap = add --patch
-  up = pull
+  br = branch
+  ca = commit --amend -C HEAD
   ci = commit
-  st = status
+  cm = commit -m
+  cleanup = !git remote prune origin && git gc && git stash clear
+  co = checkout
+  cob = checkout -b
+  deploy = !git push && cap deploy
   di = diff
   dic = diff --cached
-  co = checkout
-  br = branch
-  sta = stash
+  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push  
+  ir = !git rebase -i origin/master  
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  pp = !git pull --rebase && git push
+  rmb = !sh -c 'git branch -D $1 && git push origin :$1' -  
   sd = svn dcommit
   sr = svn rebase
-  pp = !git pull --rebase && git push
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  deploy = !git push && cap deploy
+  st = status
+  sta = stash
+  undo = reset --hard
+  up = !git fetch origin && git rebase origin/master  
+  who = shortlog -n -s --no-merges
 [core]
   excludesfile = "/Users/cnixon/.gitignore"
-  pager = most
+  pager = less
 [color]
   ui = auto
 [apply]
