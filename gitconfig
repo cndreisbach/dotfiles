@@ -5,6 +5,7 @@
   user = crnixon
   token = 00aa78a17ed69048edaa80b8e62bba60
 [alias]
+  aliases = config --get-regexp alias 
   aa = add --all
   ap = add --patch
   br = branch
