@@ -177,6 +177,7 @@ map <leader>r :FufRenewCache<cr>
 Bundle "scala.vim"
 Bundle "othree/html5-syntax.vim"
 Bundle "pangloss/vim-javascript"
+Bundle "briancollins/vim-jst"
 Bundle "tpope/vim-haml"
 Bundle "tpope/vim-rails"
 Bundle "asciidoc.vim"
@@ -190,6 +191,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.asciidoc set filetype=asciidoc
   autocmd BufNewFile,BufRead *.rss set filetype=xml
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
-  autocmd BufRead,BufNewFile *.jst set filetype=html.javascript
+  autocmd BufRead,BufNewFile *.jst set filetype=jst.html
 endif
 
