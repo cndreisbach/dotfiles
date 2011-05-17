@@ -1,0 +1,2 @@
+require 'ripl/multi_line'
+

@@ -1,0 +1,12 @@
+ActiveRecord::Base.logger     = Logger.new STDOUT
+ActiveRecord::Base.clear_reloadable_connections!
+ActionController::Base.logger = Logger.new STDOUT
+
+include Rails.application.routes.url_helpers
+default_url_options[:host] = Rails.application.class.parent_name.downcase
+
+# initiate authlogic session
+if defined? Authlogic
+  Authlogic::Session::Base.controller =
+      Authlogic::ControllerAdapters::RailsAdapter.new(self)
+end
