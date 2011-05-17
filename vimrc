@@ -182,6 +182,7 @@ Bundle "tpope/vim-haml"
 Bundle "tpope/vim-rails"
 Bundle "asciidoc.vim"
 Bundle "Markdown"
+Bundle "Rdoc"
 
 if has("autocmd")
   " Treat .rss files as XML
@@ -192,5 +193,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss set filetype=xml
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd BufRead,BufNewFile *.jst set filetype=jst.html
+  autocmd BufRead,BufNewFile *.rdoc set filetype=rdoc
+
+  autocmd BufWritePre *.rb :%s/\s\+$//e
 endif
 

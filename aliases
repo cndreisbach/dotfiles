@@ -14,6 +14,7 @@ alias deploy="rake && git push && cap deploy"
 alias ducks="du -cks * | sort -rn | head -11"
 alias lip="lorem $* | pbcopy"
 alias vi='vim'
+alias .rvm=". ./.rvmrc"
 # Editor
 alias e=$EDITOR
 

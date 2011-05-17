@@ -1,3 +1,7 @@
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
+
 if [ -f ~/.env ]; then
   . ~/.env
 fi
