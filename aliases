@@ -12,7 +12,6 @@ alias reload="source ~/.aliases && source ~/.env"
 alias push="rake && git push"
 alias deploy="rake && git push && cap deploy"
 alias ducks="du -cks * | sort -rn | head -11"
-alias lip="lorem $* | pbcopy"
 alias vi='vim'
 alias .rvm=". ./.rvmrc"
 # Editor
@@ -61,5 +60,3 @@ alias bp="bundle package"
 alias bu="bundle update"
 alias be="bundle exec"
 alias binit="bi && bundle package && echo 'vendor/ruby' >> .gitignore"
-
-alias hyde="python /usr/local/Cellar/hyde/0.5.3/hyde.py"

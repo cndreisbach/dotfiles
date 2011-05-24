@@ -1,21 +1,13 @@
 export MY_NAME='Clinton R. Nixon'
-export MY_EMAIL='crnixon@gmail.com'
+export MY_EMAIL='crnixon@crnixon.com'
 export MY_GITHUB_LOGIN='crnixon'
-export MY_ORG='Viget Labs'
+export MY_ORG='CRNixon Development'
 
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin:~/.cljr/bin:~/.cabal/bin:~/.racket/bin:/usr/local/Cellar/python/2.7.1/bin
-export CDPATH=.:~/Projects:~/Projects/Viget
-export EDITOR='mvim -f'
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export CDPATH=.:~/Projects
+export EDITOR='gvim -f'
 export PAGER=most
 export CLICOLOR=1
-
-export APXS2='/usr/sbin/apxs'
-export APACHE='/usr/sbin/httpd'
-
-export CFLAGS='-O3'
-export CXXFLAGS=$CFLAGS
-
-export AWT_TOOLKIT=MToolkit
 
 export RUBY_HEAP_MIN_SLOTS=500000 
 export RUBY_HEAP_SLOTS_INCREMENT=500000 
@@ -24,14 +16,7 @@ export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_HEAP_FREE_MIN=500000
 
 export PERL_CPANM_OPT="--local-lib=~/.perl5"
-export PERL5LIB="/Users/cnixon/.perl5/lib/perl5"
-
-export NODE_PATH="/usr/local/lib/node"
-
-export NGINX_HOME='/usr/local/Cellar/nginx/0.7.67'
-export NGINX_CONF='/usr/local/etc/nginx'
+export PERL5LIB="/home/crnixon/.perl5/lib/perl5"
 
 export JAVA_OPTS="-Dfile.encoding=UTF-8"
 export SBT_OPTS="-Dfile.encoding=UTF-8"
-export APPENGINE_SDK_HOME="/usr/local/Cellar/appengine-java-sdk/1.4.0"
-export NODE_PATH="/usr/local/lib/node"

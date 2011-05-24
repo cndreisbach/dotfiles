@@ -112,7 +112,7 @@ if (has("gui_running"))
   set guioptions-=T                 " Hide toolbar.
   set guioptions-=rL                " Don't show right scrollbar
   set guioptions-=m                 " Don't show menu
-  set guifont=Monaco:h12
+  set guifont=Monospace
 
   if has("gui_macvim")
     " Command-/ to toggle comments
