@@ -31,7 +31,7 @@
   up = !git fetch origin && git rebase origin/master  
   who = shortlog -n -s --no-merges
 [core]
-  excludesfile = "/Users/cnixon/.gitignore"
+  excludesfile = "/home/crnixon/.gitignore"
   pager = less
 [color]
   ui = auto
@@ -42,3 +42,9 @@
 [branch]  
   autosetuprebase = always
   autosetupmerge = always
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	history-view-vpane-position = 352
+	file-view-vpane-position = 660
+	main-window-view = HistoryView

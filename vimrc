@@ -112,7 +112,7 @@ if (has("gui_running"))
   set guioptions-=T                 " Hide toolbar.
   set guioptions-=rL                " Don't show right scrollbar
   set guioptions-=m                 " Don't show menu
-  set guifont=Monospace
+  set guifont=Liberation\ Mono\ 12
 
   if has("gui_macvim")
     " Command-/ to toggle comments
@@ -196,7 +196,5 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd BufRead,BufNewFile *.jst set filetype=jst.html
   autocmd BufRead,BufNewFile *.rdoc set filetype=rdoc
-
-  autocmd BufWritePre *.rb :%s/\s\+$//e
 endif
 

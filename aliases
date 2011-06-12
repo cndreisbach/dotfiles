@@ -13,7 +13,12 @@ alias push="rake && git push"
 alias deploy="rake && git push && cap deploy"
 alias ducks="du -cks * | sort -rn | head -11"
 alias vi='vim'
+alias ack='ack-grep'
 alias .rvm=". ./.rvmrc"
+alias sap='sudo aptitude'
+alias open='gnome-open'
+alias o='gnome-open'
+alias hm='todo.pl'
 # Editor
 alias e=$EDITOR
 
