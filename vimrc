@@ -138,6 +138,7 @@ call vundle#rc()
 
 " Utilities
 Bundle "IndentAnything"
+Bundle "Ack"
 Bundle "YankRing.vim"
 Bundle "airblade/vim-rooter"
 Bundle "ervandew/supertab"
