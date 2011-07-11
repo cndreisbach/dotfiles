@@ -140,6 +140,7 @@ call vundle#rc()
 Bundle "IndentAnything"
 Bundle "Ack"
 Bundle "YankRing.vim"
+Bundle "AutoTag"
 Bundle "airblade/vim-rooter"
 Bundle "ervandew/supertab"
 Bundle "mileszs/ack.vim"
@@ -161,11 +162,11 @@ map <leader>c :TComment<cr>
 
 " Fugitive
 Bundle "tpope/vim-fugitive"
-let g:fugitive_git_executable="/usr/local/bin/git"
+let g:fugitive_git_executable="/usr/bin/git"
 
 " Tags
 Bundle "taglist.vim"
-let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+let Tlist_Ctags_Cmd="/usr/bin/ctags"
 
 " FuzzyFinder
 Bundle "L9"
@@ -197,5 +198,7 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd BufRead,BufNewFile *.jst set filetype=jst.html
   autocmd BufRead,BufNewFile *.rdoc set filetype=rdoc
+  autocmd BufRead,BufNewFile *.ru set filetype=ruby
+  autocmd BufRead,BufNewFile Gemfile set filetype=ruby
 endif
 

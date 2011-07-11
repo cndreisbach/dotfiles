@@ -21,10 +21,7 @@
   done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push  
   ir = !git rebase -i origin/master  
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  pp = !git pull --rebase && git push
   rmb = !sh -c 'git branch -D $1 && git push origin :$1' -  
-  sd = svn dcommit
-  sr = svn rebase
   st = status
   sta = stash
   undo = reset --hard
@@ -36,15 +33,9 @@
 [color]
   ui = auto
 [apply]
-  whitespace = nowarn
+  whitespace = warn
 [help]
   autocorrect = 1
 [branch]  
-  autosetuprebase = always
-  autosetupmerge = always
-[giggle]
-	main-window-maximized = true
-	main-window-geometry = 0x0+0+0
-	history-view-vpane-position = 352
-	file-view-vpane-position = 660
-	main-window-view = HistoryView
+  autosetupmerge = true
+  autosetuprebase = never
