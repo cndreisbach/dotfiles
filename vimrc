@@ -187,6 +187,8 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "asciidoc.vim"
 Bundle "Markdown"
 Bundle "Rdoc"
+Bundle "gridaphobe/go.vim"
+Bundle "vimclojure"
 
 if has("autocmd")
   " Treat .rss files as XML
@@ -200,5 +202,8 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.rdoc set filetype=rdoc
   autocmd BufRead,BufNewFile *.ru set filetype=ruby
   autocmd BufRead,BufNewFile Gemfile set filetype=ruby
+  autocmd BufRead,BufNewFile *.go set filetype=go
+
+  autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
 endif
 
