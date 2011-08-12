@@ -79,8 +79,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
               
-let g:slimv_lisp='/usr/local/bin/clisp'
-
 map <S-Enter> O<ESC>
 map <Enter> o<ESC>
 
@@ -133,12 +131,12 @@ endif
 let g:vmail_flagged_color = "ctermfg=yellow ctermbg=black cterm=bold"
 
 " Bundles
-set rtp+=~/.vim/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle "vundle"
 
 " Utilities
 Bundle "IndentAnything"
-Bundle "Ack"
 Bundle "YankRing.vim"
 Bundle "AutoTag"
 Bundle "airblade/vim-rooter"
@@ -186,9 +184,8 @@ Bundle "tpope/vim-rails"
 Bundle "kchmck/vim-coffee-script"
 Bundle "asciidoc.vim"
 Bundle "Markdown"
-Bundle "Rdoc"
 Bundle "gridaphobe/go.vim"
-Bundle "vimclojure"
+Bundle "VimClojure"
 
 if has("autocmd")
   " Treat .rss files as XML
