@@ -45,12 +45,6 @@
                :load-path (".")
                :features rhtml-mode
                :after (lambda () (rhtml-mode-hook)))
-        (:name rvm
-               :type git
-               :url "git://github.com/djwhitt/rvm.el.git"
-               :load "rvm.el"
-               :compile ("rvm.el")
-               :after (lambda () (rvm-autodetect-ruby)))
         (:name css-mode 
                :type elpa
                :after (lambda () (css-mode-hook)))

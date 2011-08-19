@@ -17,8 +17,6 @@ done
 if [ -f $HOME/.Xdefaults ]; then
   xrdb -merge $HOME/.Xdefaults
 fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-if [ "`rvm-prompt`" == ".rvm-" ]; then 
-  rvm use
-fi
+source "$HOME/.rbenv/completions/rbenv.bash"
+rbenv rehash 2>/dev/null
