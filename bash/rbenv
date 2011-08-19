@@ -1,0 +1,2 @@
+source "$HOME/.rbenv/completions/rbenv.bash"
+rbenv rehash 2>/dev/null
