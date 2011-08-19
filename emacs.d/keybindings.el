@@ -1,6 +1,10 @@
-(global-set-key (kbd "C-z") 'undo)
-(global-set-key (kbd "C-Z") 'redo)
 (global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "C-/") 'dabbrev-expand)
+(global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "C-/") 'dabbrev-expand)
+(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-\\") 'indent-region)
+(global-set-key (kbd "C-c a") 'mark-whole-buffer)
+(global-set-key (kbd "C-c e") 'eval-buffer)
+(global-set-key (kbd "C-c r") 'query-replace-regexp)
+

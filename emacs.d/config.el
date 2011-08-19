@@ -9,9 +9,9 @@
               "622bc659276360fb1fc4dd8725c284afe3a3caad"
               "a73fd470d417fe2f963e5355e9211fe88acd45f2"
               default)))
-(load-theme 'solarized-light)
+(load-theme 'tango)
 
-(delete-selection-mode t)
+(setq inhibit-startup-message t)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (blink-cursor-mode t)
@@ -21,19 +21,24 @@
 (set-fringe-style 4)
 (tooltip-mode -1)
 (menu-bar-mode -1)
-(global-hl-line-mode)
+(global-hl-line-mode t)
+(global-font-lock-mode t)
+(show-paren-mode t)
+; (setq show-paren-style 'expression) ;; highlight between parens
+(blink-cursor-mode 0)
 
 ;; config
 (add-to-list 'exec-path "/usr/local/bin")
-
+(setq shell-file-name "/bin/bash")
+(delete-selection-mode t)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
-(setq inhibit-startup-message t)
-
+(setq-default c-basic-offset 2)
+(setq-default js-indent-level 2)
 (fset 'yes-or-no-p 'y-or-n-p)
-(cua-mode)
+(cua-selection-mode t)
 
 ; Use the native clipboard
 (setq x-select-enable-clipboard t)

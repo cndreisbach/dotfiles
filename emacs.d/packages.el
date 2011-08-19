@@ -56,11 +56,13 @@
                :after (lambda () (yaml-mode-hook)))
         (:name markdown-mode)
         (:name rainbow-mode)
+        (:name rainbow-delimiters)
         (:name paredit)
         (:name slime :type elpa)
         (:name slime-repl :type elpa)
         (:name clojure-mode
                :after (lambda () (setq slime-net-coding-system 'utf-8-unix)))
+        (:name adoc-mode)
         (:name yasnippet
                :type svn
                :url "http://yasnippet.googlecode.com/svn/trunk/"
