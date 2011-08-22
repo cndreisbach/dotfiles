@@ -18,20 +18,20 @@ myManageHook =
     [ isSplash --> doIgnore 
     , isFullscreen --> doFullFloat ]
 
-myWorkspaces = ["one", "two", "three", "four", "five"]
-
 main = do xmonad $ gnomeConfig
                      { manageHook = manageHook gnomeConfig <+> composeAll myManageHook
                      , layoutHook = windowNavigation $ layoutHook gnomeConfig
-                     , borderWidth = 3
-                     , focusedBorderColor = "#FFF838"
-                     , normalBorderColor = "#444447"
+                     , borderWidth = 2
+                     , focusedBorderColor = "orange"
+                     , normalBorderColor = "black"
                      , modMask = mod4Mask
---                     , workspaces = myWorkspaces
                      }
                      `additionalKeysP`
                      [ ("M-<Left>",    prevWS)
                      , ("M-<Right>",   nextWS)
                      , ("M-S-<Left>",  shiftToPrev )
                      , ("M-S-<Right>", shiftToNext )
+                     , ("M-p", spawn "synapse")
+                     , ("M-n", spawn "nautilus --browser")
+                     , ("M-c", spawn "gnome-control-center")
                      ]
