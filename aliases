@@ -19,6 +19,7 @@ alias sap='sudo aptitude'
 alias open='gnome-open'
 alias o='gnome-open'
 alias hm='todo.pl'
+alias nv="~/Projects/envy/nv.pl"
 # Editor
 alias e=$EDITOR
 
