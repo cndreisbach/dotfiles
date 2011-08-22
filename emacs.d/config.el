@@ -28,7 +28,10 @@
 (blink-cursor-mode 0)
 
 ;; config
-(add-to-list 'exec-path "/usr/local/bin")
+(setq exec-path (append exec-path '("~/go/bin"
+                                    "~/.rbenv/bin"
+                                    "~/.rbenv/shims"
+                                    "~/.local/bin")))
 (setq shell-file-name "/bin/bash")
 (delete-selection-mode t)
 (setq make-backup-files nil)

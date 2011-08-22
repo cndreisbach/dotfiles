@@ -62,6 +62,7 @@
         (:name slime-repl :type elpa)
         (:name clojure-mode
                :after (lambda () (setq slime-net-coding-system 'utf-8-unix)))
+        (:name go-mode)
         (:name adoc-mode)
         (:name yasnippet
                :type svn
