@@ -1,12 +1,3 @@
-(defun textmate-mode-hook ()
-  (textmate-mode t)
-  (global-set-key (kbd "M-RET") 'textmate-next-line)
-  (global-set-key (kbd "M-/") 'comment-or-uncomment-region-or-line)
-  (global-set-key (kbd "M-t") 'textmate-goto-file)
-  (global-set-key (kbd "M-T") 'textmate-goto-symbol)
-  (global-set-key (kbd "M-]") 'textmate-shift-right)
-  (global-set-key (kbd "M-[") 'textmate-shift-left))
-
 (defun ruby-mode-hook ()
   (autoload 'ruby-mode "ruby-mode" nil t)
   (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
@@ -53,4 +44,10 @@
           ("Rake project"
            :root-contains-files ("Rakefile"))
           ("Generic Git project"
-           :root-contains-files (".git")))))
+           :root-contains-files (".git"))))
+  (defun project-create-tags ()
+    (interactive)
+    (with-project-root
+        (let ((root (cdr project-details)))
+              (create-tags root)))))
+

@@ -68,11 +68,6 @@
                :url "http://yasnippet.googlecode.com/svn/trunk/"
                :after (lambda ()
                         (yas/initialize)
-                        (yas/load-directory "~/.emacs.d/snippets")))
-        (:name textmate
-               :type git
-               :url "git://github.com/defunkt/textmate.el"
-               :load "textmate.el"
-               :after (lambda () (textmate-mode-hook)))))
+                        (yas/load-directory "~/.emacs.d/snippets"))))
 
 (el-get 'sync)

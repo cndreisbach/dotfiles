@@ -3,4 +3,6 @@
 
 (load "config.el")
 (load "packages.el")
+(load "functions.el")
 (load "keybindings.el")
+
