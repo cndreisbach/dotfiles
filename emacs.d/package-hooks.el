@@ -16,6 +16,7 @@
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
   (add-hook 'ruby-mode-hook '(lambda ()
+                               (local-set-key (kbd "RET") 'newline-and-indent)
                                (setq ruby-deep-arglist t)
                                (setq ruby-deep-indent-paren nil)
                                (setq c-tab-always-indent nil)
@@ -43,4 +44,13 @@
   (autoload 'scss-mode "scss-mode" nil t)
   (set-variable 'scss-compile-at-save nil))
 
-
+(defun project-root-hook ()
+  (setq project-roots
+        `(("Rails project"
+           :root-contains-files ("app" "config" "Rakefile")
+           :filename-regex ,(regexify-ext-list '(rb ru js css sass scss erb haml))
+           :exclude-paths '("vendor"))
+          ("Rake project"
+           :root-contains-files ("Rakefile"))
+          ("Generic Git project"
+           :root-contains-files (".git")))))

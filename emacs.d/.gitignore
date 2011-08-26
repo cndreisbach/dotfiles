@@ -2,3 +2,7 @@ url
 elpa
 el-get
 .smex-items
+session*
+.project-roots
+.#*
+*~

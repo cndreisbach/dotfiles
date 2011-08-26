@@ -20,6 +20,11 @@
       '((:name magit
                :after (lambda ()
                         (global-set-key (kbd "C-x C-z") 'magit-status)))
+        (:name project-root
+               :type hg
+               :url "http://hg.piranha.org.ua/project-root"
+               :load "project-root.el"
+               :after (lambda () (project-root-hook)))
         (:name full-ack :type elpa)
         (:name smex
                :after (lambda ()
@@ -33,12 +38,6 @@
         (:name inf-ruby :type elpa)
         (:name ruby-compilation :type elpa)
         (:name ruby-electric :type elpa)
-        (:name rinari
-               :type git
-               :url "http://github.com/eschulte/rinari.git"
-               :load-path ("." "util" "util/jump")
-               :compile ("\\.el$" "util")
-               :features rinari)
         (:name rhtml
                :type git
                :url "git://github.com/crazycode/rhtml.git"

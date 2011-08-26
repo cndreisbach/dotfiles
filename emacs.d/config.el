@@ -6,10 +6,8 @@
 (setq custom-safe-themes 
       (quote ("5600dc0bb4a2b72a613175da54edb4ad770105aa" 
               "0174d99a8f1fdc506fa54403317072982656f127"
-              "622bc659276360fb1fc4dd8725c284afe3a3caad"
-              "a73fd470d417fe2f963e5355e9211fe88acd45f2"
               default)))
-(load-theme 'tango)
+(load-theme 'wombat)
 
 (setq inhibit-startup-message t)
 (scroll-bar-mode -1)
@@ -21,17 +19,18 @@
 (set-fringe-style 4)
 (tooltip-mode -1)
 (menu-bar-mode -1)
-(global-hl-line-mode t)
+(global-hl-line-mode -1)
 (global-font-lock-mode t)
 (show-paren-mode t)
 ; (setq show-paren-style 'expression) ;; highlight between parens
 (blink-cursor-mode 0)
 
 ;; config
-(setq exec-path (append exec-path '("~/go/bin"
-                                    "~/.rbenv/bin"
-                                    "~/.rbenv/shims"
-                                    "~/.local/bin")))
+(setq exec-path (append '("~/go/bin"
+                          "~/.rbenv/bin"
+                          "~/.rbenv/shims"
+                          "~/.local/bin") exec-path))
+(setenv "PATH" (concat "~/go/bin:~/.rbenv/bin:~/.rbenv/shims:~/.local/bin:" (getenv "PATH")))
 (setq shell-file-name "/bin/bash")
 (delete-selection-mode t)
 (setq make-backup-files nil)
