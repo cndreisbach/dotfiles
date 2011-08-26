@@ -25,6 +25,12 @@
                :url "http://hg.piranha.org.ua/project-root"
                :load "project-root.el"
                :after (lambda () (project-root-hook)))
+        (:name yasnippet
+               :type svn
+               :url "http://yasnippet.googlecode.com/svn/trunk/"
+               :after (lambda ()
+                        (yas/initialize)
+                        (yas/load-directory "~/.emacs.d/snippets")))
         (:name full-ack :type elpa)
         (:name smex
                :after (lambda ()
@@ -62,12 +68,6 @@
         (:name clojure-mode
                :after (lambda () (setq slime-net-coding-system 'utf-8-unix)))
         (:name go-mode)
-        (:name adoc-mode)
-        (:name yasnippet
-               :type svn
-               :url "http://yasnippet.googlecode.com/svn/trunk/"
-               :after (lambda ()
-                        (yas/initialize)
-                        (yas/load-directory "~/.emacs.d/snippets"))))
+        (:name adoc-mode))
 
 (el-get 'sync)
