@@ -1,49 +1,45 @@
 ### ALIASES
-alias g+="grep -r $1 *"
+
+# 1 chars
+alias a='ack'
+alias b='bundle'
+alias c='cd'
+alias e=$EDITOR
+alias f='find'
+alias g='grep'
 alias h="history"
+alias l="ls"
+alias o='popd'
+alias p='pushd'
+alias r='rake'
+alias s='sudo'
+
+# More
+alias gr="grep -r"
 alias ll="ls -laFh"
 alias \?="history | grep $1"
 alias ps\?="ps ax | grep $1"
-alias c='clear'
-alias my='mysql -u root'
 alias .a="$EDITOR ~/dotfiles/aliases && source ~/dotfiles/aliases"
 alias .e="$EDITOR ~/dotfiles/env && source ~/dotfiles/env"
 alias reload="source ~/.aliases && source ~/.env"
-alias push="rake && git push"
-alias deploy="rake && git push && cap deploy"
 alias ducks="du -cks * | sort -rn | head -11"
 alias vi='vim'
 alias ack='ack-grep'
-alias .rvm=". ./.rvmrc"
 alias sap='sudo aptitude'
 alias open='gnome-open'
-alias o='gnome-open'
 alias hm='todo.pl'
 alias nv="~/Projects/envy/nv.pl"
-# Editor
-alias e=$EDITOR
-
-# Subversion
-alias sa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
-alias sl='svn log --limit 5'
-alias se='svn log -v --limit 1'
-alias sr='svn diff | less'
-alias s\?='svn status | grep "^\?"'
 
 # Git
-alias g='git'
 alias ga='git add'
 alias gb='git branch'
 alias gaa='git add --all'
 alias gap='git add --patch'
 alias gc='git commit'
-alias gca='git commit -a'
+alias gca='git commit --amend -C HEAD'
 alias gst='git status'
 alias gs='git status'
-alias gsd='git svn dcommit'
-alias gsr='git svn rebase'
 alias gpp='git pp'
-alias gci='git pull --rebase && rake && git push'
 
 # Rails
 alias ss='script/server'
@@ -60,7 +56,6 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmlogs="find . -name '*.log' | xargs rm"
 
 # Bundler
-alias b="bundle"
 alias bi="bundle install --path vendor"
 alias bp="bundle package"
 alias bu="bundle update"
