@@ -29,6 +29,7 @@ alias sap='sudo aptitude'
 alias open='gnome-open'
 alias hm='todo.pl'
 alias nv="~/Projects/envy/nv.pl"
+alias mvim="gvim"
 
 # Git
 alias ga='git add'
