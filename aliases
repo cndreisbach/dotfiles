@@ -1,3 +1,12 @@
+### FUNCTIONS
+# be () {
+#   if [[ -a Gemfile ]]; then
+#     bundle exec $*
+#   else
+#     command $*
+#   fi
+# }
+
 ### ALIASES
 
 # 1 chars
@@ -28,7 +37,7 @@ alias ack='ack-grep'
 alias sap='sudo aptitude'
 alias open='gnome-open'
 alias hm='todo.pl'
-alias nv="~/Projects/envy/nv.pl"
+alias nv="envy.pl"
 alias mvim="gvim"
 
 # Git
@@ -57,7 +66,7 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmlogs="find . -name '*.log' | xargs rm"
 
 # Bundler
-alias bi="bundle install --path vendor"
+alias bi="bundle install --path vendor --binstubs"
 alias bp="bundle package"
 alias bu="bundle update"
 alias be="bundle exec"
