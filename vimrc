@@ -18,6 +18,8 @@ set hidden                        " Handle multiple buffers better.
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 
+let mapleader=","
+
 " Searching
 nnoremap / /\v
 vnoremap / /\v
@@ -110,7 +112,7 @@ if (has("gui_running"))
   set guioptions-=T                 " Hide toolbar.
   set guioptions-=rL                " Don't show right scrollbar
   set guioptions-=m                 " Don't show menu
-  set guifont=Liberation\ Mono\ 12
+  set guifont=Droid\ Sans\ Mono\ 11
 
   if has("gui_macvim")
     " Command-/ to toggle comments
