@@ -1,4 +1,5 @@
 source /etc/bash.bashrc
+source /usr/share/autojump/autojump.bash 
 
 if [ -f ~/.env ]; then
   . ~/.env
