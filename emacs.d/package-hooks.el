@@ -20,6 +20,14 @@
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
   (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode)))
 
+(defun haml-mode-hook ()
+  (autoload 'haml-mode "haml-mode" nil t)
+  (add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode)))
+
+(defun sass-mode-hook ()
+  (autoload 'sass-mode "sass-mode" nil t)
+  (add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode)))
+
 (defun yaml-mode-hook ()
   (autoload 'yaml-mode "yaml-mode" nil t)
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))

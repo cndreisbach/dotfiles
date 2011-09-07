@@ -3,8 +3,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/"))
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; (add-to-list 'package-archives
+;;             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; Bootstrap el-get
@@ -53,9 +53,15 @@
         (:name css-mode 
                :type elpa
                :after (lambda () (css-mode-hook)))
-        (:name scss-mode 
+        (:name haml-mode
                :type elpa
-               :after (lambda () (scss-mode-hook)))
+               :after (lambda () (haml-mode-hook)))
+        (:name sass-mode
+               :type elpa
+               :after (lambda () (sass-mode-hook)))
+        ;; (:name scss-mode 
+        ;;        :type elpa
+        ;;        :after (lambda () (scss-mode-hook)))
         (:name yaml-mode 
                :type elpa
                :after (lambda () (yaml-mode-hook)))
@@ -68,6 +74,6 @@
         (:name clojure-mode
                :after (lambda () (setq slime-net-coding-system 'utf-8-unix)))
         (:name go-mode)
-        (:name adoc-mode))
+        (:name adoc-mode)))
 
 (el-get 'sync)
