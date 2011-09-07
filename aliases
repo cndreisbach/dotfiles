@@ -1,27 +1,32 @@
-### FUNCTIONS
-# be () {
-#   if [[ -a Gemfile ]]; then
-#     bundle exec $*
-#   else
-#     command $*
-#   fi
-# }
-
 ### ALIASES
 
 # 1 chars
 alias a='ack'
 alias b='bundle'
 alias c='cd'
+alias d='df -h'
 alias e=$EDITOR
 alias f='find'
 alias g='grep'
 alias h="history"
-alias l="ls"
+alias i='id'
+# j reserved for autojump
+alias k='kill'
+alias l="ls -laFH"
+alias m='mkdir -p'
+alias n='nano'
 alias o='popd'
 alias p='pushd'
+alias q="echo 'no alias for q'"
 alias r='rake'
 alias s='sudo'
+alias t='todo.pl'
+alias u="sudo aptitude update"
+alias v="vim"
+alias w='which'
+alias x='xargs'
+alias y="echo 'no alias for y'"
+alias z="echo 'no alias for z'"
 
 # More
 alias gr="grep -r"
@@ -39,6 +44,7 @@ alias open='gnome-open'
 alias hm='todo.pl'
 alias nv="envy.pl"
 alias mvim="gvim"
+alias irb="pry"
 
 # Git
 alias ga='git add'
@@ -52,14 +58,34 @@ alias gs='git status'
 alias gpp='git pp'
 
 # Rails
-alias ss='script/server'
-alias rs='rails server'
-alias sc='script/console'
-alias rc='rails console'
-alias sg='script/generate'
-alias rg='rails generate'
+function rs() {
+  if [ -e ./script/server ]; then
+    ./script/server
+  elif [ -e ./script/rails ]; then
+    ./script/rails server
+  else
+    echo "No rails here!"
+  fi
+}
+function rc() {
+  if [ -e ./script/console ]; then
+    ./script/console
+  elif [ -e ./script/rails ]; then
+    ./script/rails console
+  else
+    echo "No rails here!"
+  fi
+}
+function rg() {
+  if [ -e ./script/generate ]; then
+    ./script/generate
+  elif [ -e ./script/rails ]; then
+    ./script/rails generate 
+  else
+    echo "No rails here!"
+  fi
+}
 alias rr='touch tmp/restart.txt'
-alias rp='passenger start &'
 
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
