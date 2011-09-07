@@ -1,6 +1,3 @@
-" Example Vim configuration.
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
-
 set nocompatible                  " Must come first because it changes other options.
 set t_Co=256
 set exrc
@@ -112,13 +109,7 @@ if (has("gui_running"))
   set guioptions-=T                 " Hide toolbar.
   set guioptions-=rL                " Don't show right scrollbar
   set guioptions-=m                 " Don't show menu
-  set guifont=Droid\ Sans\ Mono\ 11
-
-  if has("gui_macvim")
-    " Command-/ to toggle comments
-    map <D-/> :TComment<CR>
-    map <D-x> :
-  endif
+  set guifont=Monospace\ 10
 
   " Nice title
   if has('title') && (has('gui_running') || &title)
@@ -143,13 +134,16 @@ Bundle "YankRing.vim"
 Bundle "AutoTag"
 Bundle "airblade/vim-rooter"
 Bundle "ervandew/supertab"
-Bundle "mileszs/ack.vim"
-Bundle "msanders/snipmate.vim"
 Bundle "scrooloose/nerdtree"
+Bundle "msanders/snipmate.vim"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-surround"
 Bundle "crnixon/textshifter.vim"
-Bundle "mattn/zencoding-vim"
+Bundle "Command-T"
+
+" Ack
+Bundle "mileszs/ack.vim"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Colors
 Bundle "altercation/vim-colors-solarized"
