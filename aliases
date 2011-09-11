@@ -17,7 +17,7 @@ alias m='mkdir -p'
 alias n='nano'
 alias o='popd'
 alias p='pushd'
-alias q="echo 'no alias for q'"
+alias q="sudo aptitude update && sudo aptitude full-upgrade"
 alias r='rake'
 alias s='sudo'
 alias t='todo.pl'
@@ -58,41 +58,21 @@ alias gs='git status'
 alias gpp='git pp'
 
 # Rails
-function rs() {
-  if [ -e ./script/server ]; then
-    ./script/server
-  elif [ -e ./script/rails ]; then
-    ./script/rails server
-  else
-    echo "No rails here!"
-  fi
-}
-function rc() {
-  if [ -e ./script/console ]; then
-    ./script/console
-  elif [ -e ./script/rails ]; then
-    ./script/rails console
-  else
-    echo "No rails here!"
-  fi
-}
-function rg() {
-  if [ -e ./script/generate ]; then
-    ./script/generate
-  elif [ -e ./script/rails ]; then
-    ./script/rails generate 
-  else
-    echo "No rails here!"
-  fi
-}
+alias rs="./script/rails server"
+alias rc="./script/rails console"
+alias rg="./script/rails generate"
 alias rr='touch tmp/restart.txt'
+alias ss="./script/server"
+alias sc="./script/console"
+alias sg="./script/generate"
+
 
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmlogs="find . -name '*.log' | xargs rm"
 
 # Bundler
-alias bi="bundle install --path vendor --binstubs"
+alias bi="bundle install --path vendor"
 alias bp="bundle package"
 alias bu="bundle update"
 alias be="bundle exec"
