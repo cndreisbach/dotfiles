@@ -72,7 +72,7 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmlogs="find . -name '*.log' | xargs rm"
 
 # Bundler
-alias bi="bundle install --path vendor"
+alias bi="bundle install --path vendor --binstubs"
 alias bp="bundle package"
 alias bu="bundle update"
 alias be="bundle exec"
