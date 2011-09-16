@@ -139,7 +139,10 @@ Bundle "msanders/snipmate.vim"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-surround"
 Bundle "crnixon/textshifter.vim"
+
+" Command-T
 Bundle "Command-T"
+set wildignore+=vendor/ruby
 
 " Ack
 Bundle "mileszs/ack.vim"
@@ -196,6 +199,8 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.ru set filetype=ruby
   autocmd BufRead,BufNewFile Gemfile set filetype=ruby
   autocmd BufRead,BufNewFile *.go set filetype=go
+
+  autocmd FileType js setlocal shiftwidth=4 sts=4 et
 
   autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
 endif
