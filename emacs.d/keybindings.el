@@ -8,3 +8,4 @@
 (global-set-key (kbd "C-c e") 'eval-buffer)
 (global-set-key (kbd "C-c r") 'query-replace-regexp)
 
+(global-set-key [f8] 'deft)

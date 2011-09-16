@@ -1,5 +1,5 @@
 ;; Visual setup
-(set-frame-font "Monospace-12")
+(set-frame-font "Monospace-14")
 (setq my-theme-dir "~/.emacs.d/themes")
 (add-to-list 'load-path my-theme-dir)
 (setq custom-theme-directory my-theme-dir)

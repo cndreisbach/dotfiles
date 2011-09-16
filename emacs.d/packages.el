@@ -3,8 +3,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/"))
-;; (add-to-list 'package-archives
-;;             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+            '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; Bootstrap el-get
@@ -25,13 +25,19 @@
                :url "http://hg.piranha.org.ua/project-root"
                :load "project-root.el"
                :after (lambda () (project-root-hook)))
-        (:name yasnippet
-               :type svn
-               :url "http://yasnippet.googlecode.com/svn/trunk/"
-               :after (lambda ()
-                        (yas/initialize)
-                        (yas/load-directory "~/.emacs.d/snippets")))
+        ;; (:name yasnippet
+        ;;        :type svn
+        ;;        :url "http://yasnippet.googlecode.com/svn/trunk/"
+        ;;        :after (lambda ()
+        ;;                 (yas/initialize)
+        ;;                 (yas/load-directory "~/.emacs.d/snippets")))
         (:name full-ack :type elpa)
+        (:name deft
+               :type http
+               :url "http://jblevins.org/projects/deft/deft.el"
+               :after (lambda ()
+                        (setq deft-directory "~/Dropbox/Notes")
+                        (setq deft-text-mode 'markdown-mode)))
         (:name smex
                :after (lambda ()
                         (setq smex-save-file "~/.emacs.d/.smex-items")
@@ -59,9 +65,9 @@
         (:name sass-mode
                :type elpa
                :after (lambda () (sass-mode-hook)))
-        ;; (:name scss-mode 
-        ;;        :type elpa
-        ;;        :after (lambda () (scss-mode-hook)))
+        (:name scss-mode 
+               :type elpa
+               :after (lambda () (scss-mode-hook)))
         (:name yaml-mode 
                :type elpa
                :after (lambda () (yaml-mode-hook)))
