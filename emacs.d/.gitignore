@@ -3,3 +3,4 @@ elpa
 .smex-items
 .backup
 session*
+*.elc
