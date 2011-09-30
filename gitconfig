@@ -37,6 +37,8 @@
   whitespace = warn
 [help]
   autocorrect = 1
+[push]
+  default = tracking
 [branch]  
   autosetupmerge = true
   autosetuprebase = never

@@ -1,0 +1,6 @@
+set blink-matching-paren on
+set completion-ignore-case on
+set completion-prefix-display-length 2
+set show-all-if-ambigious on
+set show-all-if-unmodified on
+set completion-map-case on

@@ -109,7 +109,7 @@ if (has("gui_running"))
   set guioptions-=T                 " Hide toolbar.
   set guioptions-=rL                " Don't show right scrollbar
   set guioptions-=m                 " Don't show menu
-  set guifont=Monospace\ 10
+  set guifont=Monospace\ 12
 
   " Nice title
   if has('title') && (has('gui_running') || &title)
@@ -199,9 +199,7 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.ru set filetype=ruby
   autocmd BufRead,BufNewFile Gemfile set filetype=ruby
   autocmd BufRead,BufNewFile *.go set filetype=go
-
-  autocmd FileType js setlocal shiftwidth=4 sts=4 et
-
+  autocmd FileType javascript setlocal expandtab shiftwidth=4 tabstop=4 
   autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
 endif
 
