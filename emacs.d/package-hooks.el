@@ -7,13 +7,13 @@
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
   (add-hook 'ruby-mode-hook '(lambda ()
+                               (require 'inf-ruby)
+                               (require 'ruby-compilation)
+                               (require 'ruby-electric)
                                (local-set-key (kbd "RET") 'newline-and-indent)
                                (setq ruby-deep-arglist t)
                                (setq ruby-deep-indent-paren nil)
-                               (setq c-tab-always-indent nil)
-                               (require 'inf-ruby)
-                               (require 'ruby-compilation)
-                               (require 'ruby-electric))))
+                               (setq c-tab-always-indent nil))))
 
 (defun rhtml-mode-hook ()
   (autoload 'rhtml-mode "rhtml-mode" nil t)
@@ -59,3 +59,5 @@
         (let ((root (cdr project-details)))
               (create-tags root)))))
 
+(defun eproject-mode-hook ()
+  (load "eproject-extras.el"))

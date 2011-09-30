@@ -1,5 +1,5 @@
 ;; Visual setup
-(set-frame-font "Monospace-14")
+(set-frame-font "Monospace-12")
 (setq my-theme-dir "~/.emacs.d/themes")
 (add-to-list 'load-path my-theme-dir)
 (setq custom-theme-directory my-theme-dir)
@@ -24,6 +24,9 @@
 (show-paren-mode t)
 ; (setq show-paren-style 'expression) ;; highlight between parens
 (blink-cursor-mode 0)
+
+;;(setq whitespace-line-count 80
+;;      whitespace-style '(faces lines trailing space-before-tab indentation space-after-tab))
 
 ;; config
 (setq exec-path (append '("~/go/bin"
@@ -67,3 +70,5 @@
   (set-frame-parameter nil 'fullscreen
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 (global-set-key [f11] 'fullscreen)
+
+(setq scheme-program-name "racket")

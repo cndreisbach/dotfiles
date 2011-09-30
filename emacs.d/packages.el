@@ -20,29 +20,28 @@
       '((:name magit
                :after (lambda ()
                         (global-set-key (kbd "C-x C-z") 'magit-status)))
-        (:name project-root
-               :type hg
-               :url "http://hg.piranha.org.ua/project-root"
-               :load "project-root.el"
-               :after (lambda () (project-root-hook)))
-        ;; (:name yasnippet
-        ;;        :type svn
-        ;;        :url "http://yasnippet.googlecode.com/svn/trunk/"
-        ;;        :after (lambda ()
-        ;;                 (yas/initialize)
-        ;;                 (yas/load-directory "~/.emacs.d/snippets")))
+        (:name eproject
+               :type git
+               :url "git://github.com/jrockway/eproject.git"
+               :load "eproject.el"
+               :after (lambda () (eproject-mode-hook)))
         (:name full-ack :type elpa)
         (:name deft
                :type http
                :url "http://jblevins.org/projects/deft/deft.el"
                :after (lambda ()
-                        (setq deft-directory "~/Dropbox/Notes")
+                        (setq deft-directory "~/Dropbox/Notes/")
                         (setq deft-text-mode 'markdown-mode)))
         (:name smex
                :after (lambda ()
                         (setq smex-save-file "~/.emacs.d/.smex-items")
                         (global-set-key (kbd "M-x") 'smex)
                         (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
+        (:name rainbow-mode)
+        (:name rainbow-delimiters)
+        (:name paredit)
+        
+        ;; languages
         (:name ruby-mode 
                :type elpa
                :load "ruby-mode.el"
@@ -71,15 +70,21 @@
         (:name yaml-mode 
                :type elpa
                :after (lambda () (yaml-mode-hook)))
+        (:name go-mode)
         (:name markdown-mode)
-        (:name rainbow-mode)
-        (:name rainbow-delimiters)
-        (:name paredit)
+        (:name asciidoc)
+        
+        ;; lisp!
         (:name slime :type elpa)
         (:name slime-repl :type elpa)
+        (:name geiser
+               :type git
+               :url "git://git.sv.gnu.org/geiser.git"
+               :load "elisp/geiser.el")
+        (:name quack)
         (:name clojure-mode
                :after (lambda () (setq slime-net-coding-system 'utf-8-unix)))
-        (:name go-mode)
-        (:name adoc-mode)))
+        ))
+
 
 (el-get 'sync)
