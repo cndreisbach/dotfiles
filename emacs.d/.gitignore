@@ -1,6 +1,7 @@
 abbrev_defs
 elpa
-.smex-items
-.backup
+places
 session*
+.backup
+.smex-items
 *.elc

@@ -5,7 +5,6 @@
 
 ;;; Initial configuration
 (require 'cl)
-(load-theme 'tango)
 
 (setq crn-elisp-dir (expand-file-name "elisp" user-emacs-directory))
 (add-to-list 'load-path crn-elisp-dir)
