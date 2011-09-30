@@ -1,8 +1,5 @@
-url
+abbrev_defs
 elpa
-el-get
 .smex-items
+.backup
 session*
-.project-roots
-.#*
-*~
