@@ -67,6 +67,9 @@
 
 (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
 
+(require 'undo-tree)
+(global-undo-tree-mode)
+
 ;;; Local code
 (load "functions.el")
 
@@ -80,7 +83,8 @@
 
 ;;; Keybindings
 (global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-z") 'undo-tree-undo)
+(global-set-key (kbd "M-z") 'undo-tree-redo)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-/") 'dabbrev-expand)
 (global-set-key (kbd "M-/") 'hippie-expand)
