@@ -18,8 +18,9 @@
 
 ; Backups
 (setq backup-directory-alist
-      (list (cons "." (expand-file-name "backup" user-emacs-directory))))
-
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 ;;; Package installation
 (require 'package)
