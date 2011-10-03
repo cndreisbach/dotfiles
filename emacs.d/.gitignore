@@ -5,3 +5,4 @@ session*
 .backup
 .smex-items
 *.elc
+url

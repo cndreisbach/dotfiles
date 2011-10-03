@@ -10,3 +10,7 @@
   (interactive)
   (set-buffer-modified-p t)
   (save-buffer))
+
+(defun esk-run-coding-hook ()
+  "This method appears to be missing from ESK."
+  t)
