@@ -38,12 +38,15 @@
                     starter-kit-js
                     starter-kit-bindings
                     clojure-mode clojure-test-mode
-                    markdown-mode
+                    ruby-end
                     yaml-mode
                     haml-mode
                     sass-mode scss-mode
+                    feature-mode
                     coffee-mode
                     go-mode
+                    markdown-mode
+                    undo-tree
                     full-ack
                     deft
                     marmalade))
