@@ -60,7 +60,7 @@
 (setq css-indent-offset 2)
 
 (setq deft-directory "~/Dropbox/Notes/")
-(setq deft-text-mode 'markdown-mode)
+(setq deft-text-mode 'org-mode)
 
 (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
 
