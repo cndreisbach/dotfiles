@@ -645,7 +645,7 @@ prompt_command_function() {
         eval "${cwd_cmd/\\/cwd=\\\\}"
 
         # PS1="$colors_reset$rc$head_local$color_who_where$dir_color$cwd$tail_local$dir_color [\$(~/.rvm/bin/rvm-prompt i v g)]\n$prompt_char $colors_reset"
-        PS1="$colors_reset$rc$head_local$color_who_where$dir_color$cwd$tail_local$dir_color [\$(~/.rbenv/bin/rbenv version | cut -d ' ' -f 1)] (\$(git_user_initials))\n$prompt_char $colors_reset"
+        PS1="$colors_reset$rc$head_local$color_who_where$dir_color$cwd$tail_local$dir_color [\$(rbenv version | cut -d ' ' -f 1)] (\$(git_user_initials))\n$prompt_char $colors_reset"
 
         unset head_local tail_local pwd
  }
