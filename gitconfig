@@ -29,7 +29,7 @@
   up = !git fetch origin && git rebase origin/master  
   who = shortlog -n -s --no-merges
 [core]
-  excludesfile = "/home/crnixon/.gitignore"
+  excludesfile = "/Users/crnixon/.gitignore"
   pager = less
 [color]
   ui = auto

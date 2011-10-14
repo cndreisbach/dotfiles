@@ -3,9 +3,9 @@ export MY_EMAIL='crnixon@crnixon.com'
 export MY_GITHUB_LOGIN='crnixon'
 export MY_ORG='CRNixon Development'
 
-export PATH=~/bin:./bin:~/.rbenv/bin:~/.rbenv/shims:~/.local/bin:~/.cljr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/games
+export PATH=~/bin:./bin:~/.local/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/games
 export CDPATH=.:~/Projects
-export EDITOR='emacsclient -t'
+export EDITOR='emacs'
 export ALTERNATE_EDITOR='mg'
 export PAGER=most
 export CLICOLOR=1
