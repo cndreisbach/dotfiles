@@ -10,4 +10,3 @@ for file in $(ls ~/.bash); do
   . ~/.bash/$file
 done
 
-source ~/perl5/perlbrew/etc/bashrc
