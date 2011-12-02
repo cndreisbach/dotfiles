@@ -1,5 +1,7 @@
-ActiveRecord::Base.logger     = Logger.new STDOUT
-ActiveRecord::Base.clear_reloadable_connections!
+if defined?(ActiveRecord)
+  ActiveRecord::Base.logger     = Logger.new STDOUT
+  ActiveRecord::Base.clear_reloadable_connections!
+end
 ActionController::Base.logger = Logger.new STDOUT
 
 include Rails.application.routes.url_helpers
