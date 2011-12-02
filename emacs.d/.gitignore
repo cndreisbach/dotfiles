@@ -2,6 +2,7 @@ abbrev_defs
 elpa
 places
 session*
+eshell
 .backup
 .smex-items
 *.elc

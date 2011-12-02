@@ -20,7 +20,7 @@ alias p='pushd'
 alias q="echo 'nothing set for q'"
 alias r='rake'
 alias s='sudo'
-alias t='todo.pl'
+alias t='tmux_it'
 alias u="sudo aptitude update"
 alias v="vim"
 alias w='which'
@@ -29,7 +29,7 @@ alias y="echo 'no alias for y'"
 alias z="echo 'no alias for z'"
 
 # More
-alias ge='emacsclient -c'
+alias emacs='emacs -nw'
 alias gr="grep -r"
 alias ll="ls -laFh"
 alias \?="history | grep $1"
