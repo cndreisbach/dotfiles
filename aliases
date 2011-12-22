@@ -23,7 +23,6 @@ alias s='sudo'
 alias t='tmux_it'
 alias u="sudo aptitude update"
 alias v="vim"
-alias w='which'
 alias x='xargs'
 alias y="echo 'no alias for y'"
 alias z="echo 'no alias for z'"
@@ -39,7 +38,6 @@ alias .e="$EDITOR ~/dotfiles/env && source ~/dotfiles/env"
 alias reload="source ~/.env && source ~/.aliases"
 alias ducks="du -cks * | sort -rn | head -11"
 alias vi='vim'
-alias ack='ack-grep'
 alias sap='sudo aptitude'
 alias hm='todo.pl'
 alias irb="pry"
@@ -51,6 +49,7 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmlogs="find . -name '*.log' | xargs rm"
 
 # Git
+alias git='hub'
 alias ga='git add'
 alias gb='git branch'
 alias gaa='git add --all'
@@ -68,6 +67,7 @@ alias rg="./script/rails generate"
 alias ss="./script/server"
 alias sc="./script/console"
 alias sg="./script/generate"
+alias rrr="touch tmp/restart.txt"
 
 # Bundler
 alias bi="bundle install --path vendor --binstubs"
