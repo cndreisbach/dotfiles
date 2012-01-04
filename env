@@ -10,10 +10,6 @@ export ALTERNATE_EDITOR='mg'
 export PAGER=most
 export CLICOLOR=1
 
-export GOROOT=~/go
-export GOPATH=$GOROOT
-export PATH=$GOROOT/bin:$PATH
-
 export PERL_CPANM_OPT="--local-lib=~/.perl5"
 export PERL5LIB="/home/crnixon/.perl5/lib/perl5"
 
