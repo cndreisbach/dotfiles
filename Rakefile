@@ -3,7 +3,7 @@ def here(*paths)
 end
 
 def dotfiles
-  Dir[here('*')].map { |path| File.basename(path) }.reject { |path| path == "Rakefile" or path =~ /^README/ }
+  Dir[here('*')].map { |path| File.basename(path) }.reject { |path| path == "Rakefile" or path =~ /^README/ or path =~ /~$/ }
 end
 
 def run(cmd)
@@ -33,4 +33,3 @@ task :clean do
   end
 end
 
-  
