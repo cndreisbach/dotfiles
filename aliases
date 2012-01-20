@@ -25,7 +25,6 @@ alias u="sudo aptitude update"
 alias v="vim"
 alias x='xargs'
 alias y="echo 'no alias for y'"
-alias z="echo 'no alias for z'"
 
 # More
 alias emacs='emacs -nw'
