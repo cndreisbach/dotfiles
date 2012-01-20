@@ -1,20 +1,17 @@
 export MY_NAME='Clinton R. Nixon'
-export MY_EMAIL='crnixon@crnixon.com'
+export MY_EMAIL='crnixon@gmail.com'
 export MY_GITHUB_LOGIN='crnixon'
-export MY_ORG='CRNixon Development'
 
 export PATH=~/bin:./bin:~/.local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/games
 export CDPATH=.:~/Projects
 export EDITOR='emacs -nw'
 export ALTERNATE_EDITOR='mg'
 export PAGER=most
-export CLICOLOR=1
 
 export PERL_CPANM_OPT="--local-lib=~/.perl5"
 export PERL5LIB="/home/crnixon/.perl5/lib/perl5"
 
 export JAVA_OPTS="-Dfile.encoding=UTF-8"
-export SBT_OPTS="-Dfile.encoding=UTF-8"
 
 export CHOST="x86_64-pc-linux-gnu"
 export CFLAGS="-march=core2 -O2 -pipe"
