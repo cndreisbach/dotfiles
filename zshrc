@@ -14,9 +14,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
-# Say how long a command took, if it took more than 30 seconds
-export REPORTTIME=30
-
 # Prompts for confirmation after 'rm *' etc
 # Helps avoid mistakes like 'rm * o' when 'rm *.o' was intended
 setopt RM_STAR_WAIT
@@ -27,10 +24,18 @@ setopt AUTO_CONTINUE
 # Don’t write over existing files with >, use >! instead
 setopt NOCLOBBER
 
+# Always pushd when changing directory
+setopt auto_pushd
+
 # Completion
 zstyle :compinstall filename '/Users/crnixon/.zshrc'
 autoload -Uz compinit
 compinit
+
+# Fuzzy matching of completions for when you mistype them:
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # Initialize colors.
 autoload -U colors
