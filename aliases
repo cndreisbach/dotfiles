@@ -42,6 +42,7 @@ alias hm='todo.pl'
 alias irb="pry"
 alias clj="rlwrap java -cp ~/.local/src/clojure-1.2.1/clojure.jar clojure.main"
 alias rr="rbenv rehash"
+alias mkdir="mkdir -p"
 
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
