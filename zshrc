@@ -57,7 +57,7 @@ chpwd_functions+='chpwd_update_git_vars'
 PS1=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 RPS1='$(rbenv_version)'
 
-source ~/.aliases
 source ~/.env
+source ~/.aliases
 source ~/.zsh/z.sh
 eval "$(rbenv init -)"
