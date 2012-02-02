@@ -69,9 +69,10 @@ alias sg="./script/generate"
 alias rrr="touch tmp/restart.txt"
 
 # Bundler
-alias bi="bundle install --path vendor --binstubs"
+alias bi="bundle install"
+alias bif="bundle install --path vendor --binstubs"
 alias bp="bundle package"
 alias bu="bundle update"
 alias be="bundle exec"
 alias bo="bundle open"
-alias binit="bi && bundle package && echo 'vendor/ruby' >> .gitignore"
+alias binit="bif && bundle package && echo 'vendor/ruby' >> .gitignore"
