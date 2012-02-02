@@ -49,7 +49,6 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmlogs="find . -name '*.log' | xargs rm"
 
 # Git
-alias git='hub'
 alias ga='git add'
 alias gb='git branch'
 alias gaa='git add --all'
