@@ -1,8 +1,6 @@
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 
-export SHELL=zsh
-
 # History
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 export HISTSIZE=25000
@@ -64,5 +62,8 @@ RPS1='$(rbenv_version)'
 
 source ~/.env
 source ~/.aliases
+
+export SHELL=`which zsh`
+
 source ~/.zsh/z.sh
 eval "$(rbenv init -)"
