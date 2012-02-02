@@ -6,6 +6,7 @@ export PATH=~/bin:./bin:~/.local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local/bin:
 export CDPATH=.:~/Projects
 export EDITOR='vim'
 export PAGER=most
+export STOW_DIR=~/.local/stow
 
 export PERL_CPANM_OPT="--local-lib=~/.perl5"
 export PERL5LIB="/home/crnixon/.perl5/lib/perl5"
