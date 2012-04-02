@@ -15,11 +15,13 @@ Bundle "msanders/snipmate.vim"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-surround"
 Bundle "yankstack"
+Bundle "mattn/zencoding-vim"
 
 " Ctrl-P
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
 Bundle "kien/ctrlp.vim"
+map <C-b> :CtrlPBuffer<cr>
 
 " Commenting
 Bundle "tomtom/tcomment_vim"
@@ -52,6 +54,7 @@ Bundle "pangloss/vim-javascript"
 Bundle "briancollins/vim-jst"
 Bundle "tpope/vim-haml"
 Bundle "kchmck/vim-coffee-script"
+Bundle "jade.vim"
 Bundle "asciidoc.vim"
 Bundle "Markdown"
 

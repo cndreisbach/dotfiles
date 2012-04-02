@@ -39,10 +39,10 @@ alias ducks="du -cks * | sort -rn | head -11"
 alias vi='vim'
 alias sap='sudo aptitude'
 alias hm='todo.pl'
-alias irb="pry"
 alias clj="rlwrap java -cp ~/.local/src/clojure-1.2.1/clojure.jar clojure.main"
 alias rr="rbenv rehash"
 alias mkdir="mkdir -p"
+alias rake="noglob rake"
 
 # Cleanup
 alias rmorig="find . -name '*.orig' | xargs rm"
