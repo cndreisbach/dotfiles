@@ -65,5 +65,6 @@ source ~/.aliases
 
 export SHELL=`which zsh`
 
-source ~/.zsh/z.sh
+OPATH=$PATH
 eval "$(rbenv init -)"
+export PATH=$OPATH
