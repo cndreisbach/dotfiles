@@ -20,7 +20,7 @@ alias p='pushd'
 alias q="echo 'nothing set for q'"
 alias r='rake'
 alias s='sudo'
-alias t='tmux_it'
+alias t="echo 'nothing set for t'"
 alias u="sudo aptitude update"
 alias v="vim"
 alias x='xargs'
@@ -58,6 +58,7 @@ alias gca='git commit --amend -C HEAD'
 alias gst='git status'
 alias gs='git status'
 alias gpp='git pp'
+alias glog="git log --graph"
 
 # Rails
 alias rs="./script/rails server"

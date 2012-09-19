@@ -17,6 +17,10 @@ Bundle "tpope/vim-surround"
 Bundle "yankstack"
 Bundle "mattn/zencoding-vim"
 
+" ack.vim
+Bundle "mileszs/ack.vim"
+let g:ackprg="ack -i -H --nocolor --nogroup --column"
+
 " Ctrl-P
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
@@ -202,6 +206,6 @@ if (has("gui_running"))
     set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}  " working directory
   endif
 
-  set background=dark
+  set background=light
   colorscheme solarized
 endif

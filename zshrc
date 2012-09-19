@@ -44,6 +44,7 @@ setopt PROMPT_SUBST
  
 # Autoload zsh functions.
 fpath=(~/.zsh/functions $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
  
 # Enable auto-execution of functions.

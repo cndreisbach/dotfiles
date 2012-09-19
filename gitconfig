@@ -1,6 +1,6 @@
 [user]
 	email = crnixon@gmail.com
-	name = Clinton R. Nixon
+	name = Clinton N. Dreisbach
 	initials = cn
 [github]
   user = crnixon
@@ -20,26 +20,22 @@
   dic = diff --cached
   done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
   ir = !git rebase -i origin/master
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  rmb = !sh -c 'git branch -D $1 && git push origin :$1' -
   st = status
   sta = stash
   undo = reset --hard
   up = !git fetch origin && git rebase origin/master
   who = shortlog -n -s --no-merges
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
 [core]
   excludesfile = "/Users/crnixon/.gitignore"
   pager = less
 [color]
   ui = auto
+[format]
+  # git log uses --pretty format by default, so this changes the default
+  # format
+  # Now log uses --pretty by default
+  # 4436819 [23 hours ago] (Gabe Berke-Williams) One line prompt
+  pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
 [apply]
   whitespace = warn
 [help]
@@ -51,3 +47,10 @@
   autosetuprebase = remote
 [credential]
 	helper = osxkeychain
+[url "git://github.com/"]
+  insteadOf = gh:
+[url "git@github.com:"]
+  # Write access
+  insteadOf = wgh:
+[url "git@heroku.com:"]
+  insteadOf = heroku:
