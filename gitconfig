@@ -30,6 +30,10 @@
   pager = less
 [color]
   ui = auto
+  diff = auto
+[color "diff"]
+  old = red reverse
+  new = green reverse
 [format]
   # git log uses --pretty format by default, so this changes the default
   # format
@@ -54,3 +58,9 @@
   insteadOf = wgh:
 [url "git@heroku.com:"]
   insteadOf = heroku:
+[rerere]
+	enabled = true
+[advice]
+	statusHints = false
+[diff]
+	renames = copies

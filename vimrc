@@ -8,7 +8,6 @@ Bundle "gmarik/vundle"
 
 " Utilities
 Bundle "IndentAnything"
-Bundle "AutoTag"
 Bundle "airblade/vim-rooter"
 Bundle "ervandew/supertab"
 Bundle "msanders/snipmate.vim"

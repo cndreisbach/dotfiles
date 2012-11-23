@@ -14,7 +14,7 @@ mkmf.log
 *.swp
 *.swo
 *.sql.bz2
-.rvmrc
+*.pyc
 config/query_reviewer.yml
 vendor/plugins/query_reviewer/
 .tmtags

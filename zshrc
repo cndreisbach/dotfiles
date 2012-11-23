@@ -69,3 +69,5 @@ export SHELL=`which zsh`
 OPATH=$PATH
 eval "$(rbenv init -)"
 export PATH=$OPATH
+
+source /usr/local/share/python/virtualenvwrapper.sh
