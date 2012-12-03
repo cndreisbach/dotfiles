@@ -2,7 +2,7 @@ export MY_NAME='Clinton N. Dreisbach'
 export MY_EMAIL='clinton@dreisbach.us'
 export MY_GITHUB_LOGIN='crnixon'
 
-export PATH=~/.rbenv/shims:~/bin:./bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=~/.rbenv/shims:~/bin:./bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin/:/usr/bin:/bin:/usr/sbin:/sbin
 export CDPATH=.:~/Projects
 export EDITOR='vim'
 export PAGER=most
