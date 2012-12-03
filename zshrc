@@ -38,27 +38,33 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 # Initialize colors.
 autoload -U colors
 colors
- 
+
+# VCS info
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*:*' get-revision true
+zstyle ':vcs_info:git*:*' check-for-changes true
+zstyle ':vcs_info:git*' formats "(%s/%b%m) %6.6i %c%u"
+zstyle ':vcs_info:git*' actionformats "(%s/%b%m|%a) %6.6i %c%u"
+
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
- 
+
 # Autoload zsh functions.
 fpath=(~/.zsh/functions $fpath)
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
- 
+
 # Enable auto-execution of functions.
 typeset -ga preexec_functions
 typeset -ga precmd_functions
 typeset -ga chpwd_functions
- 
+
 # Append git functions needed for prompt.
-preexec_functions+='preexec_update_git_vars'
-precmd_functions+='precmd_update_git_vars'
-chpwd_functions+='chpwd_update_git_vars'
- 
+precmd_functions+='precmd_vcs_info'
+
 # Set the prompt.
-PS1=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
+PS1=$'%{${fg[cyan]}%}%B%~%b ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
 RPS1='$(rbenv_version)'
 
 source ~/.env
