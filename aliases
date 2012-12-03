@@ -27,7 +27,8 @@ alias x='xargs'
 alias y="echo 'no alias for y'"
 
 # More
-alias socks='ssh -vND 9999 server1.crnixon.org'
+#alias socks='ssh -vND 9999 server1.crnixon.org'
+alias socks='autossh -M 20000 -vND 9999 server1.crnixon.org'
 alias emacs='emacs -nw'
 alias gr="grep -r"
 alias ll="ls -laFh"
