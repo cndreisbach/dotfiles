@@ -1,29 +1,23 @@
 [user]
-	email = crnixon@gmail.com
-	name = Clinton N. Dreisbach
-	initials = cn
+  email = crnixon@gmail.com
+  name = Clinton N. Dreisbach
+  initials = cnd
 [github]
   user = crnixon
-  token = 00aa78a17ed69048edaa80b8e62bba60
 [alias]
   aa = add --all
   ap = add --patch
   br = branch
   ca = commit --amend -C HEAD
   ci = commit
-  cm = commit -m
   cleanup = !git remote prune origin && git gc && git stash clear
   co = checkout
   cob = checkout -b
-  deploy = !git push && cap deploy
   di = diff
   dic = diff --cached
-  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
-  ir = !git rebase -i origin/master
   st = status
   sta = stash
   undo = reset --hard
-  up = !git fetch origin && git rebase origin/master
   who = shortlog -n -s --no-merges
 [core]
   excludesfile = "/Users/crnixon/.gitignore"
@@ -35,9 +29,6 @@
   old = red reverse
   new = green reverse
 [format]
-  # git log uses --pretty format by default, so this changes the default
-  # format
-  # Now log uses --pretty by default
   # 4436819 [23 hours ago] (Gabe Berke-Williams) One line prompt
   pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
 [apply]
@@ -50,7 +41,7 @@
   autosetupmerge = true
   autosetuprebase = remote
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [url "git://github.com/"]
   insteadOf = gh:
 [url "git@github.com:"]
@@ -59,8 +50,8 @@
 [url "git@heroku.com:"]
   insteadOf = heroku:
 [rerere]
-	enabled = true
+  enabled = true
 [advice]
-	statusHints = false
+  statusHints = false
 [diff]
-	renames = copies
+  renames = copies
