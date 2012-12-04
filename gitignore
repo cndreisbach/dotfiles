@@ -22,3 +22,4 @@ tags
 TAGS
 public/bundles
 vendor/ruby
+.venv

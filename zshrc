@@ -62,6 +62,7 @@ typeset -ga chpwd_functions
 
 # Append git functions needed for prompt.
 precmd_functions+='precmd_vcs_info'
+chpwd_functions+='ch_venv'
 
 # Set the prompt.
 PS1=$'%{${fg[cyan]}%}%B%~%b ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
@@ -77,3 +78,4 @@ eval "$(rbenv init -)"
 export PATH=$OPATH
 
 source /usr/local/share/python/virtualenvwrapper.sh
+ch_venv
