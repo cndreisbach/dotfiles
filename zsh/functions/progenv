@@ -1,0 +1,11 @@
+progenv() {
+
+    if [[ -n $VIRTUAL_ENV ]]; then
+        echo -n "[py: $(basename $VIRTUAL_ENV)] "
+    else
+        echo -n "[py: system] "
+    fi
+
+    echo "[rb: $(rbenv_version)]"
+}
+

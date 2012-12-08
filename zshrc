@@ -65,8 +65,11 @@ precmd_functions+='precmd_vcs_info'
 chpwd_functions+='ch_venv'
 
 # Set the prompt.
-PS1=$'%{${fg[cyan]}%}%B%~%b ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
-RPS1='$(rbenv_version)'
+PS1=$'%{${fg[cyan]}%}%B%~%b $(progenv) ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
+function last_command() {
+  echo `history -1 | cut -d ' ' -f 3-20 | realiaser`
+}
+RPROMPT='%{$fg[$NCOLOR]%}%p $(last_command)%{$reset_color%}'
 
 source ~/.env
 source ~/.aliases
