@@ -10,6 +10,7 @@ esac
 export CDPATH=.:~/Projects
 export EDITOR='vim'
 export PAGER=most
+export PROJECT_HOME=~/Projects
 
 # Perl
 export PERL_CPANM_OPT="--local-lib=~/.perl5"
@@ -20,7 +21,9 @@ export JAVA_OPTS="-Dfile.encoding=UTF-8"
 
 # Python/virtualenv
 export WORKON_HOME=~/.virtualenv
-export PROJECT_HOME=~/Projects
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export VIRTUALENV_USE_DISTRIBUTE=1
+export PIP_RESPECT_VIRTUALENV=true
 
 if [[ -e ~/.env.local ]]; then
   source ~/.env.local
