@@ -13,5 +13,8 @@ indent_size=4
 [*.rb]
 indent_size=2
 
+[Rakefile]
+indent_size=2
+
 [*.css]
 indent_size=2
