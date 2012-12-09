@@ -66,10 +66,10 @@ chpwd_functions+='ch_venv'
 
 # Set the prompt.
 PS1=$'%{${fg[cyan]}%}%B%~%b $(progenv) ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
-function last_command() {
-  echo `history -1 | cut -d ' ' -f 3-20 | realiaser`
-}
-RPROMPT='%{$fg[$NCOLOR]%}%p $(last_command)%{$reset_color%}'
+# function last_command() {
+#   echo `history -1 | cut -d ' ' -f 3-20 | realiaser`
+# }
+# RPROMPT='%{$fg[$NCOLOR]%}%p $(last_command)%{$reset_color%}'
 
 if [ -f ~/.env ]; then
   . ~/.env
@@ -85,5 +85,5 @@ OPATH=$PATH
 eval "$(rbenv init -)"
 export PATH=$OPATH
 
-source /usr/local/share/python/virtualenvwrapper.sh
+source $(which virtualenvwrapper.sh)
 ch_venv
