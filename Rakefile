@@ -3,7 +3,15 @@ def here(*paths)
 end
 
 def dotfiles
-  Dir[here('*')].map { |path| File.basename(path) }.reject { |path| path == "Rakefile" or path =~ /^README/ or path =~ /~$/ }
+  Dir[here('*')].map { |path|
+    File.basename(path)
+  }.reject { |path|
+    path == "Rakefile" or path =~ /^README/ or path == "bin"
+  }
+end
+
+def binfiles
+  Dir[here('bin', '*')].map { |path| File.basename(path) }
 end
 
 def run(cmd)
@@ -11,7 +19,7 @@ def run(cmd)
   system cmd
 end
 
-task :default => :dotfiles
+task :default => [:dotfiles, :binfiles]
 
 desc "Symlinks all my dotfiles"
 task :dotfiles do
@@ -19,6 +27,15 @@ task :dotfiles do
     link = File.expand_path("~/.#{dotfile}")
     unless File.exists?(link)
       run %Q{ln -s "#{here(dotfile)}" "#{link}"}
+    end
+  end
+end
+
+task :binfiles do
+  binfiles.each do |binfile|
+    link = File.expand_path("~/bin/#{binfile}")
+    unless File.exists?(link)
+      run %Q{ln -s "#{here('bin', binfile)}" "#{link}"}
     end
   end
 end
