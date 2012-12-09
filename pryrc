@@ -4,4 +4,7 @@ Pry.prompt = [
   proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }
 ]
 
-load File.dirname(__FILE__) + '/.railsrc' if defined?(Rails) && Rails.env
+if defined?(Rails) && Rails.env
+  railsrc = File.dirname(__FILE__) + '/.railsrc'
+  load railsrc if File.exists?(railsrc)
+end
