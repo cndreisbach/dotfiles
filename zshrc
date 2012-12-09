@@ -26,7 +26,7 @@ setopt NOCLOBBER
 setopt auto_pushd
 
 # Completion
-zstyle :compinstall filename '/Users/crnixon/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 
@@ -71,8 +71,13 @@ function last_command() {
 }
 RPROMPT='%{$fg[$NCOLOR]%}%p $(last_command)%{$reset_color%}'
 
-source ~/.env
-source ~/.aliases
+if [ -f ~/.env ]; then
+  . ~/.env
+fi
+
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
 
 export SHELL=`which zsh`
 
