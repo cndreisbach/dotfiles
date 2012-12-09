@@ -23,6 +23,7 @@ alias s='sudo'
 alias t="echo 'nothing set for t'"
 alias u="sudo aptitude update"
 alias v="vim"
+alias w='which'
 alias x='xargs'
 alias y="echo 'no alias for y'"
 alias z="echo 'no alias for z'"
@@ -53,9 +54,9 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 
 # Git
 alias ga='git add'
+alias gb='git branch'
 alias gaa='git add --all'
 alias gap='git add --patch'
-alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend -C HEAD'
 alias glog="git log --graph"

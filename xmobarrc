@@ -1,0 +1,16 @@
+Config { font = "xft:Ubuntu Mono:size=12:normal:antialias=true",
+         bgColor = "#000000",
+         fgColor = "grey",
+         position = Bottom,
+         lowerOnStart = False,
+         commands = [
+           Run MultiCpu ["-t", "CPU: <total0> <total1>", "-L", "2", "-H", "50", "--normal", "green", "--high" , "red"] 10,
+           Run Network "eth0" ["-L", "0", "-H", "70", "--normal", "green", "--high", "red"] 10,
+           Run Memory ["-t", "Mem: <usedratio>%"] 10,
+           Run BatteryP ["BAT1"] ["-t", "Batt: <leftbar>"] 600,
+           Run StdinReader
+         ],
+         sepChar = "%",
+         alignSep = "}{",
+         template = "%StdinReader%}{ %multicpu% %memory% %battery% " 
+
