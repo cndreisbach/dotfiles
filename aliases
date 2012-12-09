@@ -25,45 +25,48 @@ alias u="sudo aptitude update"
 alias v="vim"
 alias x='xargs'
 alias y="echo 'no alias for y'"
+alias z="echo 'no alias for z'"
 
 # More
-alias socks='autossh -M 20000 -vND 9999 server1.crnixon.org'
-alias emacs='emacs -nw'
-alias gr="grep -r"
-alias ll="ls -laFh"
-alias \?="history | grep $1"
-alias ps\?="ps ax | grep $1"
 alias .a="$EDITOR ~/dotfiles/aliases && source ~/dotfiles/aliases"
 alias .e="$EDITOR ~/dotfiles/env && source ~/dotfiles/env"
-alias reload="source ~/.env && source ~/.aliases"
+alias \?="history | grep $1"
 alias ducks="du -cks * | sort -rn | head -11"
-alias vi='vim'
+alias emacs='emacs -nw'
+alias gr="grep -r"
 alias hm='todo.pl'
-alias clj="rlwrap java -cp ~/.local/src/clojure-1.2.1/clojure.jar clojure.main"
-alias rr="rbenv rehash"
-alias mkdir="mkdir -p"
+alias k9='kill -9'
+alias ll="ls -laFh"
+alias mkdir="mkdir -pv"
+alias ps\?="ps ax | grep $1"
 alias rake="noglob rake"
+alias reload="source ~/.env && source ~/.aliases"
+alias rr="rbenv rehash"
+alias root='sudo -i'
+alias socks='autossh -M 20000 -vND 9999 server1.crnixon.org'
+alias su='sudo su -'
+alias vi='vim'
 
 # Cleanup
-alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmlogs="find . -name '*.log' | xargs rm"
+alias rmorig="find . -name '*.orig' | xargs rm"
 
 # Git
 alias ga='git add'
-alias gb='git branch'
 alias gaa='git add --all'
 alias gap='git add --patch'
+alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend -C HEAD'
-alias gst='git status'
-alias gs='git status'
-alias gpp='git pp'
 alias glog="git log --graph"
+alias gpp='git pp'
+alias gs='git status'
+alias gst='git status'
 
 # Rails
-alias rs="./script/rails server"
 alias rc="./script/rails console"
 alias rg="./script/rails generate"
+alias rs="./script/rails server"
 alias rrr="touch tmp/restart.txt"
 
 # Bundler

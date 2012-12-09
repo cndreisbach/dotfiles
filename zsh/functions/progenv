@@ -1,5 +1,4 @@
 progenv() {
-
     if [[ -n $VIRTUAL_ENV ]]; then
         echo -n "[py: $(basename $VIRTUAL_ENV)] "
     else
