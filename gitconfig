@@ -20,7 +20,7 @@
   undo = reset --hard
   who = shortlog -n -s --no-merges
 [core]
-  excludesfile = "/Users/crnixon/.gitignore"
+  excludesfile = "~/.gitignore"
   pager = less
 [color]
   ui = auto
