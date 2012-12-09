@@ -4,4 +4,9 @@ These are my dotfiles - that is, my configuration files for most Unix things tha
 
 These files were made to work on a laptop running OS X 10.7. They're not guaranteed to work anywhere else, but most will likely be fine in any Unix environment.
 
-Thanks for checking them out! - Clinton R. Nixon
+Thanks for checking them out! - Clinton N. Dreisbach
+
+
+## TODO
+
+* Make these OS-independent, using uname and case where needed.
