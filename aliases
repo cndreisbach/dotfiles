@@ -48,6 +48,11 @@ alias socks='autossh -M 20000 -vND 9999 server1.crnixon.org'
 alias su='sudo su -'
 alias vi='vim'
 
+if [[ $(uname) == 'Linux' ]]; then
+  alias sap='sudo aptitude'
+  alias open='gnome-open'
+fi
+
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"
 alias rmorig="find . -name '*.orig' | xargs rm"

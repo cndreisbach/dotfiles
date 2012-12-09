@@ -146,7 +146,7 @@ set wrapmargin=0
 nnoremap ; :
 
 " Make it easy to paste without autoindent
-set pastetoggle=<F2> 
+set pastetoggle=<F2>
 
 " Movement keys
 nnoremap j gj
@@ -156,7 +156,7 @@ nnoremap k gk
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-              
+
 map <S-Enter> O<ESC>
 map <Enter> o<ESC>
 
@@ -194,7 +194,10 @@ if (has("gui_running"))
   set guioptions-=T               " Hide toolbar.
   set guioptions-=rL              " Hide right scrollbar.
   set guioptions-=m               " Don't show menu.
-  set guifont=Monaco:h14
+  set guifont=Ubuntu\ Mono\ 12
+  if has("gui_macvim")
+    set guifont=Monaco:h14
+  endif
 
   " Nice title
   if has('title') && (has('gui_running') || &title)
