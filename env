@@ -1,28 +1,22 @@
 export MY_NAME='Clinton N. Dreisbach'
 export MY_EMAIL='clinton@dreisbach.us'
-export MY_GITHUB_LOGIN='crnixon'
 
 export PATH=~/.rbenv/shims:~/bin:./bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin/:/usr/bin:/bin:/usr/sbin:/sbin
 export CDPATH=.:~/Projects
 export EDITOR='vim'
 export PAGER=most
 
+# Perl
 export PERL_CPANM_OPT="--local-lib=~/.perl5"
-export PERL5LIB="/home/crnixon/.perl5/lib/perl5"
+export PERL5LIB="~/.perl5/lib/perl5"
 
+# Java
 export JAVA_OPTS="-Dfile.encoding=UTF-8"
 
-export CHOST="x86_64-pc-linux-gnu"
-export CFLAGS="-march=core2 -O2 -pipe"
-export CXXFLAGS="${CFLAGS}"
-
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
-
-export NODE_PATH=/usr/local/lib/node_modules
-
+# Python/virtualenv
 export WORKON_HOME=~/.virtualenv
 export PROJECT_HOME=~/Projects
+
+if [[ -e ~/.env.local ]]; then
+  source ~/.env.local
+fi
