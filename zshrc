@@ -65,8 +65,8 @@ precmd_functions+='precmd_vcs_info'
 chpwd_functions+='ch_venv'
 
 # Set the prompt.
-PS1=$'%{${fg[cyan]}%}%B%~%b $(progenv) ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
-RPROMPT='%{${fg[default]}%}$(date "+%H:%M")%{${reset_color}%}'
+PS1=$'%{${fg[cyan]}%}%B%~%b ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
+RPROMPT='%{${fg[default]}%}$(progenv)%{${reset_color}%}'
 
 if [ -f ~/.env ]; then
   . ~/.env
