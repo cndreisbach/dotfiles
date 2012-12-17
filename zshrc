@@ -62,6 +62,7 @@ typeset -ga chpwd_functions
 
 # Append git functions needed for prompt.
 precmd_functions+='precmd_vcs_info'
+precmd_functions+='set_titlebar'
 chpwd_functions+='ch_venv'
 
 # Set the prompt.
