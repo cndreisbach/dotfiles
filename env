@@ -5,7 +5,7 @@ case $(uname) in
   "Linux")
     export PATH=./bin:~/bin:~/local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/games;;
   "Darwin")
-    export PATH=./bin:~/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin/:/usr/bin:/bin:/usr/sbin:/sbin;;
+    export PATH=./bin:~/bin:~/local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:/usr/local/share/npm/bin/:/usr/bin:/bin:/usr/sbin:/sbin;;
 esac
 export CDPATH=.:~/Projects
 export EDITOR='vim'
