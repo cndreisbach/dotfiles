@@ -69,6 +69,7 @@ alias glog="git log --graph"
 alias gpp='git pp'
 alias gs='git status'
 alias gst='git status'
+alias annex='git annex'
 
 # Rails
 alias rc="./script/rails console"
