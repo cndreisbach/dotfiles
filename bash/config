@@ -6,4 +6,13 @@ export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit:quit:bg:fg"
 
 ### PROMPT
-export PS1="\u@\h \w\$ "
+export PS1="\w \$ "
+
+case $TERM in
+  xterm*)
+    PS1="\[\033]0;\w\007\]\w \$ "
+    ;;
+  *)
+    PS1="bash\$ "
+    ;;
+esac

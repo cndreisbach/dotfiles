@@ -55,3 +55,7 @@
   statusHints = false
 [diff]
   renames = copies
+[hub]
+	host = github.cfpb.org
+[github "github.cfpb.org"]
+	user = cndreisbach

@@ -1,0 +1,1 @@
+source $(which virtualenvwrapper.sh)
