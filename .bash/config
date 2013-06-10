@@ -13,6 +13,6 @@ case $TERM in
     PS1="\[\033]0;\w\007\]\w \$ "
     ;;
   *)
-    PS1="bash\$ "
+    PS1="\w \$ "
     ;;
 esac
