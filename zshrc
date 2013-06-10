@@ -89,3 +89,6 @@ export PATH=$OPATH
 
 source $(which virtualenvwrapper.sh)
 ch_venv
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
