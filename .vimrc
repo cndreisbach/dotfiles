@@ -165,10 +165,10 @@ map <C-s> :w<cr>
 imap <C-s> <Esc>:w<cr>i
 
 " I like emacs
-map <C-a> 0
-imap <C-a> <Esc>0i
-map <C-e> $
-imap <C-e> <Esc>$a
+map <C-a>  <Home>
+map <C-e>  <End>
+map <C-d>  <Delete>
+inoremap <C-g>  <Esc>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e ~/.vimrc<CR>
@@ -188,15 +188,15 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
 " GUI stuff
 if (has("gui_running"))
   set guioptions-=T               " Hide toolbar.
   set guioptions-=rL              " Hide right scrollbar.
   set guioptions-=m               " Don't show menu.
-  set guifont=Ubuntu\ Mono\ 12
   if has("gui_macvim")
     set guifont=Monaco:h14
+  else
+    set guifont=Ubuntu\ Mono\ 12
   endif
 
   " Nice title
@@ -208,6 +208,6 @@ if (has("gui_running"))
     set titlestring+=\ -\ %{substitute(getcwd(),\ $HOME,\ '~',\ '')}  " working directory
   endif
 
-  set background=light
+  set background=dark
   colorscheme solarized
 endif

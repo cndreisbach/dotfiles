@@ -35,8 +35,8 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-if [[ $USER == 'cfpbuser' ]]; then
-  zstyle ':completion:*:*:git:*' script ~/local/etc/bash_completion.d/git-completion.bash
+if [[ $USER == 'dreisbachc' ]]; then
+  fpath=(/Users/dreisbachc/local/share/zsh-completions $fpath)
 fi
 
 # Initialize colors.
