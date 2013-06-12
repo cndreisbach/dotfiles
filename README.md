@@ -7,3 +7,7 @@ In order to link the actual `.whatever` files that live under my home directory 
 These files were made to work on OS X 10.7 and Ubuntu 13.04. They're not guaranteed to work anywhere else, but most will likely be fine in any Unix environment.
 
 Thanks for checking them out! - Clinton N. Dreisbach
+
+### ./bin/shtpl
+
+[`shtpl`](https://github.com/zstegi/shtpl) is a POSIX shell templating language.
