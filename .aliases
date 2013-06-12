@@ -10,7 +10,7 @@ alias f='find'
 alias g='grep'
 alias h="history"
 alias i='id'
-alias j="echo 'nothing set for j'"
+alias j="jobs"
 alias k='kill'
 alias l="ls -laFH"
 alias m='mkdir -p'
@@ -29,16 +29,16 @@ alias y="echo 'no alias for y'"
 alias z="echo 'no alias for z'"
 
 # More
-alias .a="$EDITOR ~/dotfiles/aliases && source ~/dotfiles/aliases"
-alias .e="$EDITOR ~/dotfiles/env && source ~/dotfiles/env"
+alias .a="$EDITOR ~/.aliases && source ~/.aliases"
+alias .e="$EDITOR ~/.env && source ~/.env"
 alias \?="history | grep $1"
-alias clozure='rlwrap ccl64'
+alias bell='tput bel'
 alias ducks="du -cks * | sort -rn | head -11"
-alias emacs='emacs -nw'
 alias gr="grep -r"
 alias hm='todo.pl'
 alias k9='kill -9'
 alias ll="ls -laFh"
+alias map="xargs -n1"
 alias mkdir="mkdir -pv"
 alias ps\?="ps ax | grep $1"
 alias rake="noglob rake"
@@ -49,11 +49,6 @@ alias sml='rlwrap sml'
 alias socks='autossh -M 20000 -vND 9999 server1.crnixon.org'
 alias su='sudo su -'
 alias vi='vim'
-
-if [[ $(uname) == 'Linux' ]]; then
-  alias sap='sudo aptitude'
-  alias open='gnome-open'
-fi
 
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"
@@ -73,12 +68,6 @@ alias gs='git status'
 alias gst='git status'
 alias annex='git annex'
 
-# Rails
-alias rc="./script/rails console"
-alias rg="./script/rails generate"
-alias rs="./script/rails server"
-alias rrr="touch tmp/restart.txt"
-
 # Bundler
 alias bi="bundle install"
 alias bif="bundle install --path vendor --binstubs"
@@ -87,3 +76,42 @@ alias bu="bundle update"
 alias be="bundle exec"
 alias bo="bundle open"
 alias binit="bif && bundle package && echo 'vendor/ruby' >> .gitignore"
+
+
+# Linux
+if [[ $(uname) == 'Linux' ]]; then
+    alias sap='sudo aptitude'
+    alias open='gnome-open'
+    alias update='sudo aptitude update'
+fi
+
+# OS X
+if [[ $(uname) == 'Darwin' ]]; then
+    # So used to typing this from Linux
+    alias sap='brew'
+
+    # Flush Directory Service cache
+    alias dnsflush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+    # Clean up LaunchServices to remove duplicates in the “Open With” menu
+    alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+    # Empty the Trash on all mounted volumes and the main HDD
+    # Also, clear Apple’s System Logs to improve shell startup speed
+    alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+    # Show/hide hidden files in Finder
+    alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+    alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+    # Hide/show all desktop icons (useful when presenting)
+    alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+    alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+    # Disable/enable Spotlight
+    alias spotoff="sudo mdutil -a -i off"
+    alias spoton="sudo mdutil -a -i on"
+
+    # Update Homebrew
+    alias update='brew update && echo "\n==> Outdated" && brew outdated'
+fi
