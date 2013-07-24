@@ -2,3 +2,5 @@ README.md  skip
 dfm        skip
 bin        recurse
 .lein      recurse
+setup.sh   exec
+setup.sh   skip
