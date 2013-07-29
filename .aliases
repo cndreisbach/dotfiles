@@ -81,6 +81,7 @@ alias binit="bif && bundle package && echo 'vendor/ruby' >> .gitignore"
 # Linux
 if [[ $(uname) == 'Linux' ]]; then
     alias sap='sudo aptitude'
+    alias q='sudo wajig'
     alias open='gnome-open'
     alias update='sudo aptitude update'
 fi
