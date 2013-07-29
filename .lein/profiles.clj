@@ -5,4 +5,5 @@
                   [lein-grep "0.1.0"]
                   [lein-bikeshed "0.1.3"]]
         :dependencies [[alembic "0.1.3"]
+                       [criterium "0.4.1"]
                        [org.clojure/tools.namespace "0.2.3"]]}}
