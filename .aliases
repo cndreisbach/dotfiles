@@ -36,6 +36,7 @@ alias bell='tput bel'
 alias ducks="du -cks * | sort -rn | head -11"
 alias gr="grep -r"
 alias hm='todo.pl'
+alias http='python -m SimpleHTTPServer'
 alias k9='kill -9'
 alias ll="ls -laFh"
 alias map="xargs -n1"
