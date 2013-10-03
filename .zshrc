@@ -65,12 +65,12 @@ typeset -ga precmd_functions
 typeset -ga chpwd_functions
 
 # Append git functions needed for prompt.
-precmd_functions+='precmd_vcs_info'
 precmd_functions+='set_titlebar'
 chpwd_functions+='ch_venv'
 
 # Set the prompt.
-PS1=$'%{${fg[cyan]}%}%B%~%b ${vcs_info_msg_0_}%{${fg[default]}%}\n$ '
+autoload -U promptinit && promptinit
+prompt pure
 RPROMPT='%{${fg[default]}%}$(progenv)%{${reset_color}%}'
 
 if [ -f ~/.env ]; then
@@ -89,6 +89,3 @@ export PATH=$OPATH
 
 source $(which virtualenvwrapper.sh)
 ch_venv
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
