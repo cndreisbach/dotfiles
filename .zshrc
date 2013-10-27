@@ -89,3 +89,7 @@ export PATH=$OPATH
 
 source $(which virtualenvwrapper.sh)
 ch_venv
+
+if [[ -e ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
