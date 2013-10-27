@@ -49,6 +49,7 @@ function timer_stop() {
 function prompt_command() {
   exit_status=$?
   timer_stop
+  time_display=""
   [[ $timer_show -ge "5" ]] && time_display=" ${timer_show}s"
   color=$PROMPTC
   [[ $exit_status -ne "0" ]] && color="$ERRORC$BOLD"
