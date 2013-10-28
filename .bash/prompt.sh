@@ -10,15 +10,13 @@ if tput setaf 1 &> /dev/null; then
   tput sgr0
   DIRC="tput setaf 6"
   GITC="tput setaf 7"
-  PROMPTC="tput setaf 6"
   ERRORC="tput setaf 1"
-  TIMERC="tput setaf 9"
+  TIMERC="tput setaf 3"
   BOLD="tput bold"
   RESET="tput sgr0"
 fi
 
 export DIRC
-export PROMPTC
 export ERRORC
 export TIMERC
 export GITC
@@ -48,12 +46,12 @@ function prompt_command() {
   timer_stop
 
   local time_display=""
-  local prompt_color=$($PROMPTC)
+  local error_msg=""
 
   [[ $timer_show -ge "5" ]] && time_display=" ${timer_show}s"
-  [[ $exit_status -ne "0" ]] && prompt_color="$($ERRORC)$($BOLD)"
+  [[ $exit_status -ne "0" ]] && error_msg=" $($ERRORC)${exit_status}"
 
-  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($TIMERC)${time_display}$($RESET)\n${prompt_color}\$$($RESET) "
+  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($TIMERC)${time_display}${error_msg}$($RESET)\n\$ "
 }
 
 trap 'timer_start' DEBUG
