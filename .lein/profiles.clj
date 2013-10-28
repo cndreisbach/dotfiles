@@ -1,10 +1,10 @@
 {:user {:plugins [[lein-kibit "0.0.8"]
-                  [jonase/eastwood "0.0.2"]
                   [lein-ancient "0.4.4"]
                   [lein-marginalia "0.7.1"]
                   [lein-grep "0.1.0"]
                   [lein-bikeshed "0.1.3"]
-                  [lein-try "0.3.0"]]
-        :dependencies [[alembic "0.1.3"]
-                       [criterium "0.4.1"]
-                       [org.clojure/tools.namespace "0.2.3"]]}}
+                  [lein-try "0.4.0"]
+                  [lein-catnip "0.5.1"]]
+        :dependencies [[alembic "0.2.0"]
+                       [criterium "0.4.2"]
+                       [org.clojure/tools.namespace "0.2.4"]]}}
