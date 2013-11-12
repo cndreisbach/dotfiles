@@ -41,6 +41,16 @@ function timer_stop() {
   unset timer
 }
 
+function set_title_bar() {
+  case "$TERM" in
+  xterm*|rxvt*)
+    echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"
+    ;;
+  *)
+    ;;
+  esac
+}
+
 function prompt_command() {
   local exit_status=$?
   timer_stop
@@ -52,10 +62,16 @@ function prompt_command() {
   [[ $exit_status -ne "0" ]] && error_msg=" $($ERRORC)${exit_status}"
 
   PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($TIMERC)${time_display}${error_msg}$($RESET)\n\$ "
+  set_title_bar
 }
-
-trap 'timer_start' DEBUG
 
 export PROMPT_COMMAND=prompt_command
 export PS2="- "
 export PS4="\$LINENO+ "
+
+function run_on_debug() {
+    timer_start
+}
+
+trap run_on_debug DEBUG
+
