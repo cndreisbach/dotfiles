@@ -18,3 +18,5 @@ tags
 TAGS
 .venv
 nohup.out
+.lein-repl-history
+.nrepl-port

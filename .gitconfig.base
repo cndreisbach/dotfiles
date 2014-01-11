@@ -24,7 +24,7 @@
   undo = reset --hard
   who = shortlog -n -s --no-merges
 [core]
-  excludesfile = "~/.gitignore"
+  excludesfile = "~/.gitignore.global"
   pager = less
 [color]
   ui = auto
