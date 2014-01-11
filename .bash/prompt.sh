@@ -32,6 +32,11 @@ function parse_git_branch() {
   [[ $git_branch != "" ]] && echo " $git_branch"
 }
 
+function parse_venv() {
+  local venv=$(basename $VIRTUAL_ENV 2> /dev/null)
+  [[ $venv != "" ]] && echo " (python:$venv)"
+}
+
 function timer_start() {
   timer=${timer:-$SECONDS}
 }
@@ -61,7 +66,7 @@ function prompt_command() {
   [[ $timer_show -ge "5" ]] && time_display=" ${timer_show}s"
   [[ $exit_status -ne "0" ]] && error_msg=" $($ERRORC)${exit_status}"
 
-  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($TIMERC)${time_display}${error_msg}$($RESET)\n\$ "
+  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($RESET)\$(parse_venv)$($TIMERC)${time_display}${error_msg}$($RESET)\n\$ "
   set_title_bar
 }
 
