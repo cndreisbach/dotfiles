@@ -17,7 +17,6 @@ alias m='mkdir -p'
 alias n='nano'
 alias o='popd'
 alias p='pushd'
-alias q="echo 'nothing set for q'"
 alias r='rake'
 alias s='sudo'
 alias t="echo 'nothing set for t'"
