@@ -14,3 +14,7 @@ if [[ -d "$lt_dir" && ! -e "$lt_dir/settings" ]]; then
 fi
 
 cd ~/dotfiles && git submodule update --init --quiet
+
+if [[ ! -e ~/bin/gherkin ]]; then
+  ln -s ~/dotfiles/lib/gherkin/gherkin ~/bin/gherkin
+fi

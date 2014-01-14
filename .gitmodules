@@ -1,3 +1,6 @@
 [submodule "lib/cd"]
 	path = lib/cd
 	url = https://github.com/spencertipping/cd.git
+[submodule "lib/gherkin"]
+	path = lib/gherkin
+	url = https://github.com/alandipert/gherkin.git
