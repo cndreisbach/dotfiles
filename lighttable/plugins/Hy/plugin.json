@@ -1,0 +1,10 @@
+{
+  "name": "Hy",
+  "author": "Clinton Dreisbach",
+  "version": "0.0.1",
+  "source": "https://github.com/cndreisbach/lighttable-hylang",
+  "desc": "Hy language plugin for Light Table",
+  "dependencies": {
+  },
+  "behaviors": "hy.behaviors"
+}

@@ -5,6 +5,7 @@ lib          skip
 .lein        recurse
 private.tc   skip
 private      skip
+lighttable   skip
 setup.sh     exec
 setup.sh     skip
 .gitmodules  skip
