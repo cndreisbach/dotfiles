@@ -11,6 +11,29 @@
 ;; want to do in between the square brackets (e.g. type "editor").
 
 {:+ {:app {}
-
      :editor {"alt-w" [:editor.watch.watch-selection]
-              "alt-shift-w" [:editor.watch.unwatch]}}}
+              "alt-shift-w" [:editor.watch.unwatch]
+              "cmd-;" [:toggle-comment-selection]
+              "cmd-d" [:editor.doc.toggle]
+              "ctrl-d" [:editor.delete-char-right]
+              "ctrl-k" [:editor.delete-line]
+              "ctrl-/" [:editor.select-line]
+
+              "cmd-`" [:workspace.show]
+              "ctrl-`" [:toggle-console]
+
+              "cmd-/" [:smart-indent-selection]
+
+              ;; paredit
+              "ctrl-shift-9" [:paredit.grow.left]
+              "ctrl-shift-0" [:paredit.grow.right]
+              "ctrl-shift-[" [:paredit.shrink.left]
+              "ctrl-shift-]" [:paredit.shrink.right]
+
+              "ctrl-shift-left" [:paredit.shrink.right]
+              "ctrl-shift-right" [:paredit.grow.right]
+
+              "ctrl-shift-'" [:paredit.unwrap.parent]
+
+              "ctrl-'" [:paredit.select.parent]
+              }}}
