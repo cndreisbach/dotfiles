@@ -4,7 +4,7 @@
                   [lein-grep "0.1.0"]
                   [lein-bikeshed "0.1.3"]
                   [lein-try "0.4.1"]
-                  [lein-catnip "0.5.1"]]
+                  [lein-pprint "1.1.1"]]
         :dependencies [[alembic "0.2.0"]
                        [criterium "0.4.2"]
                        [org.clojure/tools.namespace "0.2.4"]]}}
