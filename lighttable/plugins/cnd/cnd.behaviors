@@ -1,0 +1,8 @@
+{:+ {
+     ;; The app tag is kind of like global scope. You assign behaviors that affect
+     ;; all of Light Table here
+     :app [(:lt.objs.plugins/load-js "cnd_compiled.js" true)]
+
+ ;; You can use the subtract key to remove behavior that may get added by
+ ;; another diff
+ :- {:app []}}
