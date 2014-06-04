@@ -41,7 +41,6 @@ alias ll="ls -laFh"
 alias map="xargs -n1"
 alias mkdir="mkdir -pv"
 alias ps\?="ps ax | grep $1"
-alias rake="noglob rake"
 alias reload="source ~/.env && source ~/.aliases"
 alias rr="rbenv rehash"
 alias root='sudo -i'
@@ -70,7 +69,7 @@ alias annex='git annex'
 
 # Bundler
 alias bi="bundle install"
-alias bif="bundle install --path vendor --binstubs"
+alias bif="bundle install --path vendor"
 alias bp="bundle package"
 alias bu="bundle update"
 alias be="bundle exec"
