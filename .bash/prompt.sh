@@ -70,7 +70,7 @@ function prompt_command() {
   set_title_bar
 }
 
-export PROMPT_COMMAND=prompt_command
+export PROMPT_COMMAND="update_terminal_cwd;prompt_command"
 export PS2="- "
 export PS4="\$LINENO+ "
 
