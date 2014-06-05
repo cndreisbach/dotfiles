@@ -70,6 +70,8 @@ function prompt_command() {
   set_title_bar
 }
 
+function_exists update_terminal_cwd || update_terminal_cwd() { :; }
+
 export PROMPT_COMMAND="update_terminal_cwd;prompt_command"
 export PS2="- "
 export PS4="\$LINENO+ "
@@ -79,4 +81,3 @@ function run_on_debug() {
 }
 
 trap run_on_debug DEBUG
-
