@@ -1,9 +1,0 @@
-venv_file=`findup .venv`
-if [[ $? == 0 ]]; then
-    venv=`cat $venv_file`
-    if [[ ! $VIRTUAL_ENV == "$WORKON_HOME/$venv" ]]; then
-        workon `cat $venv_file`
-    fi
-elif [[ $VIRTUAL_ENV != '' ]]; then
-    deactivate
-fi
