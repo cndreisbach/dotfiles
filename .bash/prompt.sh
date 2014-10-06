@@ -64,9 +64,8 @@ function prompt_command() {
   local error_msg=""
 
   [[ $timer_show -ge "5" ]] && time_display=" ${timer_show}s"
-  [[ $exit_status -ne "0" ]] && error_msg=" $($ERRORC)${exit_status}"
 
-  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($RESET)\$(parse_venv)$($TIMERC)${time_display}${error_msg}$($RESET)\n\$ "
+  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($RESET)\$(parse_venv)$($TIMERC)${time_display}$($RESET)\n\$ "
   set_title_bar
 }
 
