@@ -15,8 +15,9 @@ for file in $(ls ~/.bash); do
   . ~/.bash/$file
 done
 
-command -v xrdb > /dev/null
+. ~/dotfiles/lib/z/z.sh
 
+command -v xrdb > /dev/null
 if [ $? -eq 0 ] && [ -f ~/.Xdefaults ]; then
   xrdb -merge ~/.Xdefaults
 fi

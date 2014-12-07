@@ -25,7 +25,6 @@ alias v="vim"
 alias w='which'
 alias x='xargs'
 alias y="echo 'no alias for y'"
-alias z="echo 'no alias for z'"
 
 # More
 alias .a="$EDITOR ~/.aliases && source ~/.aliases"
@@ -35,7 +34,7 @@ alias bell='tput bel'
 alias ducks="du -cks * | sort -rn | head -11"
 alias gr="grep -r"
 alias hm='todo.pl'
-alias http='python -m SimpleHTTPServer'
+alias http='python -m http.server'
 alias k9='kill -9'
 alias ll="ls -laFh"
 alias map="xargs -n1"
