@@ -46,7 +46,9 @@ alias root='sudo -i'
 alias sml='rlwrap sml'
 alias socks='autossh -M 20000 -vND 9999 server1.crnixon.org'
 alias su='sudo su -'
+alias top10="history | awk '{print \$4}' | sort | uniq -c | sort -rn | head -10"
 alias vi='vim'
+
 
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"

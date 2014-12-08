@@ -57,11 +57,9 @@ function set_title_bar() {
 }
 
 function prompt_command() {
-  local exit_status=$?
   timer_stop
 
   local time_display=""
-  local error_msg=""
 
   [[ $timer_show -ge "5" ]] && time_display=" ${timer_show}s"
 
