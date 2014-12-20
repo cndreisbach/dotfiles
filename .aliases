@@ -56,6 +56,7 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmpyc="find . -name '*.pyc' | xargs rm"
 
 # Git
+alias git='gh'
 alias ga='git add'
 alias gb='git branch'
 alias gaa='git add --all'
