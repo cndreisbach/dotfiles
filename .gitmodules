@@ -4,3 +4,6 @@
 [submodule "lib/z"]
 	path = lib/z
 	url = https://github.com/rupa/z.git
+[submodule "lib/autoenv"]
+	path = lib/autoenv
+	url = https://github.com/kennethreitz/autoenv.git

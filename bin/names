@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+import random
+
+namelist = """
+Lennon
+Oakley
+Charlie
+Dakota
+Phoenix
+Skyler
+Emory
+Hayden
+Casey
+Rowan
+River
+Peyton
+Avery
+Sawyer
+Parker
+Elliot
+Taylor
+Marley
+Kai
+Blake
+Jayden
+Harper
+Carter
+Hunter
+Chance
+Chase
+Allison
+Autumn
+Cadence
+Gale
+Trinidad
+Storm
+Quinn
+Keelan
+Kendall
+Remy
+Kerry
+Amari
+Marion
+Justice
+"""
+
+names = namelist.strip().split("\n")
+selected = random.sample(names, 1)
+
+for name in selected:
+    print(name)
