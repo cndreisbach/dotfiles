@@ -53,10 +53,9 @@ alias vi='vim'
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"
 alias rmorig="find . -name '*.orig' | xargs rm"
-alias rmpyc="find . -name '*.pyc' | xargs rm"
+alias rmpyc="find . -name '*.pyc' | xargs rm -r"
 
 # Git
-alias git='gh'
 alias ga='git add'
 alias gb='git branch'
 alias gaa='git add --all'

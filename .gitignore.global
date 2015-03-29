@@ -6,7 +6,7 @@
 .DS_Store
 .rake_tasks
 nbproject
-.idea
+.idea/
 mkmf.log
 *.orig
 *.iml
@@ -20,3 +20,5 @@ TAGS
 nohup.out
 .lein-repl-history
 .nrepl-port
+.envrc
+.direnv
