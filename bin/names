@@ -2,52 +2,72 @@
 
 from __future__ import print_function
 import random
+import argparse
 
 namelist = """
-Lennon
-Oakley
-Charlie
-Dakota
-Phoenix
-Skyler
-Emory
-Hayden
-Casey
-Rowan
-River
-Peyton
-Avery
-Sawyer
-Parker
-Elliot
-Taylor
-Marley
-Kai
-Blake
-Jayden
-Harper
-Carter
-Hunter
-Chance
-Chase
 Allison
+Amari
 Autumn
+Avery
+Blake
+Brody
+Brook
 Cadence
+Carter
+Casey
+Chance
+Charlie
+Chase
+Dakota
+Dale
+Elliot
+Emory
+Evelyn
 Gale
-Trinidad
-Storm
-Quinn
+Grey
+Harper
+Hayden
+Hunter
+Indiana
+India
+Indigo
+Jayden
+Justice
+Kai
 Keelan
 Kendall
-Remy
 Kerry
-Amari
+Lennon
 Marion
-Justice
+Marley
+Nevada
+Oakley
+Parker
+Peyton
+Phoenix
+Quinn
+Remy
+River
+Rowan
+Sawyer
+Scout
+Skyler
+Storm
+Taylor
+Trinidad
+Zara
 """
 
-names = namelist.strip().split("\n")
-selected = random.sample(names, 1)
+def main():
+    parser = argparse.ArgumentParser(description="Pick N names.")
+    parser.add_argument('count', metavar='N', type=int, 
+                        help="number of names", default=1)
+    args = parser.parse_args()
+    names = namelist.strip().split("\n")
+    selected = random.sample(names, args.count)
+    for name in selected:
+        print(name)
 
-for name in selected:
-    print(name)
+
+if __name__ == '__main__':
+    main()
