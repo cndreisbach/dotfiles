@@ -16,7 +16,6 @@ for file in $(ls ~/.bash); do
 done
 
 . ~/dotfiles/lib/z/z.sh
-#. ~/dotfiles/lib/autoenv/activate.sh
 
 command -v xrdb > /dev/null
 if [ $? -eq 0 ] && [ -f ~/.Xdefaults ]; then

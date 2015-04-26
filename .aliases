@@ -40,6 +40,7 @@ alias ll="ls -laFh"
 alias map="xargs -n1"
 alias mkdir="mkdir -pv"
 alias ps\?="ps ax | grep $1"
+alias pyfmt='PYTHONPATH=~/bin/yapf/yapf python ~/bin/yapf/yapf'
 alias reload="source ~/.env && source ~/.aliases"
 alias rr="rbenv rehash"
 alias root='sudo -i'
@@ -53,7 +54,7 @@ alias vi='vim'
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"
 alias rmorig="find . -name '*.orig' | xargs rm"
-alias rmpyc="find . -name '*.pyc' | xargs rm -r"
+alias rmpyc="find . -name '*.pyc' | xargs rm"
 
 # Git
 alias ga='git add'
@@ -66,15 +67,6 @@ alias glog="git log --graph"
 alias gpp='git pp'
 alias gs='git status'
 alias gst='git status'
-alias annex='git annex'
-
-# Rails
-alias rs="./bin/rails server"
-alias rc="./bin/rails console"
-alias rg="./bin/rails generate"
-alias rdm="./bin/rake db:migrate"
-alias rt="./bin/rake test"
-alias rhm="git pull && bundle install && ./bin/rake db:migrate db:seed && ./bin/rails server"
 
 # Bundler
 alias bi="bundle install"
@@ -88,17 +80,12 @@ alias binit="bif && bundle package && echo 'vendor/ruby' >> .gitignore"
 
 # Linux
 if [[ $(uname) == 'Linux' ]]; then
-    alias sap='sudo aptitude'
-    alias q='sudo wajig'
     alias open='gnome-open'
     alias update='sudo aptitude update'
 fi
 
 # OS X
 if [[ $(uname) == 'Darwin' ]]; then
-    # So used to typing this from Linux
-    alias sap='brew'
-
     # Flush Directory Service cache
     alias dnsflush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
@@ -124,3 +111,6 @@ if [[ $(uname) == 'Darwin' ]]; then
     # Update Homebrew
     alias update='brew update && echo "\n==> Outdated" && brew outdated'
 fi
+
+alias dokku='ssh -t dokku@dokku.me'
+alias zypge='ssh -t dokku@zypge.com'
