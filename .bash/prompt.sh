@@ -11,14 +11,12 @@ if tput setaf 1 &> /dev/null; then
   DIRC="tput setaf 6"
   GITC="tput setaf 7"
   ERRORC="tput setaf 1"
-  TIMERC="tput setaf 3"
   BOLD="tput bold"
   RESET="tput sgr0"
 fi
 
 export DIRC
 export ERRORC
-export TIMERC
 export GITC
 export BOLD
 export RESET
@@ -37,15 +35,6 @@ function parse_venv() {
   [[ $venv != "" ]] && echo " (python:$venv)"
 }
 
-function timer_start() {
-  timer=${timer:-$SECONDS}
-}
-
-function timer_stop() {
-  timer_show=$(($SECONDS - $timer))
-  unset timer
-}
-
 function set_title_bar() {
   case "$TERM" in
   xterm*|rxvt*)
@@ -57,13 +46,7 @@ function set_title_bar() {
 }
 
 function prompt_command() {
-  timer_stop
-
-  local time_display=""
-
-  [[ $timer_show -ge "5" ]] && time_display=" ${timer_show}s"
-
-  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($RESET)\$(parse_venv)$($TIMERC)${time_display}$($RESET)\n\$ "
+  PS1="\n$($DIRC)\w$($GITC)\$(parse_git_branch)$($RESET)\$(parse_venv)$($RESET)\n\$ "
   set_title_bar
 }
 
@@ -72,9 +55,3 @@ function_exists update_terminal_cwd || update_terminal_cwd() { :; }
 export PROMPT_COMMAND="update_terminal_cwd;prompt_command"
 export PS2="- "
 export PS4="\$LINENO+ "
-
-function run_on_debug() {
-    timer_start
-}
-
-trap run_on_debug DEBUG
