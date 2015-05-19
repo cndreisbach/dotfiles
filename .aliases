@@ -31,6 +31,7 @@ alias .a="$EDITOR ~/.aliases && source ~/.aliases"
 alias .e="$EDITOR ~/.env && source ~/.env"
 alias \?="history | grep $1"
 alias bell='tput bel'
+alias dirpy3='touch .envrc; echo "layout python3" >> .envrc'
 alias ducks="du -cks * | sort -rn | head -11"
 alias gr="grep -r"
 alias hm='todo.pl'
