@@ -1,9 +1,0 @@
-README.md    skip
-bin          recurse
-lib          skip
-.lein        recurse
-private.tc   skip
-private      skip
-setup.sh     exec
-setup.sh     skip
-.gitmodules  skip

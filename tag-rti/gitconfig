@@ -1,0 +1,51 @@
+[user]
+  email = cdreisbach@rti.org
+  name = Clinton Dreisbach
+  initials = cnd
+[github]
+  user = cndreisbach
+[core]
+  excludesfile = "~/.gitignore_global"
+  pager = less
+[alias]
+  aa = add --all
+  ap = add --patch
+  br = branch
+  ca = commit --amend -C HEAD
+  ci = commit
+  cleanup = !git remote prune origin && git gc && git stash clear
+  co = checkout
+  cob = checkout -b
+  di = diff
+  dc = diff --cached
+  lg = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
+  undo = reset --hard
+  who = shortlog -n -s --no-merges
+[color]
+  ui = auto
+  diff = auto
+[format]
+  # 4436819 [23 hours ago] (Gabe Berke-Williams) One line prompt
+  pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
+[apply]
+  whitespace = warn
+[help]
+  autocorrect = 1
+[push]
+  default = tracking
+[branch]
+  autosetupmerge = true
+  autosetuprebase = remote
+[credential]
+  helper = osxkeychain
+[url "git://github.com/"]
+  insteadOf = gh:
+[url "git@github.com:"]
+  # Write access
+  insteadOf = wgh:
+[url "git@heroku.com:"]
+  insteadOf = heroku:
+

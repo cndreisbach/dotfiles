@@ -1,7 +1,3 @@
-export MY_NAME='Clinton Dreisbach'
-export MY_EMAIL='cdreisbach@rti.org'
-
-export GPGKEY=5D552D52
 export EDITOR='vim'
 export VISUAL='vim'
 

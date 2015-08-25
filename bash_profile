@@ -15,6 +15,4 @@ for file in $(ls ~/.bash); do
   . ~/.bash/$file
 done
 
-. ~/dotfiles/lib/z/z.sh
-
 eval "$(direnv hook bash)"

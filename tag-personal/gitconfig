@@ -4,6 +4,9 @@
   initials = cnd
 [github]
   user = cndreisbach
+[core]
+  excludesfile = "~/.gitignore_global"
+  pager = less
 [alias]
   aa = add --all
   ap = add --patch
@@ -19,19 +22,11 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
-  st = status
-  sta = stash
   undo = reset --hard
   who = shortlog -n -s --no-merges
-[core]
-  excludesfile = "~/.gitignore.global"
-  pager = less
 [color]
   ui = auto
   diff = auto
-[color "diff"]
-  old = red reverse
-  new = green reverse
 [format]
   # 4436819 [23 hours ago] (Gabe Berke-Williams) One line prompt
   pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
@@ -53,13 +48,4 @@
   insteadOf = wgh:
 [url "git@heroku.com:"]
   insteadOf = heroku:
-[rerere]
-  enabled = true
-[advice]
-  statusHints = false
-[diff]
-  renames = copies
-[hub]
-	host = github.cfpb.org
-[github "github.cfpb.org"]
-	user = cndreisbach
+

@@ -1,32 +1,5 @@
 ### ALIASES
 
-# 1 chars
-alias a='ack'
-alias b='bundle'
-alias c='cd'
-alias d='df -h'
-alias e=$EDITOR
-alias f='find'
-alias g='git'
-alias h="history"
-alias i='id'
-alias j="jobs"
-alias k='kill'
-alias l="ls -laFH"
-alias m='mkdir -p'
-alias n='nano'
-alias o='popd'
-alias p='pushd'
-alias r='rake'
-alias s='sudo'
-alias t="echo 'nothing set for t'"
-alias u="sudo aptitude update"
-alias v="vim"
-alias w='which'
-alias x='xargs'
-alias y="echo 'no alias for y'"
-
-# More
 alias .a="$EDITOR ~/.aliases && source ~/.aliases"
 alias .e="$EDITOR ~/.env && source ~/.env"
 alias \?="history | grep $1"
@@ -34,23 +7,15 @@ alias bell='tput bel'
 alias dirpy3='touch .envrc; echo "layout python3" >> .envrc'
 alias ducks="du -cks * | sort -rn | head -11"
 alias gr="grep -r"
-alias hm='todo.pl'
-alias http='python -m http.server'
+alias http='python3 -m http.server'
 alias k9='kill -9'
 alias ll="ls -laFh"
-alias map="xargs -n1"
 alias mkdir="mkdir -pv"
 alias ps\?="ps ax | grep $1"
-alias pyfmt='PYTHONPATH=~/bin/yapf/yapf python ~/bin/yapf/yapf'
 alias reload="source ~/.env && source ~/.aliases"
-alias rr="rbenv rehash"
 alias root='sudo -i'
-alias sml='rlwrap sml'
-alias socks='autossh -M 20000 -vND 9999 server1.crnixon.org'
 alias su='sudo su -'
-alias top10="history | awk '{print \$4}' | sort | uniq -c | sort -rn | head -10"
 alias vi='vim'
-
 
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"
@@ -58,31 +23,18 @@ alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmpyc="find . -name '*.pyc' | xargs rm"
 
 # Git
-alias ga='git add'
-alias gb='git branch'
-alias gaa='git add --all'
 alias gap='git add --patch'
 alias gc='git commit'
 alias gca='git commit --amend -C HEAD'
 alias glog="git log --graph"
-alias gpp='git pp'
-alias gs='git status'
 alias gst='git status'
 
-# Bundler
-alias bi="bundle install"
-alias bif="bundle install --path vendor"
-alias bp="bundle package"
-alias bu="bundle update"
-alias be="bundle exec"
-alias bo="bundle open"
-alias binit="bif && bundle package && echo 'vendor/ruby' >> .gitignore"
-
+# Dokku
+alias zypge='ssh -t dokku@zypge.com'
 
 # Linux
 if [[ $(uname) == 'Linux' ]]; then
     alias open='gnome-open'
-    alias update='sudo aptitude update'
 fi
 
 # OS X
@@ -108,10 +60,4 @@ if [[ $(uname) == 'Darwin' ]]; then
     # Disable/enable Spotlight
     alias spotoff="sudo mdutil -a -i off"
     alias spoton="sudo mdutil -a -i on"
-
-    # Update Homebrew
-    alias update='brew update && echo "\n==> Outdated" && brew outdated'
 fi
-
-alias dokku='ssh -t dokku@dokku.me'
-alias zypge='ssh -t dokku@zypge.com'
