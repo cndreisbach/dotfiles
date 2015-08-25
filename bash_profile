@@ -16,3 +16,4 @@ for file in $(ls ~/.bash); do
 done
 
 eval "$(direnv hook bash)"
+eval "$(fasd --init auto)"
