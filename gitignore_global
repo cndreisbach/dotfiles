@@ -22,3 +22,5 @@ nohup.out
 .nrepl-port
 .envrc
 .direnv
+*.sublime-project
+*.sublime-workspace

@@ -24,6 +24,7 @@
   ls = ls-files
   undo = reset --hard
   who = shortlog -n -s --no-merges
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [color]
   ui = auto
   diff = auto
@@ -49,3 +50,9 @@
 [url "git@heroku.com:"]
   insteadOf = heroku:
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
