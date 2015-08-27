@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+import random
+import argparse
+
+namelist = """
+Allison
+Amari
+Autumn
+Avery
+Blake
+Brody
+Brook
+Cadence
+Carter
+Casey
+Chance
+Charlie
+Chase
+Dakota
+Dale
+Elliot
+Emory
+Evelyn
+Gale
+Grey
+Harper
+Hayden
+Hunter
+Indiana
+India
+Indigo
+Jayden
+Justice
+Kai
+Keelan
+Kendall
+Kerry
+Lennon
+Marion
+Marley
+Nevada
+Oakley
+Parker
+Peyton
+Phoenix
+Quinn
+Remy
+River
+Rowan
+Sawyer
+Scout
+Skyler
+Storm
+Taylor
+Trinidad
+Zara
+"""
+
+def main():
+    parser = argparse.ArgumentParser(description="Pick N names.")
+    parser.add_argument('count', metavar='N', type=int, 
+                        help="number of names", default=1)
+    args = parser.parse_args()
+    names = namelist.strip().split("\n")
+    selected = random.sample(names, args.count)
+    for name in selected:
+        print(name)
+
+
+if __name__ == '__main__':
+    main()
