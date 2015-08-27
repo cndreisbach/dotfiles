@@ -49,3 +49,5 @@
 [url "git@heroku.com:"]
   insteadOf = heroku:
 
+[include]
+  path = ~/.gitconfig.local
