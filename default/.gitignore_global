@@ -1,6 +1,7 @@
 *~
 .#*
 *.zwc
+.zedstate
 .ditz-config
 .sass-cache
 .DS_Store

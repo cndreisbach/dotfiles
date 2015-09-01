@@ -5,8 +5,11 @@ import random
 import argparse
 
 namelist = """
+Alexis
 Allison
 Amari
+Angel
+Ariel
 Autumn
 Avery
 Blake
@@ -20,7 +23,9 @@ Charlie
 Chase
 Dakota
 Dale
+Dallas
 Elliot
+Emerson
 Emory
 Evelyn
 Gale
@@ -35,11 +40,15 @@ Jayden
 Justice
 Kai
 Keelan
+Kelly
 Kendall
 Kerry
+Landry
 Lennon
+Logan
 Marion
 Marley
+Milan
 Nevada
 Oakley
 Parker
@@ -47,6 +56,7 @@ Peyton
 Phoenix
 Quinn
 Remy
+Riley
 River
 Rowan
 Sawyer
@@ -54,14 +64,15 @@ Scout
 Skyler
 Storm
 Taylor
+Teagan
 Trinidad
 Zara
 """
 
 def main():
     parser = argparse.ArgumentParser(description="Pick N names.")
-    parser.add_argument('count', metavar='N', type=int, 
-                        help="number of names", default=1)
+    parser.add_argument('count', metavar='N', type=int, nargs='?',
+                        help="number of names", default=5)
     args = parser.parse_args()
     names = namelist.strip().split("\n")
     selected = random.sample(names, args.count)
