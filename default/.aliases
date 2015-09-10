@@ -29,9 +29,6 @@ alias gca='git commit --amend -C HEAD'
 alias glog="git log --graph"
 alias gst='git status'
 
-# Dokku
-alias zypge='ssh -t dokku@zypge.com'
-
 # Linux
 if [[ $(uname) == 'Linux' ]]; then
     alias open='gnome-open'
