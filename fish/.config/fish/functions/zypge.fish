@@ -1,0 +1,1 @@
+alias zypge ssh -t dokku@zypge.com
