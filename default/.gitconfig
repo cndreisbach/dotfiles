@@ -5,7 +5,7 @@
 [github]
   user = cndreisbach
 [core]
-  excludesfile = "~/.gitignore_global"
+	excludesfile = /Users/clinton/.gitignore_global
   pager = less
 [alias]
   aa = add --all
