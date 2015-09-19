@@ -12,8 +12,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+# Set standby delay to 12 hours (default is 1 hour)
+sudo pmset -a standbydelay 43200
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -58,20 +58,17 @@ sudo systemsetup -setrestartfreeze on
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Disable smart quotes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
 
 # Disable local Time Machine snapshots
-sudo tmutil disablelocal
-
-# Disable the sudden motion sensor as it’s not useful for SSDs
-sudo pmset -a sms 0
+sudo tmutil disablelocale
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -92,10 +89,10 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # Disable press-and-hold for keys in favor of key repeat
-# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-# defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 0
 
 ###############################################################################
 # Screen                                                                      #
@@ -118,25 +115,16 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Finder                                                                      #
 ###############################################################################
 
-# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-# defaults write com.apple.finder QuitMenuItem -bool true
-
-# Finder: disable window animations and Get Info animations
-# defaults write com.apple.finder DisableAllAnimations -bool true
-
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
-# Finder: show hidden files by default
-# defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -162,16 +150,8 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
-# Remove the spring loading delay for directories
-defaults write NSGlobalDomain com.apple.springing.delay -float 0
-
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-# Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
@@ -205,17 +185,8 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Disable the warning before emptying the Trash
-# defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
 # Empty Trash securely by default
 defaults write com.apple.finder EmptyTrashSecurely -bool true
-
-# Enable AirDrop over Ethernet and on unsupported Macs running Lion
-# defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
-
-# Enable the MacBook Air SuperDrive on any Mac
-# sudo nvram boot-args="mbasd=1"
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
@@ -239,11 +210,6 @@ defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
-
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use
-# the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
@@ -354,14 +320,12 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
-# Enable Dashboard dev mode (allows keeping widgets on the desktop)
-defaults write com.apple.dashboard devmode -bool true
-
 # Enable the debug menu in iCal (pre-10.8)
 defaults write com.apple.iCal IncludeDebugMenu -bool true
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
+
 # Open and save files as UTF-8 in TextEdit
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4

@@ -5,7 +5,7 @@
 [github]
   user = cndreisbach
 [core]
-	excludesfile = /Users/clinton/.gitignore_global
+	excludesfile = /Users/cdreisbach/.gitignore_global
   pager = less
 [alias]
   aa = add --all
@@ -51,3 +51,4 @@
   insteadOf = heroku:
 [include]
   path = ~/.gitconfig.local
+  
