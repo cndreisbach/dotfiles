@@ -25,6 +25,7 @@
   undo = reset --hard
   who = shortlog -n -s --no-merges
   ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+  rmb = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 [color]
   ui = auto
   diff = auto

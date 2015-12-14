@@ -23,7 +23,7 @@ alias glog="git log --graph"
 alias gst='git status'
 
 # Dokku
-alias zypge='ssh -t dokku@zypge.com'
+alias zypge='ssh -t dokku@server.zypge.com'
 
 # OS X
 if test (uname) = 'Darwin' 
