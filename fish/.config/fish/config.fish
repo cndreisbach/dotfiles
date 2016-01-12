@@ -1,5 +1,7 @@
-### VARIABLES
-
+### Fisherman
+set fisher_home ~/vendor/fisherman
+set fisher_config ~/.config/fisherman
+source $fisher_home/config.fish
 
 ### ALIASES
 alias dirpy3='touch .envrc; echo "layout python3" >> .envrc'
@@ -26,7 +28,7 @@ alias gst='git status'
 alias zypge='ssh -t dokku@server.zypge.com'
 
 # OS X
-if test (uname) = 'Darwin' 
+if test (uname) = 'Darwin'
     # Flush Directory Service cache
     alias dnsflush="dscacheutil -flushcache; and killall -HUP mDNSResponder"
 
