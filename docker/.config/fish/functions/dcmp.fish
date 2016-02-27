@@ -1,0 +1,1 @@
+alias dcmp docker-compose

@@ -1,1 +1,3 @@
-alias ll ls -al
+function ll
+	ls -laFh $argv;
+end

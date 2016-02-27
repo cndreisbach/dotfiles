@@ -1,11 +1,10 @@
-.PHONY: work
+tags = $(subst /,,$(wildcard */))
+.PHONY: main clean $(tags)
 
-home:
-	stow -v default
-	stow -v mac
-	stow -v vim
+main: default fish git vim python docker mac
 
-work:
-	stow -v default
-	stow -v mac
-	stow -v emacs
+clean:
+	stow -Dv $(tags)
+
+$(tags):
+	stow -v $@

@@ -1,6 +1,6 @@
 [user]
-  email = crnixon@gmail.com
-  name = Clinton N. Dreisbach
+	email = 
+	name = 
   initials = cnd
 [github]
   user = cndreisbach
@@ -56,3 +56,12 @@
   
 [rebase]
 	autostash = 1
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	rustExitCode = true
+	trustExitCode = true
+[commit]
+	template = /Users/cdreisbach/.gitcommit.txt

@@ -17,3 +17,6 @@ done
 
 eval "$(direnv hook bash)"
 eval "$(fasd --init auto)"
+
+# added by Anaconda3 2.3.0 installer
+export PATH="/Users/cdreisbach/anaconda/bin:$PATH"
