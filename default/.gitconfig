@@ -5,7 +5,7 @@
 [github]
   user = cndreisbach
 [core]
-	excludesfile = /Users/cdreisbach/.gitignore_global
+	excludesfile = ~/.gitignore_global
   pager = less
 	editor = "nano -r 72"
 [alias]
