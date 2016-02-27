@@ -25,3 +25,6 @@ set autoindent    " align the new line indent with the previous line
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
+

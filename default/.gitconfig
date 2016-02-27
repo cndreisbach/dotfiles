@@ -7,6 +7,7 @@
 [core]
 	excludesfile = /Users/cdreisbach/.gitignore_global
   pager = less
+	editor = "nano -r 72"
 [alias]
   aa = add --all
   ap = add --patch
