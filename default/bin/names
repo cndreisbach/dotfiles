@@ -5,10 +5,13 @@ import random
 import argparse
 
 namelist = """
+Addison
+Adrian
 Alexis
 Allison
 Amari
 Angel
+Ari
 Ariel
 Autumn
 Avery
@@ -24,10 +27,13 @@ Chase
 Dakota
 Dale
 Dallas
+Dorian
+Drew
 Elliot
 Emerson
 Emory
 Evelyn
+Frankie
 Gale
 Grey
 Harper
@@ -49,8 +55,15 @@ Logan
 Marion
 Marley
 Milan
+Morgan
+Nat
 Nevada
+Niki
+Nolan
 Oakley
+Ordel
+Oriole
+Oz
 Parker
 Peyton
 Phoenix
@@ -59,6 +72,9 @@ Remy
 Riley
 River
 Rowan
+Ryan
+Sage
+Sam
 Sawyer
 Scout
 Skyler
@@ -66,8 +82,11 @@ Storm
 Taylor
 Teagan
 Trinidad
+Val
+Winter
 Zara
 """
+
 
 def main():
     parser = argparse.ArgumentParser(description="Pick N names.")
