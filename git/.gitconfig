@@ -13,6 +13,7 @@
 [include]
     path = ~/.gitconfig.local
 [alias]
+    cob = checkout -b
     cleanup = !git remote prune origin && git gc && git stash clear
     diffall = diff --cached
     graph = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -38,3 +39,5 @@
     autosetuprebase = remote
 [rebase]
     autostash = 1
+[commit]
+    template = "~/.gitcommit.txt"

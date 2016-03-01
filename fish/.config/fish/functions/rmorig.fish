@@ -1,3 +1,3 @@
 function rmorig
-	find . -name '*.orig' | xargs rm $argv;
+	find . -name '*.orig' | xargs rm 
 end
