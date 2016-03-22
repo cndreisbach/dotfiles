@@ -1,0 +1,77 @@
+#!/usr/bin/env ruby
+ 
+# Configures the git author to a list of developers when pair programming
+#
+# Usage: pair lm bh (Sets the author to 'Luke Melia and Bryan Helmkamp')
+#        pair       (Unsets the author so the git global config takes effect)
+#
+# Author: Bryan Helmkamp (http://brynary.com)
+# Author: Rod Hilton and Adam Esterline (http://www.rallydev.com)
+ 
+#######################################################################
+## Configuration
+ 
+EMAIL_PREFIX = "developers"
+EMAIL_SUFFIX = "@rti.org"
+AUTHORS = {}
+ 
+@pair_initials = ARGV.sort
+ 
+## End of configuration
+#######################################################################
+ 
+unless File.exists?(".git")
+  puts "This doesn't look like a git repository."
+  exit 1
+end
+ 
+unless File.exists?(".authors")
+  puts "You do not have an .authors file in the repository."
+  puts "Repository needs a file named .authors in the following format:"
+  puts "  ck Clark Kent"
+  puts "  bw Bruce Wayne"
+  puts "  pp Peter Parker"
+  exit 1
+end
+ 
+# Read the local .authors file, parsing to get the AUTHORS map
+File.open('.authors').each_line do |line|
+  initials, name = line.match(/^(\w+)\s+(.*)$/).captures
+  if(AUTHORS.has_key?(initials))
+    puts "Duplicate initials for #{initials}"
+    exit 1
+  end
+  AUTHORS[initials] = name
+end
+ 
+authors = @pair_initials.map do |initials|
+  if AUTHORS[initials.downcase]
+    AUTHORS[initials.downcase]
+  else
+    puts "Couldn't find author name for initials: #{initials}"
+    exit 1
+  end
+end
+ 
+if authors.any?
+  if authors.size == 1
+    authors = authors.first
+  elsif authors.size == 2
+    authors = authors.join(" and ")
+  else
+    authors = authors[0..-2].join(", ") + " and " + authors.last
+  end
+ 
+  email="#{EMAIL_PREFIX}+#{@pair_initials.join("+")}#{EMAIL_SUFFIX}"
+ 
+  `git config user.name '#{authors}'`
+  `git config user.email '#{email}'`
+ 
+  puts "user.name = #{authors}"
+  puts "user.email = #{email}"
+else
+  `git config --unset user.name`
+  `git config --unset user.email`
+ 
+  puts "Unset user.name and user.email"
+end
