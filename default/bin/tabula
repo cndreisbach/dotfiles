@@ -6,6 +6,7 @@ import sys
 
 diceRegex = "^(\d+)d(\d+)(?:([-x+*/])(\d+))?"
 tableGroups = {}
+DEBUG = False
 
 class TableGroup(object):
 	def __init__(self, name):
@@ -20,6 +21,8 @@ class TableGroup(object):
 		return self.tables[name.lower()]
 
 	def rollOnTable(self, name):
+		if DEBUG:
+			print("* Rolling on {}".format(name))
 		if name.lower() in self.tables:
 			raw = str(self.getTable(name).getRandom())
 			# Remove extra blank lines
@@ -227,20 +230,22 @@ def tokenize(str):
 	return tokens
 
 if __name__ == '__main__':
-	if len(sys.argv) == 2:
-		group = sys.argv[1]
-		table = sys.argv[1]
-		quantity = 1
-	elif len(sys.argv) >= 3 and len (sys.argv) <= 4:
-		group = sys.argv[1]
-		table = sys.argv[2]
-		quantity = 1
-		if len(sys.argv) == 4:
-			quantity = int(sys.argv[3])
-	else:
-		print("Usage: {0} tablegroup 'Table name' [quantity]".format(sys.argv[0]))
-		exit(1)
+	import argparse
 
-	TableGroup(group)
-	for i in range(0, quantity):
-		print(tableGroups[group].rollOnTable(table))
+	parser = argparse.ArgumentParser(description='Roll on random tables.')
+	parser.add_argument('group', help="the group of tables")
+	parser.add_argument('table', nargs='?', default=None,
+						help="the table name (leave blank to use group name)")
+	parser.add_argument('-n', dest='quantity', type=int, default=1,
+						help="the number of rolls to make")
+	parser.add_argument('-v', dest='verbose', action='store_true',
+						help="Verbose mode.")
+	args = parser.parse_args()
+
+	DEBUG = args.verbose
+
+	table = args.table or args.group
+
+	TableGroup(args.group)
+	for i in range(0, args.quantity):
+		print(tableGroups[args.group].rollOnTable(table))
