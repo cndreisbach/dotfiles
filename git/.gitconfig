@@ -18,6 +18,7 @@
     diffall = diff --cached
     graph = log --graph --decorate --pretty=oneline --abbrev-commit
     ls = ls-files
+    pf = push --force-with-lease
     undo = reset --hard
     who = shortlog -n -s --no-merges
     ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
