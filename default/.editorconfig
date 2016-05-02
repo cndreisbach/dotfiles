@@ -8,7 +8,7 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{css,html,py,js}]
+[*.{py,css,js,html}]
 charset = utf-8
 indent_style = space
 indent_size = 4
