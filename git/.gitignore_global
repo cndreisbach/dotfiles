@@ -25,3 +25,4 @@ nohup.out
 .direnv
 *.sublime-project
 *.sublime-workspace
+.dir-locals.el
