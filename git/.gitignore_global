@@ -25,3 +25,8 @@ nohup.out
 .direnv
 *.sublime-project
 *.sublime-workspace
+.dir-locals.el
+.projectile
+GPATH
+GRTAGS
+GTAGS
