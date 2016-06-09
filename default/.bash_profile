@@ -20,3 +20,4 @@ eval "$(fasd --init auto)"
 
 # added by Anaconda3 2.3.0 installer
 export PATH="/Users/cdreisbach/anaconda/bin:$PATH"
+if [ -e /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
