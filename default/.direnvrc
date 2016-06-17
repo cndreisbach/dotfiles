@@ -1,5 +1,5 @@
-use_conda () {
-  source activate "$@"
+layout_anaconda() {
+  source activate $1
 }
 
 # Example: export_alias zz "ls -la"
