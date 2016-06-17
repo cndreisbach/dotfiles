@@ -15,6 +15,6 @@ for file in $(ls ~/.bash); do
   . ~/.bash/$file
 done
 
-eval "$(direnv hook bash)"
-eval "$(fasd --init auto)"
+#eval "$(direnv hook bash)"
+#eval "$(fasd --init auto)"
 
