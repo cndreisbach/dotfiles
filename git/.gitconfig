@@ -31,6 +31,7 @@
     who = shortlog -n -s --no-merges
     generate-ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
     remove-old-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    show-ignored = ls-files --others -i --exclude-standard
 [color]
     ui = auto
     diff = auto
