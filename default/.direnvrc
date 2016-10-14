@@ -1,6 +1,6 @@
-layout_anaconda() {
-  source activate $1
-}
+# utility functions
+_print() { printf "\e[1m$1\e[0m\n"; }
+_error() { printf "\e[1;4merror\e[24m: $1\e[0m\n" >&2; exit 1; }
 
 # Example: export_alias zz "ls -la"
 export_alias() {
