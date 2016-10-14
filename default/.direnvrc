@@ -53,7 +53,7 @@ use_conda() {
     local ENV_PATH="${PWD}/.env/conda-${ENV_NAME}"
     if [[ ! -d ${ENV_PATH} ]]; then
         _print "conda: preparing Conda environment '${ENV_NAME}'"
-        conda create --prefix "${ENV_PATH}" --quiet python > /dev/null
+        conda create --prefix "${ENV_PATH}" -y python > /dev/null
     fi
 
     # activate this environment
