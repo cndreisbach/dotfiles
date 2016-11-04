@@ -50,7 +50,7 @@ use_conda() {
     fi
 
     # ensure that this environment exists
-    local ENV_PATH="${PWD}/.env/conda-${ENV_NAME}"
+    local ENV_PATH="${CONDA_ROOT}/envs/${ENV_NAME}"
     if [[ ! -d ${ENV_PATH} ]]; then
         _print "conda: preparing Conda environment '${ENV_NAME}'"
         conda create --prefix "${ENV_PATH}" -y python > /dev/null
