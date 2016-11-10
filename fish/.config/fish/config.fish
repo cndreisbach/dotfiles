@@ -1,9 +1,5 @@
 # Utilities
 
-function -e fish_preexec _run_fasd
-  fasd --proc (fasd --sanitize "$argv") > "/dev/null" 2>&1
-end
-
 eval (direnv hook fish)
 
 if test -f ~/.config/fish/conda.fish
