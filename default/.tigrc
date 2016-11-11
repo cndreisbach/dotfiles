@@ -1,6 +1,5 @@
-set show-date = relative
-set show-rev-graph = yes
-set show-refs = yes
-set show-line-numbers = yes
-set line-number-interval = 5
 set tab-size = 2
+set blame-view = \
+  date:relative \
+  line-number:yes,interval=5 text
+
