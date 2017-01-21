@@ -8,8 +8,6 @@
     excludesfile = ~/.gitignore_global
     pager = less
     editor = "nano -r 72"
-[credential]
-    helper = osxkeychain
 [include]
     path = ~/.gitconfig.local
 [alias]
