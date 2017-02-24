@@ -1,0 +1,129 @@
+# utility functions
+_print() { printf "\e[1m$1\e[0m\n"; }
+_error() { printf "\e[1;4merror\e[24m: $1\e[0m\n" >&2; exit 1; }
+_ensure_line() {
+    if [ ! -f $2 ]; then touch "$2"; fi
+    grep -q -F "$1" "$2" || echo "$1" >> "$2"; }
+
+# Example: export_alias zz "ls -la"
+export_alias() {
+  local name=$1
+  shift
+  local alias_dir=$PWD/.direnv/aliases
+  local target="$alias_dir/$name"
+  mkdir -p "$alias_dir"
+  PATH_add "$alias_dir"
+  echo "#!/usr/bin/env bash -e" > "$target"
+  echo "$@" >> "$target"
+  chmod +x "$target"
+}
+
+# use_conda: Ensure that a Conda package manager is installed and enabled (stable)
+
+# Syntax: use conda [<environment name>]
+#    <environment name>: name of the environment (default: 'default')
+
+# Notes:
+#    - the Conda environment is populated with Python 2.x
+
+use_conda() {
+    ENV_NAME="${1:-default}"
+
+    # ensure that conda is installed
+    export CONDA_ROOT="${HOME}/.direnv/conda"
+    if [[ ! -d ${CONDA_ROOT} ]]; then
+        OS_NAME="$(uname)"; WORD_SIZE=$(getconf LONG_BIT)
+
+        if [ "${OS_NAME}" == "Darwin" ]; then
+            _print "conda: installing Conda package manager (64bit)"
+            package_name="Miniconda3-latest-MacOSX-x86_64"
+        elif [ "${OS_NAME}" == "Linux" ]; then
+            if [ "${WORD_SIZE}" == "64" ]; then
+                _print "conda: installing Conda package manager (64bit)"
+                package_name="Miniconda3-latest-Linux-x86_64"
+            else
+                _print "conda: installing Conda package manager (32bit)"
+                package_name="Miniconda3-latest-Linux-x86"
+            fi
+        else
+            _error "unsupported platform: ${OS_NAME}"
+        fi
+
+        package="${TMPDIR:-/tmp}/miniconda.sh"
+        wget "https://repo.continuum.io/miniconda/${package_name}.sh" -O ${package}
+        bash ${package} -b -p ${CONDA_ROOT} && rm ${package}
+    fi
+
+    # add miniconda to the PATH
+    path_add PATH "${CONDA_ROOT}/bin"
+    if ! has conda; then
+        _error "conda: 'conda' executable not found"; fi
+
+    # ensure that this environment exists
+    local ENV_PATH="${CONDA_ROOT}/envs/${ENV_NAME}"
+    if [[ ! -d ${ENV_PATH} ]]; then
+        _print "conda: preparing Conda environment '${ENV_NAME}'"
+        conda create --prefix "${ENV_PATH}" --quiet --yes python
+    fi
+
+    # activate this environment
+    source activate "${ENV_PATH}"
+}
+
+# use_python: Ensure that a Python environment is installed and enabled (stable)
+
+# Syntax: use python <python version> [<environment name>]
+#    <python version>: version of the Python interpreter
+#    <environment name>: environment name (default: 'default')
+
+# Notes:
+#    - powered by Pyenv, see https://github.com/yyuu/pyenv
+
+use_python() {
+    if [[ $# -lt 1 ]]; then
+        _error "invalid syntax: should be 'use python <python version>'"
+    fi
+
+    ENV_NAME="${2:-default}"
+
+    # ensure that Pyenv is installed
+    export PYENV_ROOT="${HOME}/.direnv/pyenv"
+    if [[ ! -d ${PYENV_ROOT} ]]; then
+        _print "python: installing Pyenv"
+        curl -L "https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer" | bash
+    fi
+
+    # add pyenv to the PATH
+    path_add PATH "${PYENV_ROOT}/bin"
+    if ! has pyenv; then
+        _error "python: 'pyenv' executable not found"
+    fi
+
+    eval "$(pyenv init -)"
+
+    # ensure that this version of Python interpreter is installed
+    if [[ ! -d ${PYENV_ROOT}/versions/$1 ]]; then
+        _print "python: installing Python interpreter $1"
+        pyenv install --skip-existing $1
+
+        # upgrade pip, setuptools then install virtualenv
+        pyenv shell $1
+        pyenv exec pip install --upgrade --quiet setuptools
+        pyenv exec pip install --upgrade --quiet --disable-pip-version-check pip
+        pyenv exec pip install --upgrade --quiet virtualenv
+        pyenv rehash
+    else
+        pyenv shell $1
+    fi
+
+    # ensure that this environment exists
+    local ENV_PATH="${PWD}/.env/pyenv-$1-${ENV_NAME}"
+    if [[ ! -d ${ENV_PATH} ]]; then
+        _print "python: preparing Python environment '${ENV_NAME}'"
+        virtualenv --always-copy "${ENV_PATH}"
+    fi
+
+    # activate this environment
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+    source "${ENV_PATH}/bin/activate"
+}

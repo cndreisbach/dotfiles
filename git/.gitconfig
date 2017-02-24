@@ -2,6 +2,7 @@
     email = clinton@dreisbach.us
     name = Clinton Dreisbach
     initials = cnd
+	signingkey = 4863E401
 [github]
     user = cndreisbach
 [core]
@@ -58,3 +59,5 @@
 	TrustExitCode = true
 [ghq]
 	root = ~/repos
+[commit]
+	gpgsign = true
