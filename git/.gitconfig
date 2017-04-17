@@ -35,6 +35,8 @@
     list-tracked = ls-tree -r HEAD --name-only
     initial-commit = commit --allow-empty -m 'Initial commit'
     st = status --short --branch
+    prune = fetch --prune
+    stash-all = stash save --include-untracked
 [color]
     ui = auto
     diff = auto
@@ -46,7 +48,8 @@
 [help]
     autocorrect = 1
 [push]
-    default = tracking
+    default = simple
+    gpgsign = if-asked
 [branch]
     autosetupmerge = true
     autosetuprebase = remote
