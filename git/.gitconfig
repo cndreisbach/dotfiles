@@ -13,30 +13,30 @@
     path = ~/.gitconfig.local
 [alias]
 	aliases = config --get-regexp ^alias\\.
-    branches = branch -a
-    tags = tag
-    stashes = stash list
-    unstage = reset -q HEAD --
-    discard = checkout --
     amend = commit --amend
-    uncommit = reset --mixed HEAD~
-    new-branch = checkout -b
+    branches = branch -a
     cleanup = !git remote prune origin && git gc && git stash clear
     diffall = diff --cached
-    graph = log --graph --branches --remotes --tags  --format=format:'%Cgreen%h %Creset %s (%cN, %cr) %Cred%d'
-    ls = ls-files
+    discard = checkout --
     force-push = push --force-with-lease
-    undo = reset --hard
-    who = shortlog -n -s --no-merges
     generate-ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+    graph = log --graph --branches --remotes --tags  --format=format:'%Cgreen%h %Creset %s (%cN, %cr) %Cred%d'
+    initial-commit = commit --allow-empty -m 'Initial commit'
+    list-tracked = ls-tree -r HEAD --name-only
+    ls = ls-files
+    new-branch = checkout -b
+    prune = fetch --prune
     remove-old-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     rmb = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     show-ignored = ls-files --others -i --exclude-standard
-    list-tracked = ls-tree -r HEAD --name-only
-    initial-commit = commit --allow-empty -m 'Initial commit'
     st = status --short --branch
-    prune = fetch --prune
     stash-all = stash save --include-untracked
+    stashes = stash list
+    tags = tag
+    uncommit = reset --mixed HEAD~
+    undo = reset --hard
+    unstage = reset -q HEAD --
+    who = shortlog -n -s --no-merges
 [color]
     ui = auto
     diff = auto
