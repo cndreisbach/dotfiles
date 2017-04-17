@@ -33,6 +33,8 @@
     rmb = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     show-ignored = ls-files --others -i --exclude-standard
     list-tracked = ls-tree -r HEAD --name-only
+    initial-commit = commit --allow-empty -m 'Initial commit'
+    st = status --short --branch
 [color]
     ui = auto
     diff = auto
@@ -50,14 +52,6 @@
     autosetuprebase = remote
 [rebase]
     autostash = 1
-[commit]
-    #template = "~/.gitcommit.txt"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	TrustExitCode = true
 [ghq]
 	root = ~/repos
 [commit]
