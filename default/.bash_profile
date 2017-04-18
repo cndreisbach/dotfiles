@@ -17,3 +17,4 @@ done
 
 which direnv > /dev/null && eval "$(direnv hook bash)"
 
+if [ -e /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
