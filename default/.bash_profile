@@ -17,4 +17,11 @@ done
 
 which direnv > /dev/null && eval "$(direnv hook bash)"
 
+<<<<<<< Updated upstream
 if [ -e /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+=======
+export PATH="/home/clinton/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+>>>>>>> Stashed changes
