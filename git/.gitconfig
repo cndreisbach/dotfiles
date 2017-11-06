@@ -32,6 +32,7 @@
     remove-old-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     rmb = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     show-ignored = ls-files --others -i --exclude-standard
+    initial-commit = "commit --allow-empty -m 'Initial commit'"
 [color]
     ui = auto
     diff = auto
