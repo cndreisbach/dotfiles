@@ -7,17 +7,14 @@ root = true
 [*]
 end_of_line = lf
 insert_final_newline = true
-
-[*.{py,css,js,html}]
-charset = utf-8
-indent_style = space
-indent_size = 4
-
-[*.{yml,yaml,rb,md}]
 charset = utf-8
 indent_style = space
 indent_size = 2
 
+[*.py]
+indent_size = 4
+
 # Tab indentation (no size specified)
 [Makefile]
+indent_size = unset
 indent_style = tab
