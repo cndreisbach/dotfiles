@@ -6,9 +6,10 @@
 [github]
     user = cndreisbach
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/clinton/.gitignore_global
     pager = less
     editor = "nano -r 72"
+	autocrlf = input
 [include]
     path = ~/.gitconfig.local
 [alias]
@@ -26,6 +27,7 @@
     ls = ls-files
     new-branch = checkout -b
     prune = fetch --prune
+    push-branch = "!git push -u origin `git rev-parse --abbrev-ref HEAD`"
     remove-old-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     rmb = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     show-ignored = ls-files --others -i --exclude-standard

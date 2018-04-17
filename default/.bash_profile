@@ -12,16 +12,14 @@ if [ -f ~/.aliases ]; then
 fi
 
 for file in $(ls ~/.bash); do
-  . ~/.bash/$file
+ . ~/.bash/$file
 done
+
+export PATH=/usr/local/bin:$PATH
 
 which direnv > /dev/null && eval "$(direnv hook bash)"
 
-<<<<<<< Updated upstream
-if [ -e /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cdreisbach/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-=======
-export PATH="/home/clinton/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export GIT_PROMPT_THEME=Solarized
 
->>>>>>> Stashed changes
+[[ -f "$(brew --prefix)/etc/bash_completion" ]] && source "$(brew --prefix)/etc/bash_completion"
+[[ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]] && source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
