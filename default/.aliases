@@ -11,6 +11,7 @@ alias http='python3 -m http.server'
 alias k9='kill -9'
 alias ll="ls -laFh"
 alias mkdir="mkdir -pv"
+alias pass='gopass'
 alias pj="cd \$(ghq root)/\$(ghq list | peco)"
 alias ps\?="ps ax | grep $1"
 alias reload="source ~/.env && source ~/.aliases"

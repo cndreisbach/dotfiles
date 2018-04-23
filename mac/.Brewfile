@@ -8,6 +8,7 @@ brew "ghq"
 brew "git"
 brew "gnupg"
 brew "go"
+brew "gopass"
 brew "hub"
 brew "hugo"
 brew "jq"
@@ -16,7 +17,6 @@ brew "modd"
 brew "most"
 brew "node"
 brew "pandoc"
-brew "pass"
 brew "peco"
 brew "pinentry-mac"
 brew "pre-commit"
@@ -29,6 +29,7 @@ cask 'spideroakone'
 cask 'spectacle'
 cask 'brogue'
 cask 'imageoptim'
+cask 'keycastr'
 
 mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
