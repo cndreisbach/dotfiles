@@ -9,9 +9,10 @@ alias ducks="du -cks * | sort -rn | head -11"
 alias gr="grep -r"
 alias http='python3 -m http.server'
 alias k9='kill -9'
-alias ll="ls -laFh"
+alias ll="ls -lAFh"
 alias mkdir="mkdir -pv"
-alias pass='gopass'
+#alias npm=pnpm
+#alias pass='gopass'
 alias pj="cd \$(ghq root)/\$(ghq list | peco)"
 alias ps\?="ps ax | grep $1"
 alias reload="source ~/.env && source ~/.aliases"
@@ -19,10 +20,15 @@ alias root='sudo -i'
 alias su='sudo su -'
 alias vi='vim'
 
+alias kb='cd ~/repos/github.com/momentum-cohort-2018-07/kb'
+
+alias dokku="~/.dokku/contrib/dokku_client.sh"
+
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"
 alias rmorig="find . -name '*.orig' | xargs rm"
 alias rmpyc="find . -name '*.pyc' | xargs rm"
+alias rmnode="find . -name 'node_modules' -type d -d | xargs rm -rf"
 
 # Git
 alias gap='git add --patch'
@@ -30,6 +36,9 @@ alias gc='git commit'
 alias gca='git commit --amend -C HEAD'
 alias glog="git log --graph"
 alias gst='git status'
+
+# Node
+alias new-package-json="echo '{\"private\": true}' > package.json"
 
 # Linux
 if [[ $(uname) == 'Linux' ]]; then

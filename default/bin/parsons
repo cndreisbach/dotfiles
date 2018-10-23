@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import random
+import argparse
+
+parser = argparse.ArgumentParser(description='Scramble source code for a Parsons problem.')
+
+parser.add_argument("-i", "--preserve-indent",
+                    action="store_true", dest="preserve_indent", default=False,
+                    help="preserve whitespace at the beginning of the line")
+parser.add_argument("-b", "--preserve-blank-lines",
+                    action="store_true", dest="preserve_blank_lines", default=False,
+                    help="preserve blank lines")
+parser.add_argument("filename", metavar="FILE")
+
+args = parser.parse_args()
+
+with open(args.filename, "r") as file:
+  lines = file.readlines()
+
+if not args.preserve_indent:
+  lines = [line.strip("\t\n ") 
+            for line in lines]
+  lines = [line for line in lines
+            if len(line) > 0 or args.preserve_blank_lines]
+
+if len(lines) > 26:
+  print("File is too long - {} lines".format(len(lines)))
+  exit(1)
+
+random.shuffle(lines)
+lines = ["{}  -  {}".format(chr(97 + idx), line)
+         for idx, line in enumerate(lines)]
+
+for line in lines:
+  print(line)
