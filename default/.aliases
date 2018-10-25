@@ -20,7 +20,7 @@ alias root='sudo -i'
 alias su='sudo su -'
 alias vi='vim'
 
-alias kb='cd ~/repos/github.com/momentum-cohort-2018-07/kb'
+alias kb='cd ~/repos/github.com/momentum-cohort-2018-10/kb'
 
 alias dokku="~/.dokku/contrib/dokku_client.sh"
 
