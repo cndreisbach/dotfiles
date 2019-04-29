@@ -1,13 +1,13 @@
 {
   "default_hour": 9, 
-  "timeformat": "%Y-%m-%d %H:%M", 
+  "timeformat": "%B %d, %Y at %I:%M%p",
   "linewrap": 79, 
   "encrypt": false, 
   "editor": "vim", 
   "default_minute": 0, 
   "highlight": true, 
   "journals": {
-    "default": "/Users/cdreisbach/ownCloud/journal.txt"
+    "default": "~/Dropbox/jrnl.txt"
   }, 
   "tagsymbols": "@"
 }

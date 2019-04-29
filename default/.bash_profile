@@ -3,12 +3,12 @@ function_exists() {
     return $?
 }
 
-if [ -f ~/.env ]; then
-  . ~/.env
+if [ -f ~/.env.sh ]; then
+  . ~/.env.sh
 fi
 
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
+if [ -f ~/.aliases.sh ]; then
+  . ~/.aliases.sh
 fi
 
 for file in $(ls ~/.bash); do
@@ -28,5 +28,3 @@ eval "$(nodenv init -)"
 set -o noclobber
 
 export EDITOR=nano
-export MANPATH=/usr/share/man:/usr/local/share/man:/usr/X11/man:$HOME/man
-export MANSECT=1:1p:8:2:3:3p:4:5:6:7:9:0p:tcl:n:l:p:o:0

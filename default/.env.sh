@@ -1,10 +1,6 @@
 export EDITOR='vim'
 export VISUAL='vim'
-
-which most > /dev/null
-if [ $? -eq 0 ]; then
-  export PAGER=`which most`
-fi
+export PAGER='less'
 
 # Java
 export JAVA_OPTS="-Dfile.encoding=UTF-8"

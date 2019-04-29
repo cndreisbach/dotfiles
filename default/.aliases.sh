@@ -19,8 +19,9 @@ alias reload="source ~/.env && source ~/.aliases"
 alias root='sudo -i'
 alias su='sudo su -'
 alias vi='vim'
+alias xee='open -a /Applications/Xee³.app'
 
-alias kb='cd ~/repos/github.com/momentum-cohort-2018-10/kb'
+alias kb='cd ~/repos/github.com/momentum-cohort-2019-02/kb'
 
 alias dokku="~/.dokku/contrib/dokku_client.sh"
 

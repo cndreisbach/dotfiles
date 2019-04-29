@@ -1,5 +1,5 @@
 [user]
-    email = clinton@dreisbach.us
+	email = clinton@dreisbach.us
     name = Clinton Dreisbach
     initials = cnd
 	signingkey = 4863E401
@@ -9,7 +9,8 @@
 [core]
 	excludesfile = /Users/clinton/.gitignore_global
     pager = less
-    editor = "nano -r 72"
+	#editor = /Applications/Komet.app/Contents/MacOS/Komet
+	editor = code -w
 	autocrlf = input
 [include]
     path = ~/.gitconfig.local
@@ -26,7 +27,7 @@
     initial-commit = commit --allow-empty -m 'Initial commit'
     list-tracked = ls-tree -r HEAD --name-only
     ls = ls-files
-    new-branch = checkout -b
+	new-branch = checkout -b
     prune = fetch --prune
     push-branch = "!git push -u origin `git rev-parse --abbrev-ref HEAD`"
     remove-old-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
@@ -41,12 +42,13 @@
     undo = reset --hard
     unstage = reset -q HEAD --
     who = shortlog -n -s --no-merges
+	drop-changes = reset --hard HEAD
 [color]
     ui = auto
     diff = auto
 [format]
     # 4436819 [23 hours ago] (Gabe Berke-Williams) One line prompt
-    pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
+    #pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
 [apply]
     whitespace = fix
 [help]
@@ -80,3 +82,9 @@
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

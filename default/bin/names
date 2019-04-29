@@ -21,6 +21,7 @@ Blake
 Brody
 Brook
 Cadence
+Cameron
 Carter
 Casey
 Chance
@@ -46,6 +47,7 @@ Indiana
 India
 Indigo
 Jayden
+Jesse
 Justice
 Kai
 Keelan
@@ -58,6 +60,7 @@ Leslie
 Logan
 Marion
 Marley
+Meredith
 Milan
 Morgan
 Nat
@@ -79,6 +82,7 @@ Rowan
 Ryan
 Sage
 Sam
+Sandy
 Sawyer
 Scout
 Skyler
@@ -94,8 +98,13 @@ Zara
 
 def main():
     parser = argparse.ArgumentParser(description="Pick N names.")
-    parser.add_argument('count', metavar='N', type=int, nargs='?',
-                        help="number of names", default=5)
+    parser.add_argument(
+        'count',
+        metavar='N',
+        type=int,
+        nargs='?',
+        help="number of names",
+        default=5)
     args = parser.parse_args()
     names = namelist.strip().split("\n")
     selected = random.sample(names, args.count)
