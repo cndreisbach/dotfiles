@@ -23,8 +23,11 @@ export GIT_PROMPT_THEME=Solarized
 
 [[ -f "$(brew --prefix)/etc/bash_completion" ]] && source "$(brew --prefix)/etc/bash_completion"
 [[ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]] && source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-eval "$(nodenv init -)"
+#eval "$(nodenv init -)"
 
 set -o noclobber
 
 export EDITOR=nano
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+eval $(thefuck --alias wtf)

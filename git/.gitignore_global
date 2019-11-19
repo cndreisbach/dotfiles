@@ -32,3 +32,5 @@ GRTAGS
 GTAGS
 .vscode/
 .cache
+.mypy_cache
+.pytest_cache

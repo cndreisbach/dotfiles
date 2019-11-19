@@ -23,7 +23,7 @@ alias xee='open -a /Applications/Xee³.app'
 
 alias kb='cd ~/repos/github.com/momentum-cohort-2019-02/kb'
 
-alias dokku="~/.dokku/contrib/dokku_client.sh"
+alias sp='rlwrap -i -f ~/.sqlplus_history -H ~/.sqlplus_history -s 30000 sqlplus'
 
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"
