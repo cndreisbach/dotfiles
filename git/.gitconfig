@@ -7,7 +7,6 @@
 [github]
     user = cndreisbach
 [core]
-	excludesfile = /Users/clinton/.gitignore_global
     pager = less
 	#editor = /Applications/Komet.app/Contents/MacOS/Komet
     #editor = code -w
