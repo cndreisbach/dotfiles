@@ -1,68 +1,122 @@
-# See https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew for more details
-#
-
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
-tap 'homebrew/services'
-tap 'railwaycat/emacsmacport'
-tap 'thoughtbot/formulae'
-brew 'libyaml'
-brew 'openssl'
-brew 'ansible'
-brew 'docbook'
-brew 'asciidoc'
-brew 'autoconf'
-brew 'xz'
-brew 'automake'
-brew 'readline'
-brew 'bash'
-brew 'cmake'
-brew 'coreutils'
-brew 'cscope'
-brew 'direnv'
-brew 'fasd'
-brew 'fish'
-brew 'gdbm'
-brew 'pcre'
-brew 'git'
-brew 'htop-osx'
-brew 'libpng'
-brew 'pkg-config'
-brew 'sqlite'
-brew 'python3'
-brew 'macvim'
-brew 's-lang'
-brew 'most'
-brew 'node'
-brew 'parallel'
-brew 'postgresql'
-brew 'rename'
-brew 'ssh-copy-id'
-brew 'stow'
-brew 'surfraw'
-brew 'the_silver_searcher'
-brew 'todo-txt'
-brew 'tree'
-brew 'uchardet'
-brew 'wget'
-brew 'zsh'
-brew 'zsh-completions'
-brew 'caskroom/cask/brew-cask'
-brew 'railwaycat/emacsmacport/emacs-mac', args: ['with-spacemacs-icon']
-cask 'alfred'
-cask 'bartender'
-cask 'caffeine'
-cask 'dash'
-cask 'google-chrome'
-cask 'hazel'
-cask 'karabiner'
-cask 'macdown'
-cask 'nvalt'
-cask 'skitch'
-cask 'skype'
-cask 'sourcetree'
-cask 'spectacle'
-cask 'vagrant'
-cask 'virtualbox'
-cask 'xmind'
-cask 'xquartz'
+tap "github/gh"
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/php"
+tap "homebrew/services"
+tap "pivotal/tap"
+brew "ack"
+brew "ansible"
+brew "aws-elasticbeanstalk"
+brew "bat"
+brew "composer"
+brew "coreutils"
+brew "csvkit"
+brew "direnv"
+brew "django-completion"
+brew "dnsmasq", restart_service: true
+brew "dos2unix"
+brew "exa"
+brew "exercism"
+brew "lame"
+brew "ffmpeg"
+brew "node"
+brew "firebase-cli"
+brew "fswatch"
+brew "geckodriver"
+brew "ghq"
+brew "git"
+brew "git-quick-stats"
+brew "gnupg"
+brew "go"
+brew "python"
+brew "hub"
+brew "hugo"
+brew "imagemagick"
+brew "imageoptim-cli"
+brew "jq"
+brew "libdvdcss"
+brew "links"
+brew "mas"
+brew "mkdocs"
+brew "modd"
+brew "most"
+brew "mysql"
+brew "nano"
+brew "pandoc"
+brew "peco"
+brew "postgresql", restart_service: true
+brew "pgloader"
+brew "php"
+brew "pinentry-mac"
+brew "pipenv", link: false
+brew "rename"
+brew "ripgrep"
+brew "rlwrap"
+brew "roswell"
+brew "roundup"
+brew "ruby"
+brew "sassc"
+brew "starship"
+brew "stow"
+brew "tcl-tk"
+brew "thefuck"
+brew "tmux"
+brew "trash"
+brew "watchman"
+brew "wget"
+brew "yarn"
+brew "yarn-completion"
+brew "zlib"
+brew "zsh-completions"
+brew "github/gh/gh"
+brew "heroku/brew/heroku"
+cask "brogue"
+cask "buttercup"
+cask "chromedriver"
+cask "dbeaver-community"
+cask "font-droid-sans-mono-for-powerline"
+cask "font-fira-mono-for-powerline"
+cask "font-go"
+cask "font-go-mono"
+cask "font-go-mono-nerd-font"
+cask "font-ibm-plex"
+cask "font-input"
+cask "font-menlo-for-powerline"
+cask "font-poppins"
+cask "font-source-code-pro-for-powerline"
+cask "font-ubuntu"
+cask "font-ubuntu-mono-derivative-powerline"
+cask "fork"
+cask "git-it"
+cask "imageoptim"
+cask "iterm2"
+cask "karabiner-elements"
+cask "macsvg"
+cask "mactex-no-gui"
+cask "osxfuse"
+cask "patchwork"
+cask "racket"
+cask "sourcetree"
+cask "spideroakone"
+cask "surge"
+cask "vectr"
+cask "wkhtmltopdf"
+cask "xquartz"
+mas "Amphetamine", id: 937984704
+mas "Aware", id: 1082170746
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Kiwi for Gmail", id: 986304488
+mas "monday", id: 1298450641
+mas "Murasaki", id: 430300762
+mas "Pages", id: 409201541
+mas "Pocket", id: 568494494
+mas "Slack", id: 803453959
+mas "Space Gremlin", id: 414515628
+mas "The Unarchiver", id: 425424353
+mas "White Noise", id: 415139197
+mas "Xcode", id: 497799835

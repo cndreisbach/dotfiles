@@ -34,3 +34,4 @@ GTAGS
 .cache
 .mypy_cache
 .pytest_cache
+node_modules/

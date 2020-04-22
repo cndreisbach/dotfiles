@@ -1,7 +1,5 @@
 ### ALIASES
 
-alias .a="$EDITOR ~/.aliases && source ~/.aliases"
-alias .e="$EDITOR ~/.env && source ~/.env"
 alias \?="history | grep $1"
 alias bell='tput bel'
 alias dirpy3='touch .envrc; echo "layout python3" >> .envrc'
@@ -9,21 +7,14 @@ alias ducks="du -cks * | sort -rn | head -11"
 alias gr="grep -r"
 alias http='python3 -m http.server'
 alias k9='kill -9'
-alias ll="ls -lAFh"
 alias mkdir="mkdir -pv"
-#alias npm=pnpm
-#alias pass='gopass'
 alias pj="cd \$(ghq root)/\$(ghq list | peco)"
 alias ps\?="ps ax | grep $1"
-alias reload="source ~/.env && source ~/.aliases"
-alias root='sudo -i'
-alias su='sudo su -'
 alias vi='vim'
-alias xee='open -a /Applications/Xee³.app'
 
-alias kb='cd ~/repos/github.com/momentum-cohort-2019-02/kb'
+alias ll='exa -laF'
+alias tree='exa -TR'
 
-alias sp='rlwrap -i -f ~/.sqlplus_history -H ~/.sqlplus_history -s 30000 sqlplus'
 
 # Cleanup
 alias rmlogs="find . -name '*.log' | xargs rm"

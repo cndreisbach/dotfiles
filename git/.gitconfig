@@ -4,6 +4,7 @@
     initials = cnd
 	signingkey = 4863E401
 	username = cndreisbach
+	useConfigOnly = true
 [github]
     user = cndreisbach
 [core]
@@ -13,6 +14,7 @@
 	autocrlf = input
 	name = Clinton Dreisbach
 	editor = nano
+	excludesfile = /Users/clinton/.gitignore
     #editor = nano
 [include]
     path = ~/.gitconfig.local
