@@ -1,5 +1,0 @@
-set tab-size = 2
-set blame-view = \
-  date:relative \
-  line-number:yes,interval=5 text
-
