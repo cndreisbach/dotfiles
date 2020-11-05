@@ -113,7 +113,7 @@ hs.hotkey.bind(hyper, "n", function()
 end)
 
 Install:andUse("Seal", {
-    hotkeys = {show = {hyper, "space"}},
+    hotkeys = {toggle = {hyper, "space"}, show = {"cmd", "space"}},
     fn = function(s)
         s:loadPlugins({"apps", "calc", "screencapture", "useractions"})
         s.plugins.apps.appSearchPaths = {
