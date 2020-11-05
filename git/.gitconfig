@@ -1,75 +1,64 @@
 [user]
-	email = clinton@dreisbach.us
-	name = Clinton Dreisbach
-    initials = cnd
-	signingkey = 4863E401
-	username = cndreisbach
-	useConfigOnly = true
+  email = clinton@dreisbach.us
+  name = Clinton Dreisbach
+  initials = cnd
+  signingkey = 4863E401
+  username = cndreisbach
+  useConfigOnly = true
 [github]
-    user = cndreisbach
+  user = cndreisbach
 [core]
-    pager = less
-	#editor = /Applications/Komet.app/Contents/MacOS/Komet
-    #editor = code -w
-	autocrlf = input
-	name = Clinton Dreisbach
-	editor = nano
-	excludesfile = /Users/clinton/.gitignore
-    #editor = nano
+  pager = less
+  autocrlf = input
+  name = Clinton Dreisbach
+  editor = nano
 [include]
     path = ~/.gitconfig.local
 [alias]
-	aliases = config --get-regexp ^alias\\.
-    amend = commit --amend
-    branches = branch -a
-    cleanup = !git remote prune origin && git gc && git stash clear
-    diffall = diff --cached
-    discard = checkout --
-    force-push = push --force-with-lease
-    generate-ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
-    graph = log --graph --branches --remotes --tags  --format=format:'%Cgreen%h %Creset %s (%cN, %cr) %Cred%d'
-    initial-commit = commit --allow-empty -m 'Initial commit'
-    list-tracked = ls-tree -r HEAD --name-only
-    ls = ls-files
-    new-branch = checkout -b
-    prune = fetch --prune
-    remove-old-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-    rmb = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-    show-ignored = ls-files --others -i --exclude-standard
-    initial-commit = "commit --allow-empty -m 'Initial commit'"
-    st = status --short --branch
-    stash-all = stash save --include-untracked
-    stashes = stash list
-    tags = tag
-    uncommit = reset --mixed HEAD~
-    undo = reset --hard
-    unstage = reset -q HEAD --
-    who = shortlog -n -s --no-merges
-    drop-changes = reset --hard HEAD
+  aliases = config --get-regexp ^alias\\.
+  amend = commit --amend
+  branches = branch -a
+  cleanup = !git remote prune origin && git gc && git stash clear
+  diffall = diff --cached
+  discard = checkout --
+  force-push = push --force-with-lease
+  generate-ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+  graph = log --graph --branches --remotes --tags  --format=format:'%Cgreen%h %Creset %s (%cN, %cr) %Cred%d'
+  initial-commit = commit --allow-empty -m 'Initial commit'
+  list-tracked = ls-tree -r HEAD --name-only
+  ls = ls-files
+  new-branch = checkout -b
+  prune = fetch --prune
+  remove-old-branches = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  rmb = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  show-ignored = ls-files --others -i --exclude-standard
+  initial-commit = "commit --allow-empty -m 'Initial commit'"
+  st = status --short --branch
+  stash-all = stash save --include-untracked
+  stashes = stash list
+  tags = tag
+  uncommit = reset --mixed HEAD~
+  undo = reset --hard
+  unstage = reset -q HEAD --
+  who = shortlog -n -s --no-merges
+  drop-changes = reset --hard HEAD
+	new = !git init && git symbolic-ref HEAD refs/heads/main
 [color]
-    ui = auto
-    diff = auto
-[format]
-    # 4436819 [23 hours ago] (Gabe Berke-Williams) One line prompt
-    #pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
+  ui = auto
+  diff = auto
 [apply]
-    whitespace = fix
+  whitespace = fix
 [help]
-    autocorrect = 1
+  autocorrect = 1
 [push]
-    default = simple
-    #gpgsign = if-asked
+  default = simple
 [branch]
-    autosetupmerge = true
-    autosetuprebase = remote
+  autosetupmerge = true
+  autosetuprebase = remote
 [rebase]
-    autostash = 1
+  autostash = 1
 [ghq]
-	root = ~/repos
-[commit]
-	#gpgsign = true
-[gpg]
-	program = /usr/local/bin/gpg
+  root = ~/repos
 [diff]
   tool = meld
 [difftool]
@@ -84,10 +73,7 @@
 [mergetool "meld"]
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
-
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[credential]
+  helper = osxkeychain
+[init]
+  defaultBranch = main

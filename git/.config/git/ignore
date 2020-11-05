@@ -35,3 +35,4 @@ GTAGS
 .mypy_cache
 .pytest_cache
 node_modules/
+.ipynb_checkpoints
