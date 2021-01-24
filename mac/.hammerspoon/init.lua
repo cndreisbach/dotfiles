@@ -32,20 +32,20 @@ hs.alert.show("Hammerspoon config loaded")
 
 hs.window.animationDuration = 0.1
 
-hs.hotkey.bind(hyper, "Up", function()
-    local win = hs.window.focusedWindow()
-    win:moveToUnit(hs.layout.maximized)
-end)
+-- hs.hotkey.bind(hyper, "Up", function()
+--     local win = hs.window.focusedWindow()
+--     win:moveToUnit(hs.layout.maximized)
+-- end)
 
-hs.hotkey.bind(hyper, "Left", function()
-    local win = hs.window.focusedWindow()
-    win:moveToUnit(hs.layout.left50)
-end)
+-- hs.hotkey.bind(hyper, "Left", function()
+--     local win = hs.window.focusedWindow()
+--     win:moveToUnit(hs.layout.left50)
+-- end)
 
-hs.hotkey.bind(hyper, "Right", function()
-    local win = hs.window.focusedWindow()
-    win:moveToUnit(hs.layout.right50)
-end)
+-- hs.hotkey.bind(hyper, "Right", function()
+--     local win = hs.window.focusedWindow()
+--     win:moveToUnit(hs.layout.right50)
+-- end)
 
 function moveToPrevScreen()
     local win = hs.window.focusedWindow()
@@ -61,56 +61,10 @@ function moveToNextScreen()
     win:moveToScreen(nextScreen)
 end
 
-hs.hotkey.bind({"cmd", "ctrl", "alt"}, "Left", moveToPrevScreen)
-hs.hotkey.bind({"cmd", "ctrl", "alt"}, "Right", moveToNextScreen)
-hs.hotkey.bind(hyper, "PageUp", moveToPrevScreen)
-hs.hotkey.bind(hyper, "PageDown", moveToNextScreen)
-
-hs.hotkey.bind(hyper, "l", function()
-    local app = hs.application.frontmostApplication()
-
-    if app:name() ~= "The Archive" then return end
-
-    local output = hs.execute(
-                       "cd ~/Dropbox/Notes/; ls | sed -E -e 's/.[^.]*$//' -e 's!^([0-9]+)[[:space:]-]+(.+)!\\2 [[\\1]]!'")
-
-    output = trim(output)
-    local notes = lines(output)
-    local choices = {}
-    for k, v in pairs(notes) do choices[k] = {["text"] = v} end
-
-    local chooser = hs.chooser.new(function(choice)
-        if choice then
-            hs.pasteboard.setContents(choice["text"])
-            hs.eventtap.keyStroke({"cmd"}, "v")
-        end
-    end)
-    chooser:choices(choices)
-    chooser:show()
-end)
-
-hs.hotkey.bind(hyper, "n", function()
-    hs.application.launchOrFocus("The Archive")
-    hs.osascript.applescript([[
-      set theResponse to display dialog "New note name?" default answer "" with icon note buttons {"Cancel", "Continue"} default button "Continue"
-
-      tell application "The Archive"
-        activate
-      end tell
-      tell application "System Events"
-        tell process "The Archive"
-          click menu item "New…" of menu "Note" of menu bar 1
-          click menu item "Rename" of menu "Note" of menu bar 1
-          key code 124
-          if (text returned of theResponse) is not equal to "" then
-            keystroke " " & (text returned of theResponse)
-          end if
-          key code 36
-          key code 48
-        end tell
-      end tell
-    ]])
-end)
+-- hs.hotkey.bind({"cmd", "ctrl", "alt"}, "Left", moveToPrevScreen)
+-- hs.hotkey.bind({"cmd", "ctrl", "alt"}, "Right", moveToNextScreen)
+-- hs.hotkey.bind(hyper, "PageUp", moveToPrevScreen)
+-- hs.hotkey.bind(hyper, "PageDown", moveToNextScreen)
 
 Install:andUse("Seal", {
     hotkeys = {toggle = {hyper, "space"}, show = {"cmd", "space"}},
@@ -128,11 +82,5 @@ Install:andUse("Seal", {
         s.plugins.apps:restart()
         s:refreshAllCommands()
     end,
-    start = true
-})
-
-Install:andUse("ClipboardTool", {
-    hotkeys = {show_clipboard = {hyper, "v"}},
-    config = {paste_on_select = true, show_in_menubar = false, hist_size = 50},
     start = true
 })

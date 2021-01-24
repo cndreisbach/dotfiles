@@ -11,7 +11,7 @@
   pager = less
   autocrlf = input
   name = Clinton Dreisbach
-  editor = nano
+	editor = nano
 [include]
     path = ~/.gitconfig.local
 [alias]
@@ -77,3 +77,8 @@
   helper = osxkeychain
 [init]
   defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
