@@ -7,6 +7,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "pivotal/tap"
 brew "ack"
+brew "tcl-tk"
 brew "ansible"
 brew "aws-elasticbeanstalk"
 brew "awscli"
@@ -28,6 +29,7 @@ brew "lame"
 brew "ffmpeg"
 brew "node"
 brew "firebase-cli"
+brew "fish"
 brew "fswatch"
 brew "geckodriver"
 brew "gh"
@@ -46,6 +48,7 @@ brew "jq"
 brew "libdvdcss"
 brew "links"
 brew "mas"
+brew "micro"
 brew "mkdocs"
 brew "modd"
 brew "most"
@@ -55,8 +58,6 @@ brew "pandoc"
 brew "peco"
 brew "postgresql", restart_service: true
 brew "pgloader"
-brew "php", link: false
-brew "php@7.4", link: true
 brew "pinentry-mac"
 brew "pipenv"
 brew "postgresql@12"
@@ -112,9 +113,7 @@ cask "font-ubuntu-mono-derivative-powerline"
 cask "font-ubuntu-mono-nerd-font"
 cask "fork"
 cask "freemind"
-cask "git-it"
 cask "google-chrome"
-cask "hammerspoon"
 cask "imageoptim"
 cask "inky"
 cask "insomnia"
@@ -122,7 +121,6 @@ cask "karabiner-elements"
 cask "keepassxc"
 cask "loom"
 cask "mactex-no-gui"
-cask "mockoon"
 cask "ngrok"
 cask "obsidian"
 cask "racket"
@@ -130,32 +128,24 @@ cask "sketchbook"
 cask "sourcetree"
 cask "spideroakone"
 cask "spotify"
-cask "surge"
 cask "time-out"
-cask "typora"
 cask "vectr"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "wkhtmltopdf"
-cask "xmind"
 cask "xquartz"
 cask "zoom"
-cask "zoomus"
 mas "Amphetamine", id: 937984704
 mas "Aware", id: 1082170746
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kiwi for Gmail", id: 986304488
-mas "monday.com", id: 1298450641
 mas "Monosnap", id: 540348655
 mas "Murasaki", id: 430300762
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
 mas "Slack", id: 803453959
 mas "Space Gremlin", id: 414515628
-mas "Tayasui Sketches", id: 1178074963
 mas "The Unarchiver", id: 425424353
 mas "Unsplash Wallpapers", id: 1284863847
 mas "White Noise", id: 415139197
